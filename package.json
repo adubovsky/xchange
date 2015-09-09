@@ -25,6 +25,7 @@
     "grunt-contrib-sass": "^0.9.2",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-nodemon": "^0.4.0",
+    "mongo-express": "^0.21.0",
     "mongoose": "^4.1.6",
     "ng-file-upload": "^7.0.17",
     "passport": "^0.3.0",
