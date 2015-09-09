@@ -122,7 +122,7 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
                 {name: 'Electronics'},
                 {name: 'Smart phones'}
             ]);
-        },Math.floor(2000*Math.random()));
+        }, Math.floor(2000 * Math.random()));
         return deferred.promise;
     };
 
