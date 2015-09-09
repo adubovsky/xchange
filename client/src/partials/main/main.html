@@ -1,0 +1,42 @@
+<md-subheader ng-show="currentUser.isLogged">
+    Hello, {{currentUser.name}}!
+</md-subheader>
+<md-subheader ng-hide="currentUser.isLogged">
+    Hello, anonymous! Please <a ui-sref="/user/login">log in</a> or <a ui-sref="/user/register">register</a>.
+</md-subheader>
+<md-button class="md-fab md-accent md-fab-top-right"
+           aria-label="Add new item"
+           ui-sref="item/add"
+           ng-show="currentUser.isLogged">
+    <md-icon md-svg-icon="content:ic_add_24px"></md-icon>
+</md-button>
+
+<md-grid-list
+        class="items-grid"
+        md-cols-gt-md="6"
+        md-cols-sm="3"
+        md-cols-md="5"
+        md-row-height-gt-md="1:1"
+        md-row-height="1:1"
+        md-gutter-gt-md="4px"
+        md-gutter-gt-sm="4px"
+        md-gutter="2px">
+    <md-grid-tile class="items-grid-item"
+                  ng-repeat="item in items"
+                  ui-sref="item/details({id: item._id})">
+        <img ng-src="/images/{{item.imageId}}"
+             class="items-grid-item__preview">
+
+        <md-grid-tile-footer layout-padding
+                             class="items-grid-item__footer"
+                             layout="column"
+                             layout-align="center start">
+            <div class="md-body1"
+                 flex>{{item.title}}
+            </div>
+            <div class="md-caption items-grid-item__footer-description"
+                 flex>{{item.description}}
+            </div>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+</md-grid-list>

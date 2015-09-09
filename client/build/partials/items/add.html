@@ -1,0 +1,75 @@
+<h2 class="md-title">Add new item:</h2>
+<form layout="column"
+      class="add-item-form">
+    <div layout="row"
+         layout-align="start center">
+        <div ng-show="item.imageId"
+             class="add-item-form__preview"
+             layout-align="center center">
+            <img ng-src="{{item.imageId}}"/>
+        </div>
+        <md-button class="md-button md-raised"
+                   ngf-select
+                   ng-model="item.photo"
+                   name="file"
+                   ngf-pattern="'image/*"
+                   accept="image/*"
+                   ngf-max-size="20MB"
+                   ngf-min-height="100">
+            Choose photo
+        </md-button>
+    </div>
+    <md-input-container required>
+        <label>Title</label>
+        <input name="title"
+               type="text"
+               md-maxlength="50"
+               ng-model="item.title"/>
+    </md-input-container>
+
+    <md-input-container>
+        <label>Description</label>
+            <textarea name="description"
+                      ng-model="item.description"
+                      md-maxlength="250"
+                      columns="1"></textarea>
+    </md-input-container>
+
+    <md-input-container>
+        <label>Equivalent price in USD</label>
+        <input name="price"
+               type="number"
+               ng-model="item.price"
+               columns="1"
+               min="0" max="1000000"/>
+    </md-input-container>
+
+    <md-chips
+            flex
+            ng-model="item.tags"
+            readonly="false">
+        <md-autocomplete
+                md-search-text="query"
+                md-items="tag in item.getTags(query)"
+                ng-attr-placeholder="{{item.tags.length ? 'Maybe, more?' : 'Add a category'}}">
+            <span md-highlight-text="query">{{tag.name}}</span>
+        </md-autocomplete>
+        <md-chip-template>
+            {{$chip.name}}
+        </md-chip-template>
+    </md-chips>
+
+    <md-checkbox ng-model="item.visible">
+        <label>
+            Visible for search
+        </label>
+    </md-checkbox>
+
+    <md-button type="submit"
+               class="md-raised md-primary"
+               ng-click="save(item)"
+               ng-disabled="!item.isValid()">
+        Add Item
+    </md-button>
+
+</form>

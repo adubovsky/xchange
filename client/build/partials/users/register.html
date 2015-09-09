@@ -1,0 +1,23 @@
+<form layout="column"
+      autocomplete="off">
+    <md-input-container required>
+        <label>E-Mail</label>
+        <input type="email"
+               ng-attr-name="name_{{random}}"
+               ng-model="newUser.username"/>
+    </md-input-container>
+
+    <md-input-container required>
+        <label>Password</label>
+        <input type="password"
+               ng-attr-name="pass_{{random}}"
+               ng-model="newUser.password"/>
+    </md-input-container>
+
+    <md-button type="submit"
+               class="md-raised md-primary"
+               ng-click="register(newUser)"
+               ng-disabled="!newUser.isValid()">
+        Register
+    </md-button>
+</form>

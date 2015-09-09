@@ -1,0 +1,12 @@
+.side-menu{
+  height: 100vh;
+}
+
+.side-menu-avatar{
+  height: 100px;
+  &__photo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+}

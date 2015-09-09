@@ -1,0 +1,31 @@
+.add-item-form {
+  &__preview {
+    max-width: 100px;
+    max-height: 100px;
+    overflow: hidden;
+    img {
+      max-width: 100px;
+    }
+  }
+}
+
+.items-grid-item {
+  overflow: hidden;
+  &__preview {
+    width: 100%;
+  }
+  &__footer{
+    &-description{
+      display: none;
+    }
+  }
+  &:hover {
+    & .items-grid-item__footer{
+      height: 100%;
+      transition: height .2s ease-in-out;
+      &-description{
+        display: flex;
+      }
+    }
+  }
+}

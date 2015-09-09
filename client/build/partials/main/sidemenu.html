@@ -1,0 +1,47 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2 side-menu"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-md')">
+    <md-toolbar>
+        <div ng-show="user.isLogged"
+             layout="row"
+             layout-padding
+             layout-align="center center"
+             class="side-menu-avatar">
+            <img class="side-menu-avatar__photo"
+                 ng-src="{{user.photo}}"/>
+
+            <div flex
+                 layout="column"
+                 layout-align="center start">
+                <div class="md-title side-menu-avatar__name">
+                    {{user.name}}
+                </div>
+                <div class="md-caption side-menu-avatar__email">
+                    {{user.username}}
+                </div>
+            </div>
+
+            <md-button class="md-icon-button"
+                       aria-label="Menu"
+                       ng-click="user.logout(); toggleMenu();">
+                <md-icon md-svg-icon="action:ic_exit_to_app_24px"></md-icon>
+            </md-button>
+        </div>
+        <div ng-show="!user.isLogged"
+             layout="row"
+             layout-align="center center"
+             class="side-menu-avatar">
+            <md-button ng-click="toggleMenu()"
+                       ui-sref="/user/login">
+                Login
+            </md-button>
+            <md-button ng-click="toggleMenu()"
+                       ui-sref="/user/register">
+                Register
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-content layout-padding>
+
+    </md-content>
+</md-sidenav>
