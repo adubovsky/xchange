@@ -1,5 +1,3 @@
-"use strict";
-
 var app = require('./app');
 /*Material design Icons config*/
 app.config(function($mdIconProvider) {

@@ -11,5 +11,5 @@ app.config(['$stateProvider', function ($stateProvider) {
             url: "/user/login",
             templateUrl: "/partials/users/login.html",
             controller: 'UserLoginController'
-        })
+        });
 }]);

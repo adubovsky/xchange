@@ -33,7 +33,7 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
         $http.get('/api/categories')
             .then(function (response) {
                 if (response.data.success) {
-                    deferred.resolve(response.data.categories)
+                    deferred.resolve(response.data.categories);
                 }
             });
         return deferred.promise;

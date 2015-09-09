@@ -3,10 +3,8 @@ module.exports = function (grunt) {
     var siteConfig = require('./server/config/site'),
         serverDir = './' + siteConfig.serverDir,
         clientSrcDir = './' + siteConfig.clientSrcDir,
-        clientBuildDir = './' + siteConfig.clientBuildDir,
-        browserifyFiles = {};
+        clientBuildDir = './' + siteConfig.clientBuildDir;
 
-    browserifyFiles[clientBuildDir + '/js/app.js'] = [clientSrcDir + '/js/**/*.js'];
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -42,7 +40,10 @@ module.exports = function (grunt) {
         },
         browserify: {
             dist: {
-                files: browserifyFiles
+                files: [{//browserifyFiles[clientBuildDir + '/js/app.js'] = [clientSrcDir + '/js/**/*.js', '!' + clientSrcDir + '/js/**/*.tests.js'];
+                    dest: clientBuildDir + '/js/app.js',
+                    src: [clientSrcDir + '/js/**/*.js', '!' + clientSrcDir + '/js/**/*.tests.js']
+                }]
             }
         },
         copy: {
@@ -89,6 +90,32 @@ module.exports = function (grunt) {
                     }
                 ]
             }
+        },
+        karma: {
+            unit: {
+                configFile: './karma.conf.js'
+            }
+        },
+        jshint: {
+            options: {
+                '-W097': false,  //Use the function form of "use strict".
+                "globals": {
+                    /* mocha */
+                    "describe": false,
+                    "it": false,
+                    "before": false,
+                    "beforeEach": false,
+                    "after": false,
+                    "afterEach": false,
+                    /* Browserify */
+                    "require": false,
+                    "module": false,
+                    "module.exports": false
+                }
+            },
+            client: [siteConfig.clientSrcDir + '/**/*.js'],
+            server: [siteConfig.serverDir + '/**/*.js'],
+            tools: ['Gruntfile.js']
         }
     });
 
@@ -98,12 +125,14 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Default task(s).
     grunt.registerTask('default', []);
-    grunt.registerTask('server', ['nodemon:dev']);
+    grunt.registerTask('server', ['jshint:server','nodemon:dev']);
 
-    grunt.registerTask('devBuild', ['browserify', 'copy', 'sass:dev']);
+    grunt.registerTask('devBuild', ['jshint:client', 'browserify', 'copy', 'sass:dev']);
     grunt.registerTask('dev', ['devBuild', 'watch']);
 
     grunt.registerTask('mea', ['nodemon:mongoAdmin']);

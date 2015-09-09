@@ -45,7 +45,7 @@ app.use('/images', imagesRoutes);
 
 // passport config
 passport.use(new LocalStrategy(Account.authenticate(), function () {
-    console.log( arguments );
+    //console.log( arguments );
 }));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());

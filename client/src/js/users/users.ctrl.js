@@ -23,7 +23,7 @@ app.controller('UserLoginController',
                             $mdToast.showSimple('Wrong login-password pair');
                         }
                     });
-            }
+            };
         }]);
 
 app.controller('UserRegisterController', ['$scope', '$state', 'User', 'currentUser', '$mdToast', function ($scope, $state, User, currentUser, $mdToast) {
@@ -45,5 +45,5 @@ app.controller('UserRegisterController', ['$scope', '$state', 'User', 'currentUs
             }, function (result) {
                 console.warn(result);
             });
-    }
+    };
 }]);

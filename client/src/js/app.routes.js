@@ -9,5 +9,5 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             url: '/',
             templateUrl: 'partials/main/main.html',
             controller: 'MainController'
-        })
+        });
 }]);

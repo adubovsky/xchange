@@ -28,5 +28,5 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', funct
                 $state.go('/');
                 console.log(response);
             });
-    }
+    };
 }]);

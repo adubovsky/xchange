@@ -43,7 +43,7 @@ router.get('/item/:id', function (req, res) {
        res.json({
            success: true,
            item: item
-       })
+       });
     });
 });
 //End of Items API
@@ -53,7 +53,7 @@ router.get('/categories', function (req, res) {
         res.json({
             success: true,
             categories: categories
-        })
+        });
     });
 });
 

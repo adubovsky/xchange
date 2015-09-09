@@ -13,15 +13,15 @@ router.post('/register', function (req, res) {
                 error: err
             });
         }
-        res.json( {
+        res.json({
             success: true,
             user: account
-        } );
+        });
     });
 });
 
 router.post('/login', passport.authenticate('local'), function (req, res) {
-    var user =  req.user;
+    var user = req.user;
     res.json({
         success: true,
         user: user
@@ -36,7 +36,7 @@ router.post('/logout', function (req, res) {
 });
 
 router.post('/details', isAuth, function (req, res) {
-    var user =  req.user;
+    var user = req.user;
     res.json({
         success: true,
         user: user

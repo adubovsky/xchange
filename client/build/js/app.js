@@ -1,6 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-"use strict";
-
 var app = require('./app');
 /*Material design Icons config*/
 app.config(function($mdIconProvider) {
@@ -36,7 +34,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             url: '/',
             templateUrl: 'partials/main/main.html',
             controller: 'MainController'
-        })
+        });
 }]);
 },{"./app":2}],4:[function(require,module,exports){
 var app = require('../app');
@@ -69,12 +67,12 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', funct
                 $state.go('/');
                 console.log(response);
             });
-    }
+    };
 }]);
 },{"../app":2}],5:[function(require,module,exports){
 var app = require('../app');
 
-app.controller('ItemController', ['$scope', 'Item', 'Upload', '$stateParams', function ($scope, Item, Upload, $stateParams) {
+app.controller('ItemController', ['$scope', 'Item', '$stateParams', function ($scope, Item, $stateParams) {
     var item = new Item();
 
     item
@@ -119,7 +117,7 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
         $http.get('/api/categories')
             .then(function (response) {
                 if (response.data.success) {
-                    deferred.resolve(response.data.categories)
+                    deferred.resolve(response.data.categories);
                 }
             });
         return deferred.promise;
@@ -315,7 +313,7 @@ app.controller('UserLoginController',
                             $mdToast.showSimple('Wrong login-password pair');
                         }
                     });
-            }
+            };
         }]);
 
 app.controller('UserRegisterController', ['$scope', '$state', 'User', 'currentUser', '$mdToast', function ($scope, $state, User, currentUser, $mdToast) {
@@ -337,7 +335,7 @@ app.controller('UserRegisterController', ['$scope', '$state', 'User', 'currentUs
             }, function (result) {
                 console.warn(result);
             });
-    }
+    };
 }]);
 },{"../app":2}],14:[function(require,module,exports){
 var app = require('../app');
@@ -353,7 +351,7 @@ app.config(['$stateProvider', function ($stateProvider) {
             url: "/user/login",
             templateUrl: "/partials/users/login.html",
             controller: 'UserLoginController'
-        })
+        });
 }]);
 },{"../app":2}],15:[function(require,module,exports){
 /**
