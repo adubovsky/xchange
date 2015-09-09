@@ -116,13 +116,12 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
 
     Item.prototype.getTags = function (query) {
         var deferred = $q.defer();
-        setTimeout(function () {
-            deferred.resolve([
-                {name: 'Computers'},
-                {name: 'Electronics'},
-                {name: 'Smart phones'}
-            ]);
-        }, Math.floor(2000 * Math.random()));
+        $http.get('/api/categories')
+            .then(function (response) {
+                if (response.data.success) {
+                    deferred.resolve(response.data.categories)
+                }
+            });
         return deferred.promise;
     };
 
@@ -159,14 +158,12 @@ app.controller('MainController', ['$scope', '$mdUtil', '$mdSidenav', '$rootScope
 
         $scope.items = [];
 
-        $http.get('/api/items', {})
+        $http.get('/api/items')
             .then(function (response) {
                 if (response.data.success) {
                     $scope.items = response.data.items;
                 }
             });
-
-        $scope.randomColspan = Math.floor(Math.random()*2)+1;
     }]);
 },{"../app":2}],10:[function(require,module,exports){
 var app = require('../app');

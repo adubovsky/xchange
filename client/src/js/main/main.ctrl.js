@@ -6,12 +6,10 @@ app.controller('MainController', ['$scope', '$mdUtil', '$mdSidenav', '$rootScope
 
         $scope.items = [];
 
-        $http.get('/api/items', {})
+        $http.get('/api/items')
             .then(function (response) {
                 if (response.data.success) {
                     $scope.items = response.data.items;
                 }
             });
-
-        $scope.randomColspan = Math.floor(Math.random()*2)+1;
     }]);

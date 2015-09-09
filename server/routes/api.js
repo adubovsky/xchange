@@ -1,10 +1,13 @@
 var express = require('express'),
+    //models
     Item = require('../models/item'),
+    Category = require('../models/category'),
+
     router = express.Router(),
     isAuth = require('../middleware/auth'),
     parseImage = require('../middleware/parseImage'),
     Image = require('../models/image');
-
+//Items API
 router.put('/item', isAuth, parseImage('imageId'), function (req, res) {
     var item = new Item(req.body);
 
@@ -43,7 +46,15 @@ router.get('/item/:id', function (req, res) {
        })
     });
 });
-
-
+//End of Items API
+//Categories API
+router.get('/categories', function (req, res) {
+    Category.find({}, function (err, categories) {
+        res.json({
+            success: true,
+            categories: categories
+        })
+    });
+});
 
 module.exports = router;
