@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/vzotov/xchange.svg?branch=master)](https://travis-ci.org/vzotov/xchange)
+
+
 My experiments with Node.js, Express.js and MongoDB.
 Mostly for education.
 
