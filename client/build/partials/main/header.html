@@ -1,10 +1,17 @@
 <md-toolbar class="md-toolbar-tools header">
-    <md-button class="md-icon-button"
-               aria-label="Menu"
-               ng-click="toggleMenu()"
-               hide-gt-md>
-        <md-icon md-svg-icon="navigation:ic_menu_24px"></md-icon>
-    </md-button>
+    <div class="logo"
+         layout-align="start center"
+         layout="row"
+         ng-class="{'md-headline logo--gt-sm': $mdMedia('gt-sm'),'md-caption logo--sm': $mdMedia('sm')}">
+        <md-button class="md-icon-button"
+                   aria-label="Menu"
+                   ng-click="toggleMenu()"
+                   hide-gt-md>
+            <md-icon md-svg-icon="navigation:ic_menu_24px"></md-icon>
+        </md-button>
+        <span class="logo__text" flex>xchange</span>
+    </div>
+
     <md-autocomplete flex
                      md-input-name="autocompleteField"
                      md-selected-item="ctrl.selectedItem"

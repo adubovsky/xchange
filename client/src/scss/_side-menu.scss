@@ -1,5 +1,9 @@
-.side-menu{
+.side-menu,
+.side-menu.md-locked-open{
   height: 100vh;
+  width: $side-menu-width;
+  min-width: $side-menu-width;
+  background-color: $light-gray-bg;
 }
 
 .side-menu-avatar{

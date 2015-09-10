@@ -1,4 +1,29 @@
 .header{
   height: $header-height;
   max-height: $header-height;
+  padding-left: 0;
+}
+
+.logo{
+  transition: all .1s ease;
+
+  text-align: center;
+  background-color: $header-line-bg;
+  color: $white;
+  margin: 0;
+  padding-right:0;
+  width: $side-menu-width;
+
+  &--sm{
+    width: auto;
+    position: relative;
+    padding-right: 2em;
+    .logo__text{
+      -webkit-transform: rotate(-90deg);
+      position: absolute;
+      top:0;
+      bottom: 0;
+      right: -2em;
+    }
+  }
 }

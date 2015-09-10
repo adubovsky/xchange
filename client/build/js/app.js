@@ -144,8 +144,9 @@ app.config(['$stateProvider', '$urlRouterProvider', '$urlRouterProvider', functi
 },{"../app":2}],8:[function(require,module,exports){
 var app = require('../app');
 
-app.controller('HeaderController', [
-    function () {
+app.controller('HeaderController', ['$scope', '$mdMedia',
+    function ($scope, $mdMedia) {
+        $scope.$mdMedia = $mdMedia;
     }]);
 },{"../app":2}],9:[function(require,module,exports){
 var app = require('../app');

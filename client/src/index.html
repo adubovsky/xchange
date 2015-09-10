@@ -12,20 +12,24 @@
 </head>
 <body>
 <div layout="row">
-    <div ng-include="'partials/main/sidemenu.html'"
-         ng-controller="SidemenuController as ctrl"></div>
-
     <div layout="column"
          layout-fill
          flex>
         <div ng-include="'partials/main/header.html'"
              ng-controller="HeaderController as ctrl"></div>
 
-        <md-content layout-padding
-                    ui-view
-                    class="content">
+        <div layout="row">
+            <div ng-include="'partials/main/sidemenu.html'"
+                 ng-controller="SidemenuController as ctrl"></div>
 
-        </md-content>
+
+            <md-content layout-padding
+                        ui-view
+                        flex
+                        class="content">
+
+            </md-content>
+        </div>
     </div>
 </div>
 </body>
