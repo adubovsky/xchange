@@ -111,18 +111,23 @@ module.exports = function (grunt) {
         jshint: {
             options: {
                 '-W097': false,  //Use the function form of "use strict".
-                "globals": {
+                '-W030': false,  //expect($scope.item.isValid()).to.be.true;
+                                 //                                    ^ Expected an assignment or function call and instead saw an expression.
+
+            globals: {
                     /* mocha */
-                    "describe": false,
-                    "it": false,
-                    "before": false,
-                    "beforeEach": false,
-                    "after": false,
-                    "afterEach": false,
+                    describe: false,
+                    it: false,
+                    before: false,
+                    beforeEach: false,
+                    after: false,
+                    afterEach: false,
+                    expect: false,
+                    inject: false,
                     /* Browserify */
-                    "require": false,
-                    "module": false,
-                    "module.exports": false
+                    require: false,
+                    module: false,
+                    'module.exports': false
                 }
             },
             client: [siteConfig.clientSrcDir + '/**/*.js'],

@@ -1,9 +1,7 @@
 var app = require('../app');
 
 app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', function ($scope, Item, Upload, $state) {
-    var item = new Item();
-
-    $scope.item = item;
+    $scope.item = new Item();
 
     $scope.$watch('item.photo', function (newFile) {
         if (newFile) {
