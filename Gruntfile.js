@@ -89,6 +89,18 @@ module.exports = function (grunt) {
                         dest: clientBuildDir + '/css/main.css'
                     }
                 ]
+            },
+            prod: {
+                options: {
+                    sourcemap: false,
+                    style: 'compressed'
+                },
+                files: [
+                    {
+                        src: clientSrcDir + '/scss/main.scss',
+                        dest: clientBuildDir + '/css/main.css'
+                    }
+                ]
             }
         },
         karma: {
@@ -132,7 +144,8 @@ module.exports = function (grunt) {
     grunt.registerTask('default', []);
     grunt.registerTask('server', ['jshint:server','nodemon:dev']);
 
-    grunt.registerTask('devBuild', ['jshint:client', 'browserify', 'copy', 'sass:dev']);
+    grunt.registerTask('devBuild', ['jshint:client', 'karma', 'browserify', 'copy', 'sass:dev']);
+    grunt.registerTask('build', ['jshint:client', 'browserify', 'copy', 'sass:prod']);
     grunt.registerTask('dev', ['devBuild', 'watch']);
 
     grunt.registerTask('mea', ['nodemon:mongoAdmin']);
