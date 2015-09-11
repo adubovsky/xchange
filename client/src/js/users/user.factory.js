@@ -62,6 +62,10 @@ app.factory('User', ['$http', '$q', function ($http, $q) {
         return this.role === 'admin' && this.isLogged;
     };
 
+    User.prototype.hasPhoto = function () {
+        return !!this.photo;
+    };
+
     return User;
 }]);
 

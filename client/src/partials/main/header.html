@@ -10,8 +10,8 @@
             <md-icon md-svg-icon="navigation:ic_menu_24px"></md-icon>
         </md-button>
         <a class="logo__text"
-              flex
-              ui-sref="/">xchange</a>
+           flex
+           ui-sref="/">xchange</a>
     </div>
 
     <div class="header__search-line"
@@ -33,24 +33,35 @@
          layout="row"
          layout-padding
          layout-align="center center"
-         class="sidebar-avatar">
-        <img class="sidebar-avatar__photo"
-             ng-src="{{user.photo}}"/>
-
-        <div flex
-             layout="column"
-             layout-align="center start">
-            <div class="md-title sidebar-avatar__name">
-                {{user.name}}
-            </div>
-            <div class="md-caption sidebar-avatar__email">
-                {{user.username}}
+         class="user-menu">
+        <div class="user-menu__photo"
+             layout="row"
+             layout-align="center center">
+            <img ng-show="user.hasPhoto()"
+                 ng-src="{{user.photo}}"/>
+            <md-icon ng-show="!user.hasPhoto()"
+                     md-svg-icon="social:ic_person_24px"></md-icon>
+        </div>
+        <div class="user-menu__holder"
+             layout="row"
+             layout-align="center center"
+             hide-sm
+             hide-gt-sm
+             show-gt-md>
+            <div flex
+                 layout="column"
+                 layout-align="center start">
+                <div class="md-title user-menu__name">
+                    {{user.name}}
+                </div>
+                <div class="md-caption user-menu__email">
+                    {{user.username}}
+                </div>
             </div>
         </div>
-
         <md-button class="md-icon-button"
                    aria-label="Menu"
-                   ng-click="user.logout(); toggleMenu();">
+                   ng-click="user.logout()">
             <md-icon md-svg-icon="auth:logout_24px"></md-icon>
         </md-button>
     </div>
