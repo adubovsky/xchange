@@ -6,6 +6,13 @@
   &__search-line{
     padding-left: .5em;
   }
+
+  md-autocomplete {
+    min-width: 0;
+    input {
+      text-overflow: ellipsis;
+    }
+  }
 }
 
 .logo{
