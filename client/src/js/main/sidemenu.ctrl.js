@@ -1,7 +1,7 @@
 var app = require('../app');
 
-app.controller('SidemenuController', ['$scope', '$mdUtil', '$mdSidenav', '$rootScope', 'User', 'currentUser',
-    function ($scope, $mdUtil, $mdSidenav, $rootScope, User, currentUser) {
+app.controller('SidemenuController', ['$scope', '$mdUtil', '$mdSidenav', '$rootScope',
+    function ($scope, $mdUtil, $mdSidenav, $rootScope) {
         $rootScope.toggleMenu = $mdUtil.debounce(function () {
             $mdSidenav('left')
                 .toggle()
@@ -9,17 +9,4 @@ app.controller('SidemenuController', ['$scope', '$mdUtil', '$mdSidenav', '$rootS
                     console.log('done!');
                 });
         }, 200);
-
-        var user = new User();
-        user.getDetails()
-            .then(function (result) {
-                var user = result.user;
-                currentUser.setUser(user);
-                currentUser.setLogged(true);
-            },
-            function () {
-                currentUser.setLogged(false);
-            });
-
-        $scope.user = currentUser;
     }]);

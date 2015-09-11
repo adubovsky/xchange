@@ -1,0 +1,19 @@
+.sidebar,
+.sidebar.md-locked-open{
+  height: 100vh;
+  width: $sidebar-width;
+  min-width: $sidebar-width;
+  background-color: $light-gray-bg;
+  &.md-locked-open {
+    position: relative !important;
+  }
+}
+
+.sidebar-avatar{
+  height: 100px;
+  &__photo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+}

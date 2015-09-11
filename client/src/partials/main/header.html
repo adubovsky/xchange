@@ -13,7 +13,7 @@
     </div>
 
     <div class="header__search-line"
-            flex>
+         flex>
         <md-autocomplete flex
                          md-input-name="autocompleteField"
                          md-selected-item="ctrl.selectedItem"
@@ -25,5 +25,46 @@
                 <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
             </md-item-template>
         </md-autocomplete>
+    </div>
+
+    <div ng-show="user.isLogged"
+         layout="row"
+         layout-padding
+         layout-align="center center"
+         class="sidebar-avatar">
+        <img class="sidebar-avatar__photo"
+             ng-src="{{user.photo}}"/>
+
+        <div flex
+             layout="column"
+             layout-align="center start">
+            <div class="md-title sidebar-avatar__name">
+                {{user.name}}
+            </div>
+            <div class="md-caption sidebar-avatar__email">
+                {{user.username}}
+            </div>
+        </div>
+
+        <md-button class="md-icon-button"
+                   aria-label="Menu"
+                   ng-click="user.logout(); toggleMenu();">
+            <md-icon md-svg-icon="auth:logout_24px"></md-icon>
+        </md-button>
+    </div>
+    <div ng-show="!user.isLogged"
+         layout="row"
+         layout-align="center center"
+         class="sidebar-avatar">
+        <md-button ui-sref="/user/login"
+                   ng-class="{'md-icon-button': $mdMedia('sm')}">
+            <md-icon md-svg-icon="auth:login_24px"></md-icon>
+            <label hide-sm>Login</label>
+        </md-button>
+        <md-button ui-sref="/user/register"
+                   ng-class="{'md-icon-button': $mdMedia('sm')}">
+            <md-icon md-svg-icon="social:ic_person_add_24px"></md-icon>
+            <label hide-sm>Register</label>
+        </md-button>
     </div>
 </md-toolbar>

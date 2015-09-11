@@ -133,7 +133,8 @@ module.exports = function (grunt) {
             client: [siteConfig.clientSrcDir + '/**/*.js'],
             server: [siteConfig.serverDir + '/**/*.js'],
             tools: ['Gruntfile.js']
-        }
+        },
+        clean: [siteConfig.clientBuildDir]
     });
 
     grunt.loadNpmTasks('grunt-nodemon');
@@ -144,13 +145,14 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Default task(s).
     grunt.registerTask('default', []);
     grunt.registerTask('server', ['jshint:server','nodemon:dev']);
 
-    grunt.registerTask('devBuild', ['jshint:client', 'karma', 'browserify', 'copy', 'sass:dev']);
-    grunt.registerTask('build', ['jshint:client', 'browserify', 'copy', 'sass:prod']);
+    grunt.registerTask('devBuild', ['clean', 'jshint:client', 'karma', 'browserify', 'copy', 'sass:dev']);
+    grunt.registerTask('build', ['clean', 'jshint:client', 'browserify', 'copy', 'sass:prod']);
     grunt.registerTask('dev', ['devBuild', 'watch']);
 
     grunt.registerTask('mea', ['nodemon:mongoAdmin']);

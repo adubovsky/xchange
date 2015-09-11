@@ -6,5 +6,7 @@ app.config(function($mdIconProvider) {
         .iconSet('navigation', '/img/icons/navigation.svg')
         .iconSet('content', '/img/icons/content.svg')
         .iconSet('image', '/img/icons/image.svg')
-        .iconSet('action', '/img/icons/action.svg');
+        .iconSet('action', '/img/icons/action.svg')
+        .iconSet('social', '/img/icons/social.svg')
+        .iconSet('auth', '/img/icons/custom/auth.svg');
 });
