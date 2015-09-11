@@ -8,7 +8,7 @@ var express = require('express'),
     parseImage = require('../middleware/parseImage'),
     Image = require('../models/image');
 //Items API
-router.put('/item', isAuth, parseImage('imageId'), function (req, res) {
+router.put('/item', isAuth(), parseImage('imageId'), function (req, res) {
     var item = new Item(req.body);
 
     item.save(function (error, item) {

@@ -35,7 +35,7 @@ router.post('/logout', function (req, res) {
     });
 });
 
-router.post('/details', isAuth, function (req, res) {
+router.get('/details', isAuth(), function (req, res) {
     var user = req.user;
     res.json({
         success: true,

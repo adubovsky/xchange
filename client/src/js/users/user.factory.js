@@ -41,7 +41,7 @@ app.factory('User', ['$http', '$q', function ($http, $q) {
 
     User.prototype.getDetails = function () {
         var deferred = $q.defer();
-        $http.post('/user/details')
+        $http.get('/user/details')
             .then(function onUserCheckLogin(response) {
                 deferred.resolve(response.data);
             }, function onUserCheckLoginError(response) {
