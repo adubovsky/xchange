@@ -1,3 +1,9 @@
+/**
+ * Checking authorisation, checking role if it passed
+ * @param role {string=} Role
+ * @returns {isAuth} middleware function
+ */
+
 function checkAuthRole(role) {
 
     function isAuth(req, res, next) {
@@ -14,7 +20,7 @@ function checkAuthRole(role) {
         }
     }
 
-    return isAuth
+    return isAuth;
 }
 
 

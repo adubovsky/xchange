@@ -5,7 +5,8 @@ var mongoose = require('mongoose'),
 var Account = new Schema({
     username: String,
     password: String,
-    name: String
+    name: String,
+    role: String
 });
 
 Account.methods.toJSON = function() {

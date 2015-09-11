@@ -17,7 +17,6 @@ var express = require('express'),
     imagesRoutes = require('./routes/images');
 
 
-
 app.use(express.static(configSite.clientBuildDir));
 app.use('/temp', express.static(configSite.temporaryFiles));
 
@@ -28,7 +27,7 @@ app.use(require('express-session')({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
