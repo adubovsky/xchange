@@ -2,6 +2,10 @@
   height: $header-height;
   max-height: $header-height;
   padding-left: 0;
+
+  &__search-line{
+    padding-left: .5em;
+  }
 }
 
 .logo{
@@ -17,13 +21,13 @@
   &--sm{
     width: auto;
     position: relative;
-    padding-right: 2em;
+    padding-right: 1em;
     .logo__text{
       -webkit-transform: rotate(-90deg);
       position: absolute;
       top:0;
       bottom: 0;
-      right: -2em;
+      right: -2.5em;
     }
   }
 }

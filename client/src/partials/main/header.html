@@ -12,15 +12,18 @@
         <span class="logo__text" flex>xchange</span>
     </div>
 
-    <md-autocomplete flex
-                     md-input-name="autocompleteField"
-                     md-selected-item="ctrl.selectedItem"
-                     md-search-text="ctrl.query"
-                     md-items="item in ctrl.querySearch(ctrl.searchText)"
-                     md-item-text="item.display"
-                     placeholder="Try to search something">
-        <md-item-template>
-            <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
-        </md-item-template>
-    </md-autocomplete>
+    <div class="header__search-line"
+            flex>
+        <md-autocomplete flex
+                         md-input-name="autocompleteField"
+                         md-selected-item="ctrl.selectedItem"
+                         md-search-text="ctrl.query"
+                         md-items="item in ctrl.querySearch(ctrl.searchText)"
+                         md-item-text="item.display"
+                         placeholder="Try to search something">
+            <md-item-template>
+                <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
+            </md-item-template>
+        </md-autocomplete>
+    </div>
 </md-toolbar>
