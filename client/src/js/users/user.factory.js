@@ -58,6 +58,9 @@ app.factory('User', ['$http', '$q', function ($http, $q) {
         return !!(this.username && this.password);
     };
 
+    User.prototype.isAdmin = function () {
+        return this.role === 'admin' && this.isLogged;
+    };
 
     return User;
 }]);

@@ -3,6 +3,9 @@
             md-is-locked-open="$mdMedia('gt-md')"
             layout="column">
 
+    <div ng-if="user.isAdmin()" ng-include="'/partials/admin/menu.html'">
+    </div>
+
     <ul class="sidebar__menu">
         <li>
             Menu item
