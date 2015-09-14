@@ -66,6 +66,10 @@ app.factory('User', ['$http', '$q', function ($http, $q) {
         return !!this.photo;
     };
 
+    User.prototype.checkNotifications = function () {
+        return true;
+    };
+
     return User;
 }]);
 

@@ -16,4 +16,8 @@ app.controller('HeaderController', ['$scope', '$mdMedia', 'User', 'currentUser',
             });
 
         $scope.user = currentUser;
+
+        $scope.toggleUserMenu = function ($mdOpenMenu, ev) {
+            $mdOpenMenu(ev);
+        };
     }]);

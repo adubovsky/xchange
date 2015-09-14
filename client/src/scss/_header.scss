@@ -40,6 +40,10 @@
 }
 
 .user-menu{
+  height: $header-height;
+  md-menu{
+    padding: 0;
+  }
   &__photo{
     background-color: $opacity-white-09;
     width: 48px;
@@ -49,5 +53,14 @@
     md-icon{
       color: $header-line-bg
     }
+  }
+  &__toggler{
+    border-radius: 0;
+    cursor: pointer;
+    line-height: normal;
+    margin: 0;
+    height: $header-height;
+    white-space: normal;
+    text-transform: none;
   }
 }

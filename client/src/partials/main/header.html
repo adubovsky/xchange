@@ -31,34 +31,57 @@
 
     <div ng-show="user.isLogged"
          layout="row"
-         layout-padding
          layout-align="center center"
          class="user-menu">
-        <div class="user-menu__photo"
-             layout="row"
-             layout-align="center center">
-            <img ng-show="user.hasPhoto()"
-                 ng-src="{{user.photo}}"/>
-            <md-icon ng-show="!user.hasPhoto()"
-                     md-svg-icon="social:ic_person_24px"></md-icon>
-        </div>
-        <div class="user-menu__holder"
-             layout="row"
-             layout-align="center center"
-             hide-sm
-             hide-gt-sm
-             show-gt-md>
-            <div flex
-                 layout="column"
-                 layout-align="center start">
-                <div class="md-title user-menu__name">
-                    {{user.name}}
+        <md-menu>
+            <md-button class="user-menu__toggler md-button"
+                       layout-padding
+                       ng-click="toggleUserMenu($mdOpenMenu, $event)">
+                <div layout="row"
+                     layout-align="center center">
+                    <div class="user-menu__photo"
+                         layout="row"
+                         layout-align="center center">
+                        <img ng-show="user.hasPhoto()"
+                             ng-src="{{user.photo}}"/>
+                        <md-icon ng-show="!user.hasPhoto()"
+                                 md-svg-icon="social:ic_person_24px"></md-icon>
+                    </div>
+                    <div class="user-menu__holder"
+                         layout="row"
+                         layout-align="center center"
+                         hide-sm
+                         hide-gt-sm
+                         show-gt-md>
+                        <div flex
+                             layout="column"
+                             layout-align="center start">
+                            <div class="md-title user-menu__name">
+                                {{user.name}}
+                            </div>
+                            <div class="md-caption user-menu__email">
+                                {{user.username}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="md-caption user-menu__email">
-                    {{user.username}}
-                </div>
-            </div>
-        </div>
+            </md-button>
+
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button ng-click="">
+                        <md-icon md-svg-icon="action:ic_settings_24px" md-menu-align-target></md-icon>
+                        Account settings
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="">
+                        <md-icon md-svg-icon="social:ic_notifications{{user.checkNotifications() ? '' : '_none'}}_24px" md-menu-align-target></md-icon>
+                        Notifications
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
         <md-button class="md-icon-button"
                    aria-label="Menu"
                    ng-click="user.logout()">
