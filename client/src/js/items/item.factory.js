@@ -39,5 +39,20 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
         return deferred.promise;
     };
 
+    Item.get = function () {
+        var defer = $q.defer();
+
+        $http.get('/api/items')
+            .then(function (response) {
+                if (response.data.success) {
+                    defer.resolve(response.data.items);
+                }
+                else {
+                    defer.reject(response.data);
+                }
+            });
+        return defer.promise;
+    };
+
     return Item;
 }]);
