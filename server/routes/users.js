@@ -37,7 +37,6 @@ router.post('/logout', function (req, res) {
 
 router.get('/details', isAuth(), function (req, res) {
     var user = req.user;
-    console.log( user );
     res.json({
         success: true,
         user: user

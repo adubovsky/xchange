@@ -1,5 +1,5 @@
 var express = require('express'),
-    //models
+//models
     Item = require('../models/item'),
     Category = require('../models/category'),
 
@@ -18,8 +18,6 @@ router.put('/item', isAuth(), parseImage('imageId'), function (req, res) {
                 error: error
             });
         }
-        //saving photo from item.tempImage to DB
-
         res.json({
             success: true,
             item: item
@@ -40,10 +38,10 @@ router.get('/items', function (req, res) {
 router.get('/item/:id', function (req, res) {
     var id = req.params.id;
     Item.findById(id, function (err, item) {
-       res.json({
-           success: true,
-           item: item
-       });
+        res.json({
+            success: true,
+            item: item
+        });
     });
 });
 //End of Items API
@@ -56,5 +54,23 @@ router.get('/categories', function (req, res) {
         });
     });
 });
+
+router.put('/category', isAuth('admin'), function (req, res) {
+    var category = new Category(req.body);
+    category.save(function (err, category) {
+        if (err) {
+            res.json({
+                success: false,
+                error: error
+            });
+        }
+        res.json({
+            success: true,
+            category: category
+        });
+
+    });
+});
+
 
 module.exports = router;

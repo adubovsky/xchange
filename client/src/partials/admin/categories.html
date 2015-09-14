@@ -1,0 +1,41 @@
+<div layout="row">
+    <div class="category-add-form-holder"
+            flex="50">
+        Add new category:
+
+        <form>
+            <md-input-container required>
+                <label>Name</label>
+                <input ng-model="newCat.name"/>
+            </md-input-container>
+
+            <md-input-container>
+                <label>Description</label>
+                <textarea ng-model="newCat.description"></textarea>
+            </md-input-container>
+
+            <md-input-container>
+                <label>Parent</label>
+                <md-select ng-model="newCat.parent">
+                    <md-option value="" selected>No parent category</md-option>
+                    <md-option ng-repeat="cat in categories" value="{{cat._id}}">{{cat.name}}</md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-button type="submit"
+                       class="md-raised md-primary"
+                       ng-click="save(newCat)"
+                       ng-disabled="!newCat.isValid()">
+                Add Item
+            </md-button>
+        </form>
+
+    </div>
+    <div class="category-list-holder">
+        <ul>
+            <li ng-repeat="cat in categories">
+                {{cat.name}}
+            </li>
+        </ul>
+    </div>
+</div>

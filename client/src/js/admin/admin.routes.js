@@ -6,5 +6,10 @@ app.config(['$stateProvider', function ($stateProvider) {
             url: "/admin/dashboard",
             templateUrl: "/partials/admin/dashboard.html",
             controller: 'AdminController'
+        })
+        .state('/admin/categories', {
+            url: "/admin/categories",
+            templateUrl: "/partials/admin/categories.html",
+            controller: 'AdminCategoriesController'
         });
 }]);
