@@ -1,9 +1,17 @@
-menu-item{
-  width: 100%;
-}
 .menu-item__button{
   width: 100%;
+  cursor: pointer;
   box-sizing: border-box;
   margin: 0;
   text-transform: none;
+  font-weight: 100;
+  text-align: left;
+  padding-left: 1em;
+  border-radius: 0;
+  md-icon{
+    margin-right: .5em;
+  }
+  label{
+    cursor: pointer;
+  }
 }
