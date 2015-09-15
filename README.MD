@@ -6,10 +6,15 @@ Mostly for education.
 
 How to run:
 ===========
-- MongoDB: > mongod
-- Express: > grunt server
+- MongoDB, Express: > grunt server
 
 DevTools:
 ------
 - Mongo Express Admin > grunt mea
-- Client app watcher > grunt dev
+- Build dev version > grunt devBuild
+- Build dev version and start watcher > grunt dev
+
+Build:
+------
+- Build prod version > grunt build
+

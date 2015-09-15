@@ -25,22 +25,43 @@ module.exports = function (grunt) {
         },
         /*Client perks*/
         watch: {
-            scripts: {
+            options: {
+                livereload: 9000
+            },
+            js: {
                 files: [
-                    clientSrcDir + '/js/**/*.js',
+                    clientSrcDir + '/js/**/*.js'
+                ],
+                tasks: ['js:dev']
+            },
+            html: {
+                files: [
                     clientSrcDir + '/partials/**/*.html',
-                    clientSrcDir + '/*.html',
+                    clientSrcDir + '/*.html'
+                ],
+                tasks: ['html']
+            },
+            css: {
+                files: [
                     clientSrcDir + '/scss/**/*.scss'
                 ],
-                tasks: ['devBuild'],
-                options: {
-                    livereload: 9000
-                }
+                tasks: ['css:dev']
             }
         },
         browserify: {
-            dist: {
-                files: [{//browserifyFiles[clientBuildDir + '/js/app.js'] = [clientSrcDir + '/js/**/*.js', '!' + clientSrcDir + '/js/**/*.tests.js'];
+            dev: {
+                options: {
+                    browserifyOptions: {
+                        debug: true
+                    }
+                },
+                files: [{
+                    dest: clientBuildDir + '/js/app.js',
+                    src: [clientSrcDir + '/js/**/*.js', '!' + clientSrcDir + '/js/**/*.tests.js']
+                }]
+            },
+            prod: {
+                files: [{
                     dest: clientBuildDir + '/js/app.js',
                     src: [clientSrcDir + '/js/**/*.js', '!' + clientSrcDir + '/js/**/*.tests.js']
                 }]
@@ -134,7 +155,20 @@ module.exports = function (grunt) {
             server: [siteConfig.serverDir + '/**/*.js'],
             tools: ['Gruntfile.js']
         },
-        clean: [siteConfig.clientBuildDir]
+        clean: {
+            html: [siteConfig.clientBuildDir + '/index.html', siteConfig.clientBuildDir + '/partials'],
+            img: [siteConfig.clientBuildDir + '/img'],
+            css: [siteConfig.clientBuildDir + '/css'],
+            js: [siteConfig.clientBuildDir + '/js']
+        },
+        shell: {
+            mongo: {
+                command: 'mongod',
+                options: {
+                    async: true
+                }
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-nodemon');
@@ -146,13 +180,24 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-shell-spawn');
 
     // Default task(s).
     grunt.registerTask('default', []);
-    grunt.registerTask('server', ['jshint:server','nodemon:dev']);
+    grunt.registerTask('server', ['jshint:server', 'shell:mongo', 'nodemon:dev']);
 
-    grunt.registerTask('devBuild', ['clean', 'jshint:client', 'karma', 'browserify', 'copy', 'sass:dev']);
-    grunt.registerTask('build', ['clean', 'jshint:client', 'browserify', 'copy', 'sass:prod']);
+    //subtasks
+    //js
+    grunt.registerTask('js:dev', ['clean:js', 'jshint:client', 'karma', 'browserify:dev']);
+    grunt.registerTask('js:prod', ['clean:js', 'jshint:client', 'karma', 'browserify:prod']);
+    //html
+    grunt.registerTask('html', ['clean:html', 'copy']);
+    //css
+    grunt.registerTask('css:dev', ['clean:css', 'sass:dev']);
+    grunt.registerTask('css:prod', ['clean:css', 'sass:prod']);
+
+    grunt.registerTask('devBuild', ['js:dev', 'css:dev', 'html']);
+    grunt.registerTask('build', ['js:prod', 'css:prod', 'html']);
     grunt.registerTask('dev', ['devBuild', 'watch']);
 
     grunt.registerTask('mea', ['nodemon:mongoAdmin']);
