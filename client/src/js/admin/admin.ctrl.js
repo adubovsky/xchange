@@ -15,6 +15,13 @@ app.controller('AdminCategoriesController', ['$scope', '$state', 'currentUser', 
             $state.go('/');
         }
 
+        var getCategories = function () {
+            Category.get()
+                .then(function (categories) {
+                    $scope.categories = categories;
+                });
+        };
+
         $scope.newCat = new Category();
 
         $scope.save = function () {
@@ -22,11 +29,9 @@ app.controller('AdminCategoriesController', ['$scope', '$state', 'currentUser', 
                 .then(function () {
                     $scope.newCat = new Category();
                     console.log('Saved');
+                    getCategories();
                 });
         };
-        Category.get()
-            .then(function (categories) {
-                $scope.categories = categories;
-            });
 
+        getCategories();
     }]);

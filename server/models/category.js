@@ -4,7 +4,15 @@ var mongoose = require('mongoose'),
 var Category = new Schema({
     name: String,
     description: String,
-    parent: Schema.Types.ObjectId
+    parent: {
+        type: Schema.Types.ObjectId,
+        ref: 'Category'
+    },
+    children: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Category',
+        select: '-parent'
+    }]
 });
 
 module.exports = mongoose.model('Category', Category);

@@ -15,7 +15,7 @@
             </md-input-container>
 
             <md-input-container>
-                <label>Parent</label>
+                <label>Parent category</label>
                 <md-select ng-model="newCat.parent">
                     <md-option value="" selected>No parent category</md-option>
                     <md-option ng-repeat="cat in categories" value="{{cat._id}}">{{cat.name}}</md-option>
@@ -35,6 +35,11 @@
         <ul>
             <li ng-repeat="cat in categories">
                 {{cat.name}}
+                <ul ng-if="cat.children.length">
+                    <li ng-repeat="child in cat.children">
+                        {{child.name}}
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>
