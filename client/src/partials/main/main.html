@@ -4,12 +4,6 @@
 <md-subheader ng-hide="currentUser.isLogged">
     Hello, anonymous! Please <a ui-sref="/user/login">log in</a> or <a ui-sref="/user/register">register</a>.
 </md-subheader>
-<md-button class="md-fab md-accent md-fab-top-right"
-           aria-label="Add new item"
-           ui-sref="item/add"
-           ng-show="currentUser.isLogged">
-    <md-icon md-svg-icon="content:ic_add_24px"></md-icon>
-</md-button>
 
 <md-grid-list
         class="items-grid"
@@ -23,7 +17,7 @@
         md-gutter="2px">
     <md-grid-tile class="items-grid-item"
                   ng-repeat="item in items"
-                  ui-sref="item/details({id: item._id})">
+                  ui-sref="/item/details({id: item._id})">
         <img ng-src="/images/{{item.imageId}}"
              class="items-grid-item__preview">
 

@@ -3,13 +3,26 @@
             md-is-locked-open="$mdMedia('gt-md')"
             layout="column">
 
-    <div ng-if="user.isAdmin()" ng-include="'/partials/admin/menu.html'">
-    </div>
+    <div ng-if="user.isAdmin()" ng-include="'/partials/admin/menu.html'"></div>
 
     <ul class="sidebar-menu">
-        <li menu-item>
-            <md-icon md-svg-icon="social:ic_person_24px"></md-icon>
-            <label flex>Menu item</label>
+        <li menu-item
+            ui-sref="/item/add"
+            ng-show="user.isLogged">
+            <md-icon md-svg-icon="content:ic_add_24px"></md-icon>
+            <label flex>Add Item</label>
+        </li>
+        <li menu-item
+            ui-sref="/my/items"
+            ng-show="user.isLogged">
+            <md-icon md-svg-icon="content:ic_content_copy_24px"></md-icon>
+            <label flex>My Items</label>
+        </li>
+        <li menu-item
+            ui-sref="/my/wishes"
+            ng-show="user.isLogged">
+            <md-icon md-svg-icon="action:ic_grade_24px"></md-icon>
+            <label flex>Wishlist</label>
         </li>
     </ul>
 </md-sidenav>
