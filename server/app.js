@@ -1,6 +1,6 @@
 "use strict";
 var express = require('express'),
-    configSite = require('./config/site'),
+    configSite = require('./config'),
     mongoose = require('mongoose'),
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
@@ -18,7 +18,7 @@ var express = require('express'),
 
 
 app.use(express.static(configSite.clientBuildDir));
-app.use('/temp', express.static(configSite.temporaryFiles));
+app.use('/images/temp', express.static(configSite.temporaryImages));
 
 app.use(require('express-session')({
     secret: 'keyboard cat',
@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
 }));
 app.use(multiparty({
-    uploadDir: configSite.temporaryFiles
+    uploadDir: configSite.temporaryImages
 }));
 
 //Routes

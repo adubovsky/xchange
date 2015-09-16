@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
 
-    var siteConfig = require('./server/config/site'),
+    var siteConfig = require('./server/config'),
         serverDir = './' + siteConfig.serverDir,
         clientSrcDir = './' + siteConfig.clientSrcDir,
         clientBuildDir = './' + siteConfig.clientBuildDir;

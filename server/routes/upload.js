@@ -2,7 +2,7 @@ var express = require('express'),
     router = express.Router(),
     multiparty = require('connect-multiparty'),
     path = require('path'),
-    config = require('../config/site');
+    config = require('../config');
 
 router.post('/item/photo', multiparty(), function (req, res) {
     var file = req.files.file;

@@ -1,6 +1,8 @@
 var express = require('express'),
     router = express.Router(),
-    Image = require('../models/image');
+    Image = require('../models/image'),
+    config = require('../config'),
+    path = require('path');
 
 router.get('/:id', function (req, res) {
     var imageId = req.params.id;
@@ -15,6 +17,13 @@ router.get('/:id', function (req, res) {
         res.send(image.data);
     });
 
+});
+router.get('/temp/:id', function (req, res) {
+    var imageId = req.params.id,
+        filePath = path.join(config.temporaryImages, imageId);
+    res.sendFile(filePath, {
+        root: '/'
+    });
 });
 
 module.exports = router;

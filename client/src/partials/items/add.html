@@ -1,4 +1,4 @@
-<h2 class="md-title">Add new item:</h2>
+<h2 class="md-title">{{!updating ? 'Add new' :'Edit'}} item:</h2>
 <form layout="column"
       class="add-item-form">
     <div layout="row"
@@ -6,7 +6,7 @@
         <div ng-show="item.imageId"
              class="add-item-form__preview"
              layout-align="center center">
-            <img ng-src="{{item.imageId}}"/>
+            <img ng-src="{{'/images/'+item.imageId}}"/>
         </div>
         <md-button class="md-button md-raised"
                    ngf-select
@@ -69,7 +69,7 @@
                class="md-raised md-primary"
                ng-click="save(item)"
                ng-disabled="!item.isValid()">
-        Add Item
+        {{!updating ? 'Add' :'Edit'}} Item
     </md-button>
 
 </form>

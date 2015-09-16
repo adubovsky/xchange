@@ -1,6 +1,6 @@
 var app = require('../app');
 
-app.config(['$stateProvider', '$urlRouterProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', function ($stateProvider) {
     $stateProvider
         .state('/item/add', {
             url: "/item/add",
@@ -11,5 +11,10 @@ app.config(['$stateProvider', '$urlRouterProvider', '$urlRouterProvider', functi
             url: "/item/:id",
             templateUrl: "/partials/items/details.html",
             controller: 'ItemController'
+        })
+        .state('/item/edit', {
+            url: "/item/:id/edit",
+            templateUrl: "/partials/items/add.html",
+            controller: 'ItemAddController'
         });
 }]);

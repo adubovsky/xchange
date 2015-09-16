@@ -1,5 +1,5 @@
 var fs = require('fs'),
-    config = require('../config/site'),
+    config = require('../config'),
     Image = require('../models/image'),
     path = require('path'),
     _ = require('underscore');
