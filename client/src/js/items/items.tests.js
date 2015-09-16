@@ -24,7 +24,7 @@ describe('Items', function() {
             item.description = 'Cool mug';
             expect(item.isValid()).to.be.false;
 
-            item.imageId = 'H!GG#JH!G#H#H!';
+            item.photoUrl = 'H!GG#JH!G#H#H!';
             expect(item.isValid()).to.be.false;
 
             item.price = 20;

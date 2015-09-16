@@ -6,6 +6,11 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
         this.tags = [];
     };
 
+    Item.prototype.set = function (obj) {
+        angular.extend(this, obj);
+        return this;
+    };
+
     Item.prototype.save = function () {
         this.userId = currentUser.getId();
         return $http.put('/api/item', this);
@@ -16,7 +21,7 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
     };
 
     Item.prototype.isValid = function () {
-        return !!(this.title && this.description && this.price && this.imageId);
+        return !!(this.title && this.description && this.price && this.photoUrl);
     };
 
     Item.prototype.getById = function (id) {

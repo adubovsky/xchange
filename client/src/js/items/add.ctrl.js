@@ -10,7 +10,8 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
             .getById($stateParams.id)
             .then(function (found) {
                 found.photoUrl = ['/images',found.imageId].join('/');
-                $scope.item = found;
+                $scope.item = item.set(found);
+                console.log( item );
             });
     }
     else {

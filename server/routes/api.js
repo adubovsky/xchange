@@ -8,7 +8,7 @@ var express = require('express'),
     parseImage = require('../middleware/parseImage'),
     Image = require('../models/image');
 //Items API
-router.put('/item', isAuth(), parseImage('imageId'), function (req, res) {
+router.put('/item', isAuth(), parseImage('photoUrl', 'imageId'), function (req, res) {
     var item = new Item(req.body);
 
     item.save(function (error, item) {
@@ -26,11 +26,12 @@ router.put('/item', isAuth(), parseImage('imageId'), function (req, res) {
     });
 });
 
-router.post('/item', isAuth(), parseImage('imageId'), function (req, res) {
+router.post('/item', isAuth(), parseImage('photoUrl', 'imageId'), function (req, res) {
     var item = new Item(req.body),
         userId = req.user._id;
-
-    item.save(function (error, item) {
+    res.json({success:true});
+    //todo: need to update item
+    /*item.save(function (error, item) {
         if (error) {
             res.json({
                 success: false,
@@ -42,7 +43,7 @@ router.post('/item', isAuth(), parseImage('imageId'), function (req, res) {
             item: item
         });
 
-    });
+    });*/
 });
 
 
