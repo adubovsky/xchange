@@ -9,6 +9,7 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
         item
             .getById($stateParams.id)
             .then(function (found) {
+                found.photoUrl = ['/images',found.imageId].join('/');
                 $scope.item = found;
             });
     }
@@ -29,7 +30,7 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                 console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
             }).success(function (data, status, headers, config) {
-                $scope.item.imageId = data.file.temp;
+                $scope.item.photoUrl = data.file.temp;
             }).error(function (data, status, headers, config) {
                 console.log('error status: ' + status);
             });

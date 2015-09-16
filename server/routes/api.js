@@ -26,6 +26,26 @@ router.put('/item', isAuth(), parseImage('imageId'), function (req, res) {
     });
 });
 
+router.post('/item', isAuth(), parseImage('imageId'), function (req, res) {
+    var item = new Item(req.body),
+        userId = req.user._id;
+
+    item.save(function (error, item) {
+        if (error) {
+            res.json({
+                success: false,
+                error: error
+            });
+        }
+        res.json({
+            success: true,
+            item: item
+        });
+
+    });
+});
+
+
 router.get('/items', function (req, res) {
     Item.find({}, function (err, items) {
         res.json({

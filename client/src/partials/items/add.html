@@ -3,10 +3,10 @@
       class="add-item-form">
     <div layout="row"
          layout-align="start center">
-        <div ng-show="item.imageId"
+        <div ng-show="item.photoUrl"
              class="add-item-form__preview"
              layout-align="center center">
-            <img ng-src="{{'/images/'+item.imageId}}"/>
+            <img ng-src="{{item.photoUrl}}"/>
         </div>
         <md-button class="md-button md-raised"
                    ngf-select

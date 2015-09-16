@@ -9,7 +9,7 @@ router.post('/item/photo', multiparty(), function (req, res) {
     res.json({
         success: true,
         file: {
-            temp: path.relative(config.serverDir, file.path)
+            temp: path.join('/images', path.relative(config.serverDir, file.path))
         }
     });
 });
