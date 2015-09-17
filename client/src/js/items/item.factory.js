@@ -1,9 +1,10 @@
 var app = require('../app');
 
 app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser, $q) {
-    var Item = function () {
+    var Item = function (options) {
         this.visible = true;
         this.tags = [];
+        this.set(options);
     };
 
     Item.prototype.set = function (obj) {
@@ -22,6 +23,10 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
 
     Item.prototype.isValid = function () {
         return !!(this.title && this.description && this.price && this.photoUrl);
+    };
+
+    Item.prototype.getImageUrl = function () {
+        return ['/images', this.imageId].join('/');
     };
 
     Item.getById = function (id) {
@@ -53,7 +58,7 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
     Item.get = function (options) {
         var defer = $q.defer();
 
-        $http.get('/api/items', options)
+        $http.get('/api/items', {params: options})
             .then(function (response) {
                 if (response.data.success) {
                     defer.resolve(response.data.items);

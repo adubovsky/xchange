@@ -50,7 +50,8 @@ router.post('/item', isAuth(), parseImage('photoUrl', 'imageId'), function (req,
 
 
 router.get('/items', function (req, res) {
-    Item.find({}, function (err, items) {
+    var query = req.query || {};
+    Item.find(query, function (err, items) {
         res.json({
             success: true,
             items: items
