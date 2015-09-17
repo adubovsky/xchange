@@ -36,6 +36,10 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
         return $http.post('/api/item', this);
     };
 
+    Item.prototype.delete = function () {
+        return $http.delete('/api/item', this);
+    };
+
     Item.prototype.isValid = function () {
         return !!(this.title && this.description && this.price && this.photoUrl);
     };

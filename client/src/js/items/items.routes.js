@@ -10,7 +10,7 @@ app.config(['$stateProvider', function ($stateProvider) {
         .state('/item/details', {
             url: "/item/:id",
             templateUrl: "/partials/items/details.html",
-            controller: 'ItemController'
+            controller: 'ItemDetailsController'
         })
         .state('/item/details.edit', {
             url: "/edit",

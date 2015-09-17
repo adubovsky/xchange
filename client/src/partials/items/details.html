@@ -4,12 +4,21 @@
         flex>
         {{item.title}}
     </h2>
-    <md-button class="md-raised"
-               ng-show="user._id === item.userId"
-               flex="10"
-               ui-sref=".edit">
-        Edit
-    </md-button>
+
+    <div ng-if="user._id === item.userId"
+         layout="row"
+         layout-align="center center">
+        <md-button class="md-raised"
+                   flex="10"
+                   ui-sref=".edit">
+            Edit
+        </md-button>
+        <md-button class="md-raised md-accent"
+                   flex="10"
+                   ng-click="delete(item, $event)">
+            Delete
+        </md-button>
+    </div>
 </div>
 <img class="item-details__preview"
      ng-src="/images/{{item.imageId}}"/>
