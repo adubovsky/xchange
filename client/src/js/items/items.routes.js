@@ -12,9 +12,13 @@ app.config(['$stateProvider', function ($stateProvider) {
             templateUrl: "/partials/items/details.html",
             controller: 'ItemController'
         })
-        .state('/item/edit', {
-            url: "/item/:id/edit",
-            templateUrl: "/partials/items/add.html",
-            controller: 'ItemAddController'
+        .state('/item/details.edit', {
+            url: "/edit",
+            views: {
+                '@': {
+                    templateUrl: "/partials/items/add.html",
+                    controller: 'ItemAddController'
+                }
+            }
         });
 }]);

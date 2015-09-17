@@ -9,9 +9,8 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
         item
             .getById($stateParams.id)
             .then(function (found) {
-                found.photoUrl = ['/images',found.imageId].join('/');
+                found.photoUrl = ['/images', found.imageId].join('/');
                 $scope.item = item.set(found);
-                console.log( item );
             });
     }
     else {
@@ -41,7 +40,7 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
     $scope.save = function (item) {
         item[!updating ? 'save' : 'update']()
             .then(function (response) {
-                $state.go('/');
+                $state.go(updating ? '^' : '/');
                 console.log(response);
             });
     };

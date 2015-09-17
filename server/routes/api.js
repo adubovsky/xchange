@@ -29,21 +29,24 @@ router.put('/item', isAuth(), parseImage('photoUrl', 'imageId'), function (req, 
 router.post('/item', isAuth(), parseImage('photoUrl', 'imageId'), function (req, res) {
     var item = new Item(req.body),
         userId = req.user._id;
-    res.json({success:true});
+    res.json({
+        success: true,
+        item: item
+    });
     //todo: need to update item
     /*item.save(function (error, item) {
-        if (error) {
-            res.json({
-                success: false,
-                error: error
-            });
-        }
-        res.json({
-            success: true,
-            item: item
-        });
+     if (error) {
+     res.json({
+     success: false,
+     error: error
+     });
+     }
+     res.json({
+     success: true,
+     item: item
+     });
 
-    });*/
+     });*/
 });
 
 
