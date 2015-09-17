@@ -1,7 +1,18 @@
 var app = require('../app');
 
 app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser, $q) {
+    /**
+     * Item class
+     * @param options {Object | Array} item fields json or collection of items
+     * @returns {*}
+     * @constructor
+     */
     var Item = function (options) {
+        if(angular.isArray(options)){
+            return options.map(function (item) {
+                return new Item(item);
+            });
+        }
         this.visible = true;
         this.tags = [];
         this.set(options);
@@ -10,6 +21,10 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
     Item.prototype.set = function (obj) {
         angular.extend(this, obj);
         return this;
+    };
+
+    Item.prototype.getId = function () {
+        return this._id;
     };
 
     Item.prototype.save = function () {

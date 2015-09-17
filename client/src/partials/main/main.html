@@ -17,7 +17,7 @@
         md-gutter="2px">
     <md-grid-tile class="items-grid-item"
                   ng-repeat="item in items"
-                  ui-sref="/item/details({id: item._id})">
+                  ui-sref="/item/details({id: item.getId()})">
         <img ng-src="/images/{{item.imageId}}"
              class="items-grid-item__preview">
 

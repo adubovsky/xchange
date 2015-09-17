@@ -8,6 +8,6 @@ app.controller('MainController', ['$scope', '$mdUtil', '$mdSidenav', '$rootScope
 
         Item.get()
             .then(function (items) {
-                $scope.items = items;
+                $scope.items = new Item(items);
             });
     }]);
