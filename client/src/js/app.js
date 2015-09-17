@@ -9,4 +9,18 @@ require('ng-file-upload');
 
 app = angular.module('xchangeApp', ['ngMaterial', 'ui.router', 'ngFileUpload']);
 
+app.run(['$rootScope', '$state', 'currentUser', 'User', function ($rootScope, $state, currentUser, User) {
+    var checked = currentUser.check();
+
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+        checked.then(function () {
+            if (toState.authRequired && !currentUser.isLogged) {
+                event.preventDefault();
+                $state.go('/');
+            }
+        });
+    });
+
+}]);
+
 module.exports = app;

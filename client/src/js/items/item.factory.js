@@ -65,7 +65,7 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', function ($http,
 
     Item.getTags = function (query) {
         var deferred = $q.defer();
-        $http.get('/api/categories')
+        $http.get('/api/category')
             .then(function (response) {
                 if (response.data.success) {
                     deferred.resolve(response.data.categories);
@@ -77,7 +77,7 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', function ($http,
     Item.get = function (options) {
         var defer = $q.defer();
 
-        $http.get('/api/items', {params: options})
+        $http.get('/api/item', {params: options})
             .then(function (response) {
                 if (response.data.success) {
                     defer.resolve(response.data.items);

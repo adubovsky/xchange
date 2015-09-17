@@ -5,7 +5,8 @@ app.config(['$stateProvider', function ($stateProvider) {
         .state('/item/add', {
             url: "/item/add",
             templateUrl: "/partials/items/add.html",
-            controller: 'ItemAddController'
+            controller: 'ItemAddController',
+            authRequired: true
         })
         .state('/item/details', {
             url: "/item/:id",
@@ -13,6 +14,7 @@ app.config(['$stateProvider', function ($stateProvider) {
             controller: 'ItemDetailsController'
         })
         .state('/item/details.edit', {
+            authRequired: true,
             url: "/edit",
             views: {
                 '@': {

@@ -23,6 +23,17 @@ app.factory('User', ['$http', '$q', function ($http, $q) {
         return deferred.promise;
     };
 
+    User.prototype.getDetails = function () {
+        var deferred = $q.defer();
+        $http.get('/user/details')
+            .then(function onUserCheckLogin(response) {
+                deferred.resolve(response.data);
+            }, function onUserCheckLoginError(response) {
+                deferred.reject(response.data);
+            });
+        return deferred.promise;
+    };
+
     User.prototype.login = function () {
         if (!this.isValid()) return;
         var deferred = $q.defer();
@@ -35,17 +46,6 @@ app.factory('User', ['$http', '$q', function ($http, $q) {
                 deferred.resolve(response.data);
             }, function onUserLoginError(response) {
                 deferred.reject(response);
-            });
-        return deferred.promise;
-    };
-
-    User.prototype.getDetails = function () {
-        var deferred = $q.defer();
-        $http.get('/user/details')
-            .then(function onUserCheckLogin(response) {
-                deferred.resolve(response.data);
-            }, function onUserCheckLoginError(response) {
-                deferred.reject(response.data);
             });
         return deferred.promise;
     };
@@ -73,7 +73,7 @@ app.factory('User', ['$http', '$q', function ($http, $q) {
     return User;
 }]);
 
-app.factory('currentUser', ['User', '$http', function (User, $http) {
+app.factory('currentUser', ['User', '$http','$q', function (User, $http, $q) {
     var currentUser = new User();
 
     currentUser.setUser = function (user) {
@@ -91,6 +91,23 @@ app.factory('currentUser', ['User', '$http', function (User, $http) {
             }, function onUserLogoutError(response) {
 
             });
+    };
+
+    currentUser.check = function () {
+        var deferred = $q.defer();
+        currentUser.getDetails()
+            .then(function (result) {
+                var user = result.user;
+                currentUser.setUser(user);
+                currentUser.setLogged(true);
+            },
+            function () {
+                currentUser.setLogged(false);
+            }).then(function () {
+                deferred.resolve();
+            });
+
+        return deferred.promise;
     };
 
     return currentUser;

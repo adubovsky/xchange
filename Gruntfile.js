@@ -134,8 +134,9 @@ module.exports = function (grunt) {
                 '-W097': false,  //Use the function form of "use strict".
                 '-W030': false,  //expect($scope.item.isValid()).to.be.true;
                                  //                                    ^ Expected an assignment or function call and instead saw an expression.
-
-            globals: {
+                '-W087': false,  //debugger
+                globals: {
+                    console: false,
                     /* mocha */
                     describe: false,
                     it: false,
