@@ -15,7 +15,7 @@ app.factory('Category', ['$http', '$q', function ($http, $q) {
     Category.get = function () {
         var defer = $q.defer();
 
-        $http.get('/api/categories')
+        $http.get('/api/category')
             .then(function (response) {
                 if (response.data.success) {
                     defer.resolve(response.data.categories);
