@@ -30,7 +30,8 @@
                        ui-sref="/item/details.edit({id: item.getId()})">
                 Edit
             </md-button>
-            <md-button class="md-raised md-accent">
+            <md-button class="md-raised md-accent"
+                       ng-click="item.deleteConfirm($event)">
                 Delete
             </md-button>
         </div>

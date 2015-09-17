@@ -1,6 +1,6 @@
 var app = require('../app');
 
-app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser, $q) {
+app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', function ($http, currentUser, $q, $mdDialog) {
     /**
      * Item class
      * @param options {Object | Array} item fields json or collection of items
@@ -8,7 +8,7 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
      * @constructor
      */
     var Item = function (options) {
-        if(angular.isArray(options)){
+        if (angular.isArray(options)) {
             return options.map(function (item) {
                 return new Item(item);
             });
@@ -87,6 +87,23 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
                 }
             });
         return defer.promise;
+    };
+
+    Item.prototype.deleteConfirm = function (ev) {
+        var item = this,
+            confirm = $mdDialog.confirm()
+                .title('Would you like to delete this item?')
+                .content('It couldn\'t be undone!')
+                .ariaLabel('Lucky day')
+                .ok('Yes, Delete it')
+                .cancel('No, please don\'t')
+                .targetEvent(ev);
+        $mdDialog.show(confirm).then(function () {
+            console.log('Deleted!');
+            item.delete();
+        }, function () {
+            console.log('Cancelled!');
+        });
     };
 
     return Item;
