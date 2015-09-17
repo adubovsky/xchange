@@ -2,19 +2,18 @@ var app = require('../app');
 
 app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$stateParams', function ($scope, Item, Upload, $state, $stateParams) {
     var updating = false,
-        item = new Item();
+        itemId = $stateParams.id;
 
-    if ($stateParams.id) {
+    if (itemId) {
         updating = true;
-        item
-            .getById($stateParams.id)
-            .then(function (found) {
-                found.photoUrl = ['/images', found.imageId].join('/');
-                $scope.item = item.set(found);
+        Item.getById(itemId)
+            .then(function (item) {
+                item.photoUrl = ['/images', item.imageId].join('/');
+                $scope.item = item;
             });
     }
     else {
-        $scope.item = item;
+        $scope.item = new Item();
     }
 
     $scope.updating = updating;

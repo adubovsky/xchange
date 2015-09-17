@@ -1,12 +1,11 @@
 var app = require('../app');
 
 app.controller('ItemController', ['$scope', 'Item', '$stateParams', 'currentUser', function ($scope, Item, $stateParams, currentUser) {
-    var item = new Item();
+    var itemId = $stateParams.id;
 
-    item
-        .getById($stateParams.id)
-        .then(function (found) {
-            $scope.item = found;
+    Item.getById(itemId)
+        .then(function (item) {
+            $scope.item = item;
         });
 
     $scope.user = currentUser;

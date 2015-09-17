@@ -24,20 +24,22 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
         return !!(this.title && this.description && this.price && this.photoUrl);
     };
 
-    Item.prototype.getById = function (id) {
+    Item.getById = function (id) {
         var deferred = $q.defer();
         $http.get(['/api/item', id].join('/'))
             .then(function (response) {
-                var data = response.data;
+                var data = response.data,
+                    item = new Item();
                 if (data.success) {
-                    deferred.resolve(data.item);
+                    item.set(data.item);
+                    deferred.resolve(item);
                 }
             });
 
         return deferred.promise;
     };
 
-    Item.prototype.getTags = function (query) {
+    Item.getTags = function (query) {
         var deferred = $q.defer();
         $http.get('/api/categories')
             .then(function (response) {
@@ -48,10 +50,10 @@ app.factory('Item', ['$http', 'currentUser', '$q', function ($http, currentUser,
         return deferred.promise;
     };
 
-    Item.get = function () {
+    Item.get = function (options) {
         var defer = $q.defer();
 
-        $http.get('/api/items')
+        $http.get('/api/items', options)
             .then(function (response) {
                 if (response.data.success) {
                     defer.resolve(response.data.items);
