@@ -1,6 +1,18 @@
-<h2 class="md-title">{{item.title}}</h2>
-<img class="items-grid-item__preview"
-     ng-src="/images/{{item.imageId}}" />
+<div layout="row"
+     layout-align="start center">
+    <h2 class="md-title"
+        flex>
+        {{item.title}}
+    </h2>
+    <md-button class="md-raised"
+               ng-show="user._id === item.userId"
+               flex="10"
+               ui-sref="/item/edit({id: item._id})">
+        Edit
+    </md-button>
+</div>
+<img class="item-details__preview"
+     ng-src="/images/{{item.imageId}}"/>
 <div>
     {{item.description}}
 </div>

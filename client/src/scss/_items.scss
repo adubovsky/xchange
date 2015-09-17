@@ -29,3 +29,10 @@
     }
   }
 }
+
+.item-details {
+  overflow: hidden;
+  &__preview {
+    width: 200px;
+  }
+}

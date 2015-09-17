@@ -1,6 +1,6 @@
 var app = require('../app');
 
-app.controller('ItemController', ['$scope', 'Item', '$stateParams', function ($scope, Item, $stateParams) {
+app.controller('ItemController', ['$scope', 'Item', '$stateParams', 'currentUser', function ($scope, Item, $stateParams, currentUser) {
     var item = new Item();
 
     item
@@ -8,4 +8,6 @@ app.controller('ItemController', ['$scope', 'Item', '$stateParams', function ($s
         .then(function (found) {
             $scope.item = found;
         });
+
+    $scope.user = currentUser;
 }]);
