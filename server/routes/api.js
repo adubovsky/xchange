@@ -27,26 +27,25 @@ router.put('/item', isAuth(), parseImage('photoUrl', 'imageId'), function (req, 
 });
 
 router.post('/item', isAuth(), parseImage('photoUrl', 'imageId'), function (req, res) {
-    var item = new Item(req.body),
-        userId = req.user._id;
-    res.json({
-        success: true,
-        item: item
-    });
-    //todo: need to update item
-    /*item.save(function (error, item) {
-     if (error) {
-     res.json({
-     success: false,
-     error: error
-     });
-     }
-     res.json({
-     success: true,
-     item: item
-     });
+    var findOptions = {
+            _id: req.body._id,
+            userId: req.user._id
+        },
+        newFields = req.body;
 
-     });*/
+    //todo: need to update item
+    Item.update(findOptions, newFields, function (error, numAffected) {
+        if (error) {
+            res.json({
+                success: false,
+                error: error
+            });
+        }
+        res.json({
+            success: true,
+            item: newFields
+        });
+    });
 });
 
 

@@ -41,7 +41,6 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
         item[!updating ? 'save' : 'update']()
             .then(function (response) {
                 $state.go(updating ? '^' : '/');
-                console.log(response);
             });
     };
 }]);
