@@ -1,6 +1,6 @@
 .sidebar,
 .sidebar.md-locked-open{
-  height: 100vh;
+  height: $content-min-height;
   width: $sidebar-width;
   min-width: $sidebar-width;
   background-color: $light-gray-bg;

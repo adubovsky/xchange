@@ -1,4 +1,4 @@
 .content{
-  min-height: calc(100vh - #{$header-height});
+  min-height: $content-min-height;
   box-sizing: border-box;
 }

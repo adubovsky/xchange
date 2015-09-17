@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
     <link rel="stylesheet" href="/css/main.css">
 </head>
-<body>
+<body md-swipe-right="toggleMenu(true)"
+      md-swipe-left="toggleMenu(false)">
 <div layout="row">
     <div layout="column"
          layout-fill
@@ -18,15 +19,15 @@
         <div ng-include="'partials/main/header.html'"
              ng-controller="HeaderController as ctrl"></div>
 
-        <div layout="row">
+        <div layout="row"
+             class="content">
             <div ng-include="'partials/main/sidebar.html'"
                  ng-controller="SidemenuController as ctrl"></div>
 
 
             <md-content layout-padding
                         ui-view
-                        flex
-                        class="content">
+                        flex>
 
             </md-content>
         </div>
