@@ -66,7 +66,7 @@ app.factory('User', ['$http', '$q', 'BasicModel', function ($http, $q, BasicMode
     return User;
 }]);
 
-app.factory('currentUser', ['User', '$http','$q', function (User, $http, $q) {
+app.factory('currentUser', ['User', '$http', '$q', function (User, $http, $q) {
     var currentUser = new User();
 
     currentUser.setUser = function (user) {

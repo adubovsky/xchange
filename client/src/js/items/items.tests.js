@@ -3,19 +3,19 @@ require('../main/model.factory.js');
 require('./item.model.js');
 require('./add.ctrl.js');
 
-describe('Items', function() {
+describe('Items', function () {
 
     beforeEach(angular.mock.module('xchangeApp'));
 
     var $controller, Item, $scope;
 
-    beforeEach(angular.mock.inject(function(_$controller_,_$rootScope_,_Item_){
+    beforeEach(angular.mock.inject(function (_$controller_, _$rootScope_, _Item_) {
         $controller = _$controller_;
         $scope = _$rootScope_.$new();
         Item = _Item_;
     }));
 
-    describe('Item Factory', function() {
+    describe('Item Factory', function () {
         it('should be valid', function () {
             var item = new Item();
 
