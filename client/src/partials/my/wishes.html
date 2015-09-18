@@ -1,0 +1,14 @@
+<div class="my-wishes">
+    <form ng-submit="newWish.save()">
+        <md-autocomplete flex
+                         md-input-name="autocompleteField"
+                         md-search-text="query"
+                         md-items="item in ['iPhone', 'Google Nexus']"
+                         md-item-text="item.display"
+                         placeholder="Add new wish">
+            <md-item-template>
+                <span md-highlight-text="query">{{item}}</span>
+            </md-item-template>
+        </md-autocomplete>
+    </form>
+</div>

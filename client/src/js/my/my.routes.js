@@ -7,5 +7,11 @@ app.config(['$stateProvider', function ($stateProvider) {
             templateUrl: "/partials/my/items.html",
             controller: 'MyItemsController',
             authRequired: true
+        })
+        .state('/my/wishes', {
+            url: "/my/wishes",
+            templateUrl: "/partials/my/wishes.html",
+            controller: 'MyWishesController',
+            authRequired: true
         });
 }]);
