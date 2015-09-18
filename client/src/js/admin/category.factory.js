@@ -1,8 +1,7 @@
 var app = require('../app');
 
-app.factory('Category', ['$http', '$q', function ($http, $q) {
-    var Category = function () {
-    };
+app.factory('Category', ['$http', '$q', 'BasicModel', function ($http, $q, BasicModel) {
+    var Category = BasicModel.new('Category');
 
     Category.prototype.save = function () {
         return $http.put('/api/category', this);

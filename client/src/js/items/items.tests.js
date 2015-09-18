@@ -1,4 +1,5 @@
 require('../users/user.factory.js');
+require('../main/model.factory.js');
 require('./item.factory.js');
 require('./add.ctrl.js');
 

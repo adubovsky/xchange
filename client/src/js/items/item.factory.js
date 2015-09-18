@@ -1,31 +1,16 @@
 var app = require('../app');
 
-app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', function ($http, currentUser, $q, $mdDialog) {
+app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', function ($http, currentUser, $q, $mdDialog, BasicModel) {
     /**
      * Item class
      * @param options {Object | Array} item fields json or collection of items
      * @returns {*}
      * @constructor
      */
-    var Item = function (options) {
-        if (angular.isArray(options)) {
-            return options.map(function (item) {
-                return new Item(item);
-            });
-        }
-        this.visible = true;
-        this.tags = [];
-        this.set(options);
-    };
-
-    Item.prototype.set = function (obj) {
-        angular.extend(this, obj);
-        return this;
-    };
-
-    Item.prototype.getId = function () {
-        return this._id;
-    };
+    var Item = BasicModel.new('Item', {
+        visible: true,
+        tags: []
+    });
 
     Item.prototype.save = function () {
         this.userId = currentUser.getId();
