@@ -1,7 +1,14 @@
 var app = require('../app');
 
 app.controller('MyWishesController', ['$scope', 'currentUser','Wish', function ($scope, currentUser, Wish) {
-    var wishes = new Wish([{_id: 1}, {_id:2}]),
-        wish = new Wish({_id: 12});
-    console.log( wishes, wish );
+    $scope.newWish = new Wish();
+
+    $scope.save = function (wish) {
+        console.log( wish );
+        $scope.wishes.push(wish);
+        $scope.newWish = new Wish();
+        $scope.selectedItem = null;
+    };
+
+    $scope.wishes = [];
 }]);
