@@ -1,11 +1,8 @@
 var app = require('../app');
 
-app.factory('User', ['$http', '$q', function ($http, $q) {
+app.factory('User', ['$http', '$q', 'BasicModel', function ($http, $q, BasicModel) {
 
-    var User = function (options) {
-        options = options || {};
-        this.new = options.new || false;
-    };
+    var User = BasicModel.new('User');
 
     User.prototype.register = function () {
         if (!this.new) return;
@@ -48,10 +45,6 @@ app.factory('User', ['$http', '$q', function ($http, $q) {
                 deferred.reject(response);
             });
         return deferred.promise;
-    };
-
-    User.prototype.getId = function () {
-        return this._id;
     };
 
     User.prototype.isValid = function () {
