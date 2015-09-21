@@ -1,12 +1,13 @@
 var express = require('express'),
     Category = require('../../models/category'),
     router = express.Router(),
-    isAuth = require('../../middleware/auth'),
-    parseImage = require('../../middleware/parseImage');
+    isAuth = require('../../middleware/auth');
 
 //Categories API
 router.get('/', function (req, res) {
-    Category.find({parent: null})
+    var query = !Object.keys(req.query).length ? {parent: null} : req.query;
+    console.log(query);
+    Category.find(query)
         .populate('children')
         .exec(function (err, categories) {
             res.json({

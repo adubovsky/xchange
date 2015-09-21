@@ -12,7 +12,7 @@ app.controller('AdminController', ['$scope', '$state', 'currentUser',
 app.controller('AdminCategoriesController', ['$scope', '$state', 'currentUser', 'Category',
     function ($scope, $state, currentUser, Category) {
         var getCategories = function () {
-            Category.get()
+            Category.get({parent: null})
                 .then(function (categories) {
                     $scope.categories = categories;
                 });
@@ -32,25 +32,43 @@ app.controller('AdminCategoriesController', ['$scope', '$state', 'currentUser', 
         getCategories();
     }]);
 
-app.controller('AdminBrandsController', ['$scope', '$state', 'currentUser', 'Brand',
-    function ($scope, $state, currentUser, Brand) {
+app.controller('AdminBrandsController', ['$scope', '$state', 'currentUser', 'Brand', 'Category',
+    function ($scope, $state, currentUser, Brand, Category) {
         var getBrands = function () {
-            Brand.get()
-                .then(function (brands) {
-                    $scope.brands = brands;
-                });
+                Brand.get()
+                    .then(function (brands) {
+                        $scope.brands = brands;
+                    });
+            },
+            getCategories = function () {
+                Category.get()
+                    .then(function (categories) {
+                        $scope.categories = categories;
+                    });
+            };
+
+        $scope.getSubCategories = function (parentId) {
+            if(parentId) {
+                Category.get({parent: parentId})
+                    .then(function (categories) {
+                        $scope.subCategories = categories;
+                    });
+            } else {
+                $scope.subCategories = [];
+            }
         };
 
-        $scope.newBrand = new Brand();
+        $scope.brand = new Brand();
 
         $scope.save = function () {
-            $scope.newBrand.save()
+            $scope.brand.save()
                 .then(function () {
-                    $scope.newBrand = new Brand();
+                    $scope.brand = new Brand();
                     console.log('Saved');
                     getBrands();
                 });
         };
 
-        getBrands();
+        //getBrands();
+        getCategories();
     }]);
