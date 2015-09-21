@@ -43,7 +43,7 @@ module.exports = function (grunt) {
             },
             css: {
                 files: [
-                    clientSrcDir + '/scss/**/*.scss'
+                    clientSrcDir + '/css/**/*.css'
                 ],
                 tasks: ['css:dev']
             }
@@ -99,31 +99,6 @@ module.exports = function (grunt) {
                 ]
             }
         },
-        sass: {
-            dev: {
-                options: {
-                    sourcemap: true
-                },
-                files: [
-                    {
-                        src: clientSrcDir + '/scss/main.scss',
-                        dest: clientBuildDir + '/css/main.css'
-                    }
-                ]
-            },
-            prod: {
-                options: {
-                    sourcemap: false,
-                    style: 'compressed'
-                },
-                files: [
-                    {
-                        src: clientSrcDir + '/scss/main.scss',
-                        dest: clientBuildDir + '/css/main.css'
-                    }
-                ]
-            }
-        },
         karma: {
             unit: {
                 configFile: './karma.conf.js'
@@ -169,6 +144,40 @@ module.exports = function (grunt) {
                     async: true
                 }
             }
+        },
+        postcss: {
+            options: {
+                processors: [
+
+                ]
+            },
+            prod: {
+                options: {
+                    map: false,
+                    processors: [
+                        require('postcss-import'),
+                        require('postcss-simple-vars'),
+                        require('postcss-nested'),
+                        require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+                        require('cssnano')
+                    ]
+                },
+                src: clientSrcDir + '/css/main.css',
+                dest: clientBuildDir + '/css/main.css'
+            },
+            dev: {
+                options: {
+                    map: true,
+                    processors: [
+                        require('postcss-import'),
+                        require('postcss-simple-vars'),
+                        require('postcss-nested'),
+                        require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+                    ]
+                },
+                src: clientSrcDir + '/css/main.css',
+                dest: clientBuildDir + '/css/main.css'
+            }
         }
     });
 
@@ -177,11 +186,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-shell-spawn');
+    grunt.loadNpmTasks('grunt-postcss');
 
     // Default task(s).
     grunt.registerTask('default', []);
@@ -194,8 +203,8 @@ module.exports = function (grunt) {
     //html
     grunt.registerTask('html', ['clean:html', 'copy']);
     //css
-    grunt.registerTask('css:dev', ['clean:css', 'sass:dev']);
-    grunt.registerTask('css:prod', ['clean:css', 'sass:prod']);
+    grunt.registerTask('css:dev', ['clean:css', 'postcss:dev']);
+    grunt.registerTask('css:prod', ['clean:css', 'postcss:prod']);
 
     grunt.registerTask('devBuild', ['js:dev', 'css:dev', 'html']);
     grunt.registerTask('build', ['js:prod', 'css:prod', 'html']);
