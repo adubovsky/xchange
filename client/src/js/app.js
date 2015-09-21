@@ -14,7 +14,9 @@ app.run(['$rootScope', '$state', 'currentUser', 'User', function ($rootScope, $s
 
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
         checked.then(function () {
-            if (toState.authRequired && !currentUser.isLogged) {
+            if (toState.authRequired && !currentUser.isLogged ||
+                toState.authRequired === 'admin' && !currentUser.isAdmin()) {
+
                 event.preventDefault();
                 $state.go('/');
             }

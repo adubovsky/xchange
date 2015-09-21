@@ -1,7 +1,6 @@
 var app = require('../app');
 
 app.factory('User', ['$http', '$q', 'BasicModel', function ($http, $q, BasicModel) {
-
     var User = BasicModel.new('User');
 
     User.prototype.register = function () {
@@ -63,6 +62,15 @@ app.factory('User', ['$http', '$q', 'BasicModel', function ($http, $q, BasicMode
         return true;
     };
 
+    User.prototype.clearFields = function () {
+        this.role = '';
+        this.name = '';
+    };
+
+    User.prototype.setLogged = function (logged) {
+        this.isLogged = logged;
+    };
+
     return User;
 }]);
 
@@ -70,17 +78,15 @@ app.factory('currentUser', ['User', '$http', '$q', function (User, $http, $q) {
     var currentUser = new User();
 
     currentUser.setUser = function (user) {
+        this.clearFields();
         angular.extend(this, user);
-    };
-
-    currentUser.setLogged = function (logged) {
-        this.isLogged = logged;
     };
 
     currentUser.logout = function () {
         $http.post('/user/logout')
             .then(function onUserLogoutSuccess(response) {
                 currentUser.setLogged(false);
+                currentUser.clearFields();
             }, function onUserLogoutError(response) {
 
             });
