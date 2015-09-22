@@ -1,4 +1,4 @@
-require('../users/user.model.js');
+require('./user.model.js');
 require('../main/model.factory.js');
 
 describe('Users:', function () {
