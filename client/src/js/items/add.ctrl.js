@@ -42,4 +42,6 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
                 $state.go(updating ? '^' : '/');
             });
     };
+
+    $scope.getTags = Item.getTags;
 }]);

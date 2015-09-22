@@ -50,10 +50,14 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', fu
 
     Item.getTags = function (query) {
         var deferred = $q.defer();
-        $http.get('/api/category')
+        $http.get('/api/tag', {
+            params: {
+                searchQuery: query
+            }
+        })
             .then(function (response) {
                 if (response.data.success) {
-                    deferred.resolve(response.data.categories);
+                    deferred.resolve(response.data.tags);
                 }
             });
         return deferred.promise;

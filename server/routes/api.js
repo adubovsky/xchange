@@ -8,7 +8,8 @@ var express = require('express'),
     'item',
     'category',
     'brand',
-    'model'
+    'model',
+    'tag'
 ].forEach(function (routeName) {
         router.use('/'+routeName, require('./api/'+routeName));
     });

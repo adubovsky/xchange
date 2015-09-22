@@ -13,7 +13,8 @@ module.exports = function (grunt) {
             dev: {
                 script: [serverDir, 'app.js'].join('/'),
                 options: {
-                    ignore: ['node_modules/**', 'client/**']
+                    ignore: ['node_modules/**', 'client/**'],
+                    nodeArgs: ['--debug']
                 }
             },
             mongoAdmin: {
@@ -128,7 +129,12 @@ module.exports = function (grunt) {
                 }
             },
             client: [siteConfig.clientSrcDir + '/**/*.js'],
-            server: [siteConfig.serverDir + '/**/*.js'],
+            server: {
+                src: [siteConfig.serverDir + '/**/*.js'],
+                options: {
+                    esnext: true
+                }
+            },
             tools: ['Gruntfile.js']
         },
         clean: {

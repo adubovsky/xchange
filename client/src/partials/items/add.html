@@ -49,8 +49,12 @@
             ng-model="item.tags"
             readonly="false">
         <md-autocomplete
+                required
+                md-autoselect
+                md-no-cache="true"
+                md-min-length="3"
                 md-search-text="query"
-                md-items="tag in item.getTags(query)"
+                md-items="tag in getTags(query)"
                 ng-attr-placeholder="{{item.tags.length ? 'Maybe, more?' : 'Add a category'}}">
             <span md-highlight-text="query">{{tag.name}}</span>
         </md-autocomplete>
