@@ -1,9 +1,16 @@
+/**
+ * API Router Config
+ */
 var express = require('express'),
-    router = express.Router(),
-    itemRoutes = require('./api/item'),
-    categoryRoutes = require('./api/category');
+    router = express.Router();
+//API items array
+[
+    'item',
+    'category',
+    'brand'
+].forEach(function (routeName) {
+        router.use('/'+routeName, require('./api/'+routeName));
+    });
 
-router.use('/item', itemRoutes);
-router.use('/category', categoryRoutes);
 
 module.exports = router;

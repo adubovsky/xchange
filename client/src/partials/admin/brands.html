@@ -24,7 +24,7 @@
             </md-input-container>
             <md-input-container required>
                 <label>Sub Category</label>
-                <md-select ng-model="brand.subcategoryId">
+                <md-select ng-model="brand.subCategoryId">
                     <md-option value="" selected>No sub category</md-option>
                     <md-option ng-repeat="cat in subCategories" value="{{cat._id}}">{{cat.name}}</md-option>
                 </md-select>
