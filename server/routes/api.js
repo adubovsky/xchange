@@ -7,7 +7,8 @@ var express = require('express'),
 [
     'item',
     'category',
-    'brand'
+    'brand',
+    'model'
 ].forEach(function (routeName) {
         router.use('/'+routeName, require('./api/'+routeName));
     });

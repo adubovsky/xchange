@@ -4,6 +4,8 @@ var mongoose = require('mongoose'),
 var Model = new Schema({
     name: String,
     description: String,
+    categoryId: Schema.Types.ObjectId,
+    subCategoryId: Schema.Types.ObjectId,
     brandId: Schema.Types.ObjectId
 });
 

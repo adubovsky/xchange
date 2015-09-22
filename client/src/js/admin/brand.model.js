@@ -14,10 +14,12 @@ app.factory('Brand', ['$http', '$q', 'BasicModel', function ($http, $q, BasicMod
         return !!(this.name && this.categoryId && this.subCategoryId);
     };
 
-    Brand.get = function () {
+    Brand.get = function (query) {
         var defer = $q.defer();
 
-        $http.get('/api/brand')
+        $http.get('/api/brand', {
+            params: query
+        })
             .then(function (response) {
                 if (response.data.success) {
                     defer.resolve(response.data.brands);

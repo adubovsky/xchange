@@ -1,0 +1,63 @@
+<div layout="row">
+    <div class="category-add-form-holder"
+         flex="50">
+        Add new model:
+
+        <form>
+            <md-input-container required>
+                <label>Name</label>
+                <input ng-model="model.name"/>
+            </md-input-container>
+
+            <md-input-container>
+                <label>Description</label>
+                <textarea ng-model="model.description"></textarea>
+            </md-input-container>
+
+            <md-input-container required>
+                <label>Category</label>
+                <md-select ng-model="model.categoryId"
+                           ng-change="getSubCategories(model.categoryId)">
+                    <md-option value="" selected>No category</md-option>
+                    <md-option ng-repeat="cat in categories" value="{{cat._id}}">{{cat.name}}</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container required>
+                <label>Sub Category</label>
+                <md-select ng-model="model.subCategoryId"
+                           ng-change="getBrands(model.subCategoryId)">
+                    <md-option value="" selected>No sub category</md-option>
+                    <md-option ng-repeat="cat in subCategories" value="{{cat._id}}">{{cat.name}}</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container required>
+                <label>Brand</label>
+                <md-select ng-model="model.brandId">
+                    <md-option value="" selected>No brand</md-option>
+                    <md-option ng-repeat="brand in brands" value="{{brand._id}}">{{brand.name}}</md-option>
+                </md-select>
+            </md-input-container>
+
+
+            <md-button type="submit"
+                       class="md-raised md-primary"
+                       ng-click="save(model)"
+                       ng-disabled="!model.isValid()">
+                Add Item
+            </md-button>
+        </form>
+
+    </div>
+    <div class="category-list-holder">
+        <ul>
+            <li ng-repeat="cat in categories">
+                {{cat.name}}
+                <ul ng-if="cat.children.length">
+                    <li ng-repeat="child in cat.children">
+                        {{child.name}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

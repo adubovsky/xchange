@@ -1,5 +1,6 @@
 var express = require('express'),
     Model = require('../../models/model'),
+    Brand = require('../../models/brand'),
     router = express.Router(),
     isAuth = require('../../middleware/auth');
 
@@ -12,6 +13,19 @@ router.put('/', isAuth('admin'), function (req, res) {
                 success: false,
                 error: error
             });
+        }
+        if (model.brandId) {
+            Brand
+                .findByIdAndUpdate(model.brandId,
+                {
+                    $push: {
+                        models: model._id
+                    }
+                },
+                {safe: true, upsert: true},
+                function (err, brand) {
+                    console.log('%s brand is updated.', brand.name);
+                });
         }
         res.json({
             success: true,
