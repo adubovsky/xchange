@@ -1,12 +1,12 @@
 var express = require('express'),
-    Brand = require('../../models/brand'),
+    Model = require('../../models/model'),
     router = express.Router(),
     isAuth = require('../../middleware/auth');
 
 router.put('/', isAuth('admin'), function (req, res) {
-    var brand = new Brand(req.body);
+    var model = new Model(req.body);
 
-    brand.save(function (error, brand) {
+    model.save(function (error, model) {
         if (error) {
             res.json({
                 success: false,
@@ -15,7 +15,7 @@ router.put('/', isAuth('admin'), function (req, res) {
         }
         res.json({
             success: true,
-            brand: brand
+            model: model
         });
 
     });
@@ -23,10 +23,10 @@ router.put('/', isAuth('admin'), function (req, res) {
 
 router.get('/', function (req, res) {
     var query = req.query || {};
-    Brand.find(query, function (err, brands) {
+    Model.find(query, function (err, models) {
         res.json({
             success: true,
-            brands: brands
+            models: models
         });
     });
 });
