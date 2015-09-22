@@ -1,4 +1,4 @@
-var app = require('../../app');
+var app = require('../app');
 
 app.factory('Category', ['$http', '$q', 'BasicModel', function ($http, $q, BasicModel) {
     var Category = BasicModel.new('Category');

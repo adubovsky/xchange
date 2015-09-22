@@ -1,4 +1,4 @@
-var app = require('../../app');
+var app = require('../app');
 /**
  * Model for brand (manufacturer, author, etc.)
  * e.g. iPhone, Tesla, Stephen King, etc.

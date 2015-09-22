@@ -1,4 +1,4 @@
-var app = require('../../app');
+var app = require('../app');
 
 app.controller('AdminBrandsController', ['$scope', '$state', 'currentUser', 'Brand', 'Category',
     function ($scope, $state, currentUser, Brand, Category) {

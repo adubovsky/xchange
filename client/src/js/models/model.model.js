@@ -1,4 +1,4 @@
-var app = require('../../app');
+var app = require('../app');
 /**
  * Model for item model (model name, item name, book title etc.)
  * e.g. [iPhone] 6s plus, [Tesla] Model 3, [Stephen King's] The dark tower, etc.

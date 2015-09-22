@@ -1,5 +1,5 @@
-require('./user.model.js');
-require('../main/model.factory.js');
+require('./../models/user.model.js');
+require('../models/model.factory.js');
 
 describe('Users:', function () {
 
