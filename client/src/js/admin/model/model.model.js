@@ -1,4 +1,4 @@
-var app = require('../app');
+var app = require('../../app');
 /**
  * Model for item model (model name, item name, book title etc.)
  * e.g. [iPhone] 6s plus, [Tesla] Model 3, [Stephen King's] The dark tower, etc.
@@ -11,7 +11,7 @@ app.factory('Model', ['$http', '$q', 'BasicModel', function ($http, $q, BasicMod
     };
 
     Model.prototype.isValid = function () {
-        return !!(this.name);
+        return !!(this.name && this.categoryId && this.subCategoryId && this.brandId);
     };
 
     Model.get = function () {

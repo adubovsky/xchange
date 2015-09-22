@@ -1,4 +1,4 @@
-var app = require('../app');
+var app = require('../../app');
 
 app.controller('AdminModelsController', ['$scope', '$state', 'currentUser', 'Model', 'Brand', 'Category',
     function ($scope, $state, currentUser, Model, Brand, Category) {
