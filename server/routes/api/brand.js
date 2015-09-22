@@ -22,4 +22,14 @@ router.put('/', isAuth(), function (req, res) {
     });
 });
 
+router.get('/', function (req, res) {
+    var query = req.query || {};
+    Brand.find(query, function (err, brands) {
+        res.json({
+            success: true,
+            brands: brands
+        });
+    });
+});
+
 module.exports = router;
