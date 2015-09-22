@@ -4,9 +4,18 @@ var mongoose = require('mongoose'),
 var Brand = new Schema({
     name: String,
     description: String,
-    categoryId: Schema.Types.ObjectId,
-    subCategoryId: Schema.Types.ObjectId,
-    models: [Schema.Types.ObjectId]
+    categoryId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Category'
+    },
+    subCategoryId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Category'
+    },
+    models: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Model'
+    }]
 });
 
 module.exports = mongoose.model('Brand', Brand);

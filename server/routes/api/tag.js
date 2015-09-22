@@ -13,23 +13,32 @@ router.get('/', function (req, res) {
         findBrands = deferred(),
         findCategories = deferred();
 
-    Model.find({
-        name: new RegExp(query, 'i')
-    }, function (err, models) {
-        findModels.resolve(models);
-    });
+    Model
+        .find({
+            name: new RegExp(query, 'i')
+        })
+        .populate('brandId categoryId subCategoryId')
+        .exec(function (err, models) {
+            findModels.resolve(models);
+        });
 
-    Brand.find({
-        name: new RegExp(query, 'i')
-    }, function (err, brands) {
-        findBrands.resolve(brands);
-    });
+    Brand
+        .find({
+            name: new RegExp(query, 'i')
+        })
+        .populate('categoryId subCategoryId')
+        .exec(function (err, brands) {
+            findBrands.resolve(brands);
+        });
 
-    Category.find({
-        name: new RegExp(query, 'i')
-    }, function (err, categories) {
-        findCategories.resolve(categories);
-    });
+    Category
+        .find({
+            name: new RegExp(query, 'i')
+        })
+        .populate('parent')
+        .exec(function (err, categories) {
+            findCategories.resolve(categories);
+        });
 
     Promise.all([findModels.promise, findBrands.promise, findCategories.promise]).then(function (values) {
         var tags = new TagCollection(),

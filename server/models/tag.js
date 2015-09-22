@@ -4,7 +4,7 @@ class Tag {
      * @param type may be 'model', 'brand' or 'category'
      * @param instance may be Model, Brand or Category object
      */
-    constructor(type, instance){
+    constructor(type, instance) {
         this.type = type;
         this._id = instance._id;
         this.tag = this.getTag(type, instance);
@@ -17,7 +17,7 @@ class Tag {
 
     getParents(type, instance) {
         var parents = {
-            category: instance.categoryId,
+            category: type === 'category' ? instance.parent : instance.categoryId,
             subCategory: instance.subCategoryId,
             brand: instance.brandId
         };
