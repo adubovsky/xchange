@@ -7,7 +7,8 @@ var Item = new Schema({
     price: {type: Number, min: 1, max: 1000000},
     imageId: Schema.Types.ObjectId,
     visible: Boolean,
-    userId: Schema.Types.ObjectId
+    userId: Schema.Types.ObjectId,
+    tags: [Schema.Types.ObjectId]
 });
 
 module.exports = mongoose.model('Item', Item);

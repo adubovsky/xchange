@@ -7,7 +7,7 @@ class Tag {
     constructor(type, instance) {
         this.type = type;
         this._id = instance._id;
-        this.tag = this.getTag(type, instance);
+        this.name = this.getTag(type, instance);
         this.parents = this.getParents(type, instance);
     }
 
