@@ -64,10 +64,10 @@
             </div>
         </md-autocomplete>
         <md-chip-template>
-            <div>
+            <div class="md-caption">
                 <strong>{{$chip.name}}</strong>
                 <em>
-                    {{$chip.category ? '('+$chip.category.name : ''}}{{$chip.subCategory ? ', ' + $chip.subCategory.name+')' : ''}}
+                    {{$chip.category ? '('+$chip.category.name : ''}}{{$chip.subCategory ? ', ' + $chip.subCategory.name+')' : ')'}}
                 </em>
             </div>
         </md-chip-template>
