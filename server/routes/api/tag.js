@@ -10,6 +10,20 @@ var express = require('express'),
 router.get('/', function (req, res) {
     var query = req.query.searchQuery;
 
+    Tag
+        .find({
+            name: {
+                $regex: query,
+                $options: 'i'
+            }
+        })
+        .populate('category subCategory brand', 'name -_id')
+        .exec(function (err, tags) {
+            res.json({
+                success: true,
+                tags: tags
+            });
+        });
 
 });
 

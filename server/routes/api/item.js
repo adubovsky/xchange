@@ -1,5 +1,6 @@
 var express = require('express'),
     Item = require('../../models/item'),
+    Tag = require('../../models/tag'),
     router = express.Router(),
     isAuth = require('../../middleware/auth'),
     parseImage = require('../../middleware/parseImage');
@@ -58,11 +59,17 @@ router.get('/', function (req, res) {
 
 router.get('/:id', function (req, res) {
     var id = req.params.id;
-    Item.findById(id, function (err, item) {
-        res.json({
-            success: true,
-            item: item
+    Item.findById(id)
+        .populate('tags')
+        .exec(function (err, item) {
+            Tag
+                .populate(item.tags, 'brand subCategory category', function (err, tags) {
+                    item.tags = tags;
+                    res.json({
+                        success: true,
+                        item: item
+                    });
+                });
         });
-    });
 });
 module.exports = router;

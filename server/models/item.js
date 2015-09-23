@@ -8,7 +8,10 @@ var Item = new Schema({
     imageId: Schema.Types.ObjectId,
     visible: Boolean,
     userId: Schema.Types.ObjectId,
-    tags: [Schema.Types.ObjectId]
+    tags: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Tag'
+    }]
 });
 
 module.exports = mongoose.model('Item', Item);
