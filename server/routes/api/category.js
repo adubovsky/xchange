@@ -1,12 +1,12 @@
 var express = require('express'),
     Category = require('../../models/category'),
     router = express.Router(),
-    isAuth = require('../../middleware/auth');
+    isAuth = require('../../middleware/auth'),
+    Tag = require('../../models/tag');
 
 //Categories API
 router.get('/', function (req, res) {
     var query = !Object.keys(req.query).length ? {parent: null} : req.query;
-    console.log(query);
     Category.find(query)
         .populate('children')
         .exec(function (err, categories) {
@@ -49,7 +49,10 @@ router.put('/', isAuth('admin'), function (req, res) {
             success: true,
             category: category
         });
-
+        //Append new tag
+        Tag
+            .new('Category', category)
+            .save();
     });
 });
 module.exports = router;

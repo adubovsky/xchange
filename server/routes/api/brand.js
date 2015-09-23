@@ -1,7 +1,8 @@
 var express = require('express'),
     Brand = require('../../models/brand'),
     router = express.Router(),
-    isAuth = require('../../middleware/auth');
+    isAuth = require('../../middleware/auth'),
+    Tag = require('../../models/tag');
 
 router.put('/', isAuth('admin'), function (req, res) {
     var brand = new Brand(req.body);
@@ -17,7 +18,10 @@ router.put('/', isAuth('admin'), function (req, res) {
             success: true,
             brand: brand
         });
-
+        //Append new tag
+        Tag
+            .new('Brand', brand)
+            .save();
     });
 });
 

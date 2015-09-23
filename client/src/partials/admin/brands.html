@@ -16,15 +16,15 @@
 
             <md-input-container required>
                 <label>Category</label>
-                <md-select ng-model="brand.categoryId"
-                           ng-change="getSubCategories(brand.categoryId)">
+                <md-select ng-model="brand.category"
+                           ng-change="getSubCategories(brand.category)">
                     <md-option value="" selected>No category</md-option>
                     <md-option ng-repeat="cat in categories" value="{{cat._id}}">{{cat.name}}</md-option>
                 </md-select>
             </md-input-container>
             <md-input-container required>
                 <label>Sub Category</label>
-                <md-select ng-model="brand.subCategoryId">
+                <md-select ng-model="brand.subCategory">
                     <md-option value="" selected>No sub category</md-option>
                     <md-option ng-repeat="cat in subCategories" value="{{cat._id}}">{{cat.name}}</md-option>
                 </md-select>

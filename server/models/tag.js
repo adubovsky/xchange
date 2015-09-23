@@ -35,13 +35,13 @@ Tag.statics.new = function (type, instance) {
     tag.rel = instance._id;
 
     if (type === 'Category') {
-        tag.category = instance.parent ? instance.parent._id : null;
+        tag.category = instance.parent ? instance.parent : null;
     } else {
-        tag.category = instance.category._id;
+        tag.category = instance.category;
     }
 
     if (instance.subCategory) {
-        tag.subCategory = instance.subCategory._id;
+        tag.subCategory = instance.subCategory;
     }
 
     if (instance.brand) {

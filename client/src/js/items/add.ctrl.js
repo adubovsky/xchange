@@ -36,6 +36,9 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
         }
     });
 
+    $scope.$watch('item.tags', function (value) {
+       console.log( value );
+    });
     $scope.save = function (item) {
         item[!updating ? 'save' : 'update']()
             .then(function (response) {
@@ -44,4 +47,8 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
     };
 
     $scope.getTags = Item.getTags;
+
+    $scope.createChip = function ($chip) {
+        console.log( $chip );
+    };
 }]);

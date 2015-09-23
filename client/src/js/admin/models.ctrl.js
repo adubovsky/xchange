@@ -21,7 +21,7 @@ app.controller('AdminModelsController', ['$scope', '$state', 'currentUser', 'Mod
         };
 
         $scope.getBrands = function (subCategoryId) {
-            Brand.get({subCategoryId: subCategoryId})
+            Brand.get({subCategory: subCategoryId})
                 .then(function (brands) {
                     $scope.brands = brands;
                 });

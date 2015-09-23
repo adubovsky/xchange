@@ -2,7 +2,8 @@ var express = require('express'),
     Model = require('../../models/model'),
     Brand = require('../../models/brand'),
     router = express.Router(),
-    isAuth = require('../../middleware/auth');
+    isAuth = require('../../middleware/auth'),
+    Tag = require('../../models/tag');
 
 router.put('/', isAuth('admin'), function (req, res) {
     var model = new Model(req.body);
@@ -14,9 +15,9 @@ router.put('/', isAuth('admin'), function (req, res) {
                 error: error
             });
         }
-        if (model.brandId) {
+        if (model.brand) {
             Brand
-                .findByIdAndUpdate(model.brandId,
+                .findByIdAndUpdate(model.brand,
                 {
                     $push: {
                         models: model._id
@@ -24,14 +25,18 @@ router.put('/', isAuth('admin'), function (req, res) {
                 },
                 {safe: true, upsert: true},
                 function (err, brand) {
+                    model.brand = brand;
+                    res.json({
+                        success: true,
+                        model: model
+                    });
+                    //Append new tag
+                    Tag
+                        .new('Model', model)
+                        .save();
                     console.log('%s brand is updated.', brand.name);
                 });
         }
-        res.json({
-            success: true,
-            model: model
-        });
-
     });
 });
 

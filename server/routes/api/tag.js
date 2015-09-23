@@ -38,7 +38,7 @@ router.get('/updateTags', isAuth('admin'), function (req, res) {
 
     Model
         .find({})
-        .populate('brand category subCategory')
+        .populate('brand', 'name _id')
         .exec(function (err, models) {
             var tags = [];
             models.forEach(function (model) {
@@ -51,7 +51,6 @@ router.get('/updateTags', isAuth('admin'), function (req, res) {
 
     Brand
         .find({})
-        .populate('category subCategory')
         .exec(function (err, brands) {
             var tags = [];
             brands.forEach(function (model) {
@@ -63,7 +62,6 @@ router.get('/updateTags', isAuth('admin'), function (req, res) {
         });
     Category
         .find({})
-        .populate('parent')
         .exec(function (err, categories) {
             var tags = [];
             categories.forEach(function (model) {

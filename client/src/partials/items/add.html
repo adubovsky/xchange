@@ -47,24 +47,25 @@
     <md-chips
             flex
             ng-model="item.tags"
-            readonly="false">
+            readonly="false"
+            md-autocomplete-snap
+            md-require-match="true"
+            required>
         <md-autocomplete
-                required
                 md-autoselect
-                md-min-length="3"
+                md-min-length="2"
                 md-search-text="query"
-                md-selected-item="tag._id"
                 md-items="tag in getTags(query)"
                 ng-attr-placeholder="{{item.tags.length ? 'Maybe, more?' : 'Add a category'}}">
             <div md-highlight-text="query">
-                {{tag.brand.name}} {{tag.name}}
+                {{tag.name}}
                 {{tag.category ? '@ '+tag.category.name : ''}}
                 {{tag.subCategory ? '/ ' + tag.subCategory.name : ''}}
             </div>
         </md-autocomplete>
         <md-chip-template>
             <div>
-                <strong>{{$chip.brand.name}} {{$chip.name}}</strong>
+                <strong>{{$chip.name}}</strong>
                 <em>
                     {{$chip.category ? '('+$chip.category.name : ''}}{{$chip.subCategory ? ', ' + $chip.subCategory.name+')' : ''}}
                 </em>

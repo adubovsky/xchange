@@ -11,7 +11,7 @@ app.factory('Model', ['$http', '$q', 'BasicModel', function ($http, $q, BasicMod
     };
 
     Model.prototype.isValid = function () {
-        return !!(this.name && this.categoryId && this.subCategoryId && this.brandId);
+        return !!(this.name && this.category && this.subCategory && this.brand);
     };
 
     Model.get = function () {
