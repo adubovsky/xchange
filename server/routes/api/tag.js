@@ -5,55 +5,68 @@ var express = require('express'),
     router = express.Router(),
     isAuth = require('../../middleware/auth'),
     deferred = require('deferred'),
-    TagCollection = require('../../collections/tags');
+    Tag = require('../../models/tag');
 
 router.get('/', function (req, res) {
-    var query = req.query.searchQuery,
-        findModels = deferred(),
-        findBrands = deferred(),
-        findCategories = deferred();
+    var query = req.query.searchQuery;
+
+
+});
+
+router.get('/updateTags', isAuth('admin'), function (req, res) {
+    var defModels = deferred(),
+        defBrands = deferred(),
+        defCategories = deferred();
+    Tag
+        .find({})
+        .remove()
+        .exec();
 
     Model
-        .find({
-            name: new RegExp(query, 'i')
-        })
-        .populate('brandId categoryId subCategoryId')
+        .find({})
+        .populate('brand category subCategory')
         .exec(function (err, models) {
-            findModels.resolve(models);
+            var tags = [];
+            models.forEach(function (model) {
+                var tag = Tag.new('Model', model);
+                tags.push(tag);
+                tag.save();
+            });
+            defModels.resolve(true);
         });
 
     Brand
-        .find({
-            name: new RegExp(query, 'i')
-        })
-        .populate('categoryId subCategoryId')
+        .find({})
+        .populate('category subCategory')
         .exec(function (err, brands) {
-            findBrands.resolve(brands);
+            var tags = [];
+            brands.forEach(function (model) {
+                var tag = Tag.new('Brand', model);
+                tags.push(tag);
+                tag.save();
+            });
+            defBrands.resolve(true);
         });
-
     Category
-        .find({
-            name: new RegExp(query, 'i')
-        })
+        .find({})
         .populate('parent')
         .exec(function (err, categories) {
-            findCategories.resolve(categories);
+            var tags = [];
+            categories.forEach(function (model) {
+                var tag = Tag.new('Category', model);
+                tags.push(tag);
+                tag.save();
+            });
+            defCategories.resolve(true);
         });
-
-    Promise.all([findModels.promise, findBrands.promise, findCategories.promise]).then(function (values) {
-        var tags = new TagCollection(),
-        //[models, brands, categories] = values; Todo: waiting for destructing feature
-            models = values[0],
-            brands = values[1],
-            categories = values[2];
-
-        tags.add('model', models);
-        tags.add('brand', brands);
-        tags.add('category', categories);
-
+    Promise.all([defModels.promise, defBrands.promise, defCategories.promise]).then(function (values) {
         res.json({
             success: true,
-            tags: tags.getAll()
+            saved: {
+                models: values[0],
+                brands: values[1],
+                categories: values[2]
+            }
         });
     });
 });

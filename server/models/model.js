@@ -4,15 +4,15 @@ var mongoose = require('mongoose'),
 var Model = new Schema({
     name: String,
     description: String,
-    categoryId: {
+    category: {
         type: Schema.Types.ObjectId,
         ref: 'Category'
     },
-    subCategoryId: {
+    subCategory: {
         type: Schema.Types.ObjectId,
         ref: 'Category'
     },
-    brandId: {
+    brand: {
         type: Schema.Types.ObjectId,
         ref: 'Brand'
     }
