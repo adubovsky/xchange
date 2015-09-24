@@ -9,6 +9,22 @@
   }
 }
 
+.autocomplete-tags{
+  li{
+    height: 48px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+  }
+  &__name{
+    font-weight: 600;
+  }
+  &__category{
+    font-weight: 200;
+  }
+}
+
 .items-grid-item {
   overflow: hidden;
   &__preview {

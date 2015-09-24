@@ -36,9 +36,6 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
         }
     });
 
-    $scope.$watch('item.tags', function (value) {
-       console.log( value );
-    });
     $scope.save = function (item) {
         item[!updating ? 'save' : 'update']()
             .then(function (response) {

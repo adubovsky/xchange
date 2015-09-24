@@ -56,18 +56,32 @@
                 md-min-length="2"
                 md-search-text="query"
                 md-items="tag in getTags(query)"
-                ng-attr-placeholder="{{item.tags.length ? 'Maybe, more?' : 'Add a category'}}">
-            <div md-highlight-text="query">
-                {{tag.name}}
-                {{tag.category ? '@ '+tag.category.name : ''}}
-                {{tag.subCategory ? '/ ' + tag.subCategory.name : ''}}
-            </div>
+                ng-attr-placeholder="{{item.tags.length ? 'Maybe, more?' : 'Add a category'}}"
+                md-menu-class="autocomplete-tags">
+            <md-item-template>
+                <span class="autocomplete-tags__name"
+                      md-highlight-text="$parent.tagSearchQuery"
+                      layout="column"
+                      layout-align="center start"
+                      flex>
+                    {{tag.name}}
+                </span>
+                <span class="autocomplete-tags__category"
+                      ng-show="tag.category"
+                        flex="50">
+                    {{tag.category.name}}{{tag.subCategory ? ', ' + tag.subCategory.name : ''}}
+                </span>
+            </md-item-template>
+            <md-not-found>
+                <span flex layout="column"
+                      layout-align="center start">No matches found.</span>
+            </md-not-found>
         </md-autocomplete>
         <md-chip-template>
             <div class="md-caption">
                 <strong>{{$chip.name}}</strong>
                 <em>
-                    {{$chip.category ? '('+$chip.category.name : ''}}{{$chip.subCategory ? ', ' + $chip.subCategory.name+')' : ')'}}
+                    {{$chip.category ? $chip.category.name : ''}}{{$chip.subCategory ? ', ' + $chip.subCategory.name : ''}}
                 </em>
             </div>
         </md-chip-template>
