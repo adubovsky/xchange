@@ -60,16 +60,16 @@
                 md-menu-class="autocomplete-tags">
             <md-item-template>
                 <span class="autocomplete-tags__name"
-                      md-highlight-text="$parent.tagSearchQuery"
+                      md-highlight-text="query"
                       layout="column"
                       layout-align="center start"
                       flex>
                     {{tag.name}}
                 </span>
                 <span class="autocomplete-tags__category"
-                      ng-show="tag.category"
+                      ng-show="tag.parents.category"
                         flex="50">
-                    {{tag.category.name}}{{tag.subCategory ? ', ' + tag.subCategory.name : ''}}
+                    {{tag.parents.category.name}}{{tag.parents.subCategory ? ', ' + tag.parents.subCategory.name : ''}}
                 </span>
             </md-item-template>
             <md-not-found>
@@ -81,7 +81,7 @@
             <div class="md-caption">
                 <strong>{{$chip.name}}</strong>
                 <em>
-                    {{$chip.category ? $chip.category.name : ''}}{{$chip.subCategory ? ', ' + $chip.subCategory.name : ''}}
+                    {{$chip.parents.category ? $chip.parents.category.name : ''}}{{$chip.parents.subCategory ? ', ' + $chip.parents.subCategory.name : ''}}
                 </em>
             </div>
         </md-chip-template>

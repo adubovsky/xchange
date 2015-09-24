@@ -63,7 +63,7 @@ router.get('/:id', function (req, res) {
         .populate('tags')
         .exec(function (err, item) {
             Tag
-                .populate(item.tags, 'brand subCategory category', function (err, tags) {
+                .populate(item.tags, 'parents.brand parents.subCategory parents.category', function (err, tags) {
                     item.tags = tags;
                     res.json({
                         success: true,

@@ -7,45 +7,43 @@ var Tag = new Schema({
     rel: Schema.Types.ObjectId,
     type: {
         type: String,
-        enum: ['Model', 'Brand', 'Category']
+        enum: ['model', 'brand', 'subCategory', 'category']
     },
-    category: {
-        type: Schema.Types.ObjectId,
-        ref: 'Category'
-    },
-    subCategory: {
-        type: Schema.Types.ObjectId,
-        ref: 'Category'
-    },
-    brand: {
-        type: Schema.Types.ObjectId,
-        ref: 'Brand'
-    },
-    model: {
-        type: Schema.Types.ObjectId,
-        ref: 'Model'
+    parents: {
+        category: {
+            type: Schema.Types.ObjectId,
+            ref: 'Category'
+        },
+        subCategory: {
+            type: Schema.Types.ObjectId,
+            ref: 'Category'
+        },
+        brand: {
+            type: Schema.Types.ObjectId,
+            ref: 'Brand'
+        }
     }
 });
 
 Tag.statics.new = function (type, instance) {
     var tag = new this();
 
-    tag.name = type === 'Model' ? [instance.brand.name, instance.name].join(' ') : instance.name;
+    tag.name = type === 'model' ? [instance.brand.name, instance.name].join(' ') : instance.name;
     tag.type = type;
     tag.rel = instance._id;
 
-    if (type === 'Category') {
-        tag.category = instance.parent ? instance.parent : null;
+    if (type === 'subCategory' || type === 'category') {
+        tag.parents.category = instance.parent;
     } else {
-        tag.category = instance.category;
+        tag.parents.category = instance.category;
     }
 
     if (instance.subCategory) {
-        tag.subCategory = instance.subCategory;
+        tag.parents.subCategory = instance.subCategory;
     }
 
     if (instance.brand) {
-        tag.brand = instance.brand._id;
+        tag.parents.brand = instance.brand._id;
     }
     return tag;
 };

@@ -51,7 +51,7 @@ router.put('/', isAuth('admin'), function (req, res) {
         });
         //Append new tag
         Tag
-            .new('Category', category)
+            .new(category.parent ? 'subCategory' : 'category', category)
             .save();
     });
 });

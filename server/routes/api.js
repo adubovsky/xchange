@@ -9,7 +9,8 @@ var express = require('express'),
     'category',
     'brand',
     'model',
-    'tag'
+    'tag',
+    'wish'
 ].forEach(function (routeName) {
         router.use('/'+routeName, require('./api/'+routeName));
     });

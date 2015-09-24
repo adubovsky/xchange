@@ -1,14 +1,39 @@
 var app = require('../app');
 
-app.controller('MyWishesController', ['$scope', 'currentUser', 'Wish', function ($scope, currentUser, Wish) {
+app.controller('MyWishesController', ['$scope', 'currentUser', 'Wish', 'Item', function ($scope, currentUser, Wish, Item) {
+    var getWishes = function () {
+            Wish.get({user: currentUser.getId()})
+                .then(function (wishes) {
+                    $scope.wishes = wishes;
+                });
+        },
+        clearForm = function () {
+            $scope.newWish = new Wish();
+            $scope.query = '';
+        };
+
     $scope.newWish = new Wish();
 
+    $scope.getTags = Item.getTags;
+
     $scope.save = function (wish) {
-        console.log(wish);
-        $scope.wishes.push(wish);
-        $scope.newWish = new Wish();
-        $scope.selectedItem = null;
+        if (!wish.isValid()) {
+            return;
+        }
+
+        wish.save()
+            .then(function () {
+                console.log('Saved!');
+                clearForm();
+                getWishes();
+            },
+            function (error) {
+                clearForm();
+                console.error(error.data);
+            });
     };
 
-    $scope.wishes = [];
+    getWishes();
+
+
 }]);

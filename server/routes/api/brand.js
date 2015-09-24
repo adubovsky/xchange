@@ -20,7 +20,7 @@ router.put('/', isAuth('admin'), function (req, res) {
         });
         //Append new tag
         Tag
-            .new('Brand', brand)
+            .new('brand', brand)
             .save();
     });
 });

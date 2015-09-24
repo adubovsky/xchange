@@ -32,7 +32,7 @@ router.put('/', isAuth('admin'), function (req, res) {
                     });
                     //Append new tag
                     Tag
-                        .new('Model', model)
+                        .new('model', model)
                         .save();
                     console.log('%s brand is updated.', brand.name);
                 });

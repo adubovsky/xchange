@@ -1,25 +1,29 @@
 <div class="my-wishes">
     <form ng-submit="save(newWish)"
-            layout="row"
-            layout-align="center center">
+          layout="row"
+          layout-align="center center">
         <md-autocomplete flex
                          required
                          md-autoselect
+                         md-selected-item="newWish.tag"
                          md-no-cache="true"
-                         md-search-text="newWish.name"
+                         md-search-text="query"
                          md-min-length="2"
-                         md-items="item in ['iPhone', 'Google Nexus']"
-                         md-item-text="item"
+                         md-items="tag in getTags(query)"
+                         md-item-text="tag.name"
                          placeholder="Add new wish">
             <md-item-template>
-                <span md-highlight-text="newWish.name">{{item}}</span>
+                <span md-highlight-text="query">{{tag.name}}</span>
             </md-item-template>
         </md-autocomplete>
     </form>
 
     <md-list>
         <md-list-item ng-repeat="wish in wishes">
-            {{wish.name}}
+            {{wish.category.name}} \
+            {{wish.subCategory.name}} \
+            {{wish.brand.name}} \
+            {{wish.model.name}}
         </md-list-item>
     </md-list>
 </div>
