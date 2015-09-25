@@ -1,4 +1,4 @@
 .content{
-  min-height: $content-min-height;
+  min-height: var(--content-min-height);
   box-sizing: border-box;
 }

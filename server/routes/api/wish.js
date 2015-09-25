@@ -34,6 +34,7 @@ router.get('/', function (req, res) {
     Wish
         .find(query)
         .populate('model brand subCategory category', 'name -_id')
+        .select('-user -__v')
         .exec()
         .then(function (wishes) {
             res.json({

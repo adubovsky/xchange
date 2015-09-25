@@ -162,7 +162,8 @@ module.exports = function (grunt) {
                     map: false,
                     processors: [
                         require('postcss-import'),
-                        require('postcss-simple-vars'),
+                        require("postcss-cssnext"),
+                        require("postcss-calc"),
                         require('postcss-nested'),
                         require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
                         require('cssnano')
@@ -176,7 +177,8 @@ module.exports = function (grunt) {
                     map: true,
                     processors: [
                         require('postcss-import'),
-                        require('postcss-simple-vars'),
+                        require("postcss-cssnext"),
+                        require("postcss-calc"),
                         require('postcss-nested'),
                         require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
                     ]

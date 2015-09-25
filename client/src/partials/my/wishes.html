@@ -19,11 +19,27 @@
     </form>
 
     <md-list>
-        <md-list-item ng-repeat="wish in wishes">
-            {{wish.category.name}} \
-            {{wish.subCategory.name}} \
-            {{wish.brand.name}} \
-            {{wish.model.name}}
+        <md-list-item ng-repeat="wish in wishes"
+                      layout="column"
+                      layout-align="start start">
+            <div class="wish__levels"
+                 layout="row"
+                 layout-align="space-between center">
+                <span flex="25" class="wish__level">{{wish.category.name}}</span>
+                <span flex="25" class="wish__level" ng-class="{'wish__level--invisible': !wish.subCategory}">{{wish.subCategory.name}}</span>
+                <span flex="25" class="wish__level" ng-class="{'wish__level--invisible': !wish.brand}">{{wish.brand.name}}</span>
+                <span flex="25" class="wish__level" ng-class="{'wish__level--invisible': !wish.model}">{{wish.brand.name}} {{wish.model.name}}</span>
+            </div>
+            <md-slider class="wish__slider"
+                       ng-class="{
+                         'wish__slider--to-brand': wish.type === 'brand',
+                         'wish__slider--to-sub-category': wish.type === 'subCategory',
+                         'wish__slider--to-category': wish.type === 'category'
+                       }"
+                       ng-model="wish.level.current"
+                       min="0"
+                       ng-attr-max="{{wish.level.max}}"
+                       aria-label="Wish searching level"></md-slider>
         </md-list-item>
     </md-list>
 </div>

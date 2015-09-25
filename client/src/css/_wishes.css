@@ -1,0 +1,31 @@
+:root {
+  --wish-width: 100%;
+  --slider-base-width: calc(var(--wish-width) * 0.75);
+}
+.wish {
+
+  &__levels{
+    width: var(--wish-width);
+    text-align: center;
+  }
+  &__slider{
+    width: var(--slider-base-width);
+    margin-left: calc((var(--wish-width) - var(--slider-base-width)) / 2);
+    &--to-brand{
+      width: calc(var(--slider-base-width) / 3 * 2)
+    }
+    &--to-sub-category{
+      width: calc(var(--slider-base-width) / 3 * 1)
+    }
+    &--to-category{
+      display: none
+    }
+  }
+
+  &__level{
+    &--invisible{
+      visibility: hidden;
+    }
+  }
+
+}

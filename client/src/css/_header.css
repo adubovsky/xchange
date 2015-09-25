@@ -1,6 +1,6 @@
 .header{
-  height: $header-height;
-  max-height: $header-height;
+  height: var(--header-height);
+  max-height: var(--header-height);
   padding: 0;
 
   &__search-line{
@@ -19,11 +19,11 @@
   transition: all .1s ease;
 
   text-align: center;
-  background-color: $header-line-bg;
-  color: $white;
+  background-color: var(--header-line-bg);
+  color: var(--white);
   margin: 0;
   padding-right:0;
-  width: $sidebar-width;
+  width: var(--sidebar-width);
 
   &--sm{
     width: auto;
@@ -40,7 +40,7 @@
 }
 
 .user-menu{
-  height: $header-height;
+  height: var(--header-height);
   md-menu{
     padding: 0;
   }
@@ -50,7 +50,7 @@
     border-radius: 50%;
     margin-right: .33em;
     md-icon{
-      color: $header-line-bg
+      color: var(--header-line-bg)
     }
   }
   &__toggler{
@@ -58,7 +58,7 @@
     cursor: pointer;
     line-height: normal;
     margin: 0;
-    height: $header-height;
+    height: var(--header-height);
     white-space: normal;
     text-transform: none;
   }
