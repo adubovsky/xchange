@@ -10,7 +10,8 @@ var express = require('express'),
     'brand',
     'model',
     'tag',
-    'wish'
+    'wish',
+    'trade'
 ].forEach(function (routeName) {
         router.use('/'+routeName, require('./api/'+routeName));
     });

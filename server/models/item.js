@@ -11,7 +11,11 @@ var Item = new Schema({
     tags: [{
         type: Schema.Types.ObjectId,
         ref: 'Tag'
-    }]
+    }],
+    createDate: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 module.exports = mongoose.model('Item', Item);

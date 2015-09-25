@@ -4,7 +4,7 @@ var express = require('express'),
     router = express.Router(),
     isAuth = require('../../middleware/auth');
 
-router.put('/', function (req, res) {
+router.put('/', isAuth(), function (req, res) {
     var tagId = req.body.tag._id,
         wish;
 
@@ -29,7 +29,7 @@ router.put('/', function (req, res) {
         });
 });
 
-router.get('/', function (req, res) {
+router.get('/', isAuth(),function (req, res) {
     var query = req.query || {};
     Wish
         .find(query)

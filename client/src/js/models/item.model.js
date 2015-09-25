@@ -95,5 +95,20 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', fu
         });
     };
 
+    Item.prototype.newTrade = function (offeredItems) {
+        var tradeUser = this.userId,
+            required = [this];
+
+        $http.put('/api/trade', {
+            tradeUser: tradeUser,
+            required: required,
+            offered: offeredItems
+        }).then(function (response) {
+            if (response.success) {
+                console.log( 'Trade offered!', response.trade );
+            }
+        });
+    };
+
     return Item;
 }]);

@@ -6,10 +6,14 @@ var Account = new Schema({
     username: String,
     password: String,
     name: String,
-    role: String
+    role: String,
+    registerDate: {
+        type: Date,
+        default: Date.now
+    }
 });
 
-Account.methods.toJSON = function() {
+Account.methods.toJSON = function () {
     var obj = this.toObject();
     delete obj.salt;
     delete obj.hash;
