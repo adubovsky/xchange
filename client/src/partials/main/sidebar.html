@@ -24,5 +24,11 @@
             <md-icon md-svg-icon="action:ic_grade_24px"></md-icon>
             <label flex>Wishlist</label>
         </li>
+        <li menu-item
+            ui-sref="/my/trades"
+            ng-show="user.isLogged">
+            <md-icon md-svg-icon="action:ic_swap_horiz_24px"></md-icon>
+            <label flex>Trades</label>
+        </li>
     </ul>
 </md-sidenav>

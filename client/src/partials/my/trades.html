@@ -1,0 +1,75 @@
+<div class="my-trades">
+    <h3>Requests to me:</h3>
+    <md-list>
+        <md-list-item ng-repeat="trade in requests">
+            {{trade.offered}} {{trade.requested}}
+        </md-list-item>
+    </md-list>
+
+    <h3>My offers:</h3>
+
+    <div ng-repeat="trade in offers">
+        <md-grid-list
+                class="items-grid"
+                md-cols-gt-md="6"
+                md-cols-sm="3"
+                md-cols-md="5"
+                md-row-height-gt-md="1:1"
+                md-row-height="1:1"
+                md-gutter-gt-md="4px"
+                md-gutter-gt-sm="4px"
+                md-gutter="2px">
+            <md-grid-tile class="items-grid-item"
+                          ng-repeat="item in trade.offered"
+                          ui-sref="/item/details({id: item.getId()})">
+                <img ng-src="/images/{{item.imageId}}"
+                     class="items-grid-item__preview">
+
+                <md-grid-tile-footer layout-padding
+                                     class="items-grid-item__footer"
+                                     layout="column"
+                                     layout-align="center start">
+                    <div class="md-body1"
+                         flex>
+                        {{item.title}}
+                    </div>
+                    <div class="md-caption items-grid-item__footer-description"
+                         flex>
+                        {{item.description}}
+                    </div>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+        </md-grid-list>
+        <md-grid-list
+                class="items-grid"
+                md-cols-gt-md="6"
+                md-cols-sm="3"
+                md-cols-md="5"
+                md-row-height-gt-md="1:1"
+                md-row-height="1:1"
+                md-gutter-gt-md="4px"
+                md-gutter-gt-sm="4px"
+                md-gutter="2px">
+            <md-grid-tile class="items-grid-item"
+                          ng-repeat="item in trade.requested"
+                          ui-sref="/item/details({id: item.getId()})">
+                <img ng-src="/images/{{item.imageId}}"
+                     class="items-grid-item__preview">
+
+                <md-grid-tile-footer layout-padding
+                                     class="items-grid-item__footer"
+                                     layout="column"
+                                     layout-align="center start">
+                    <div class="md-body1"
+                         flex>
+                        {{item.title}}
+                    </div>
+                    <div class="md-caption items-grid-item__footer-description"
+                         flex>
+                        {{item.description}}
+                    </div>
+                </md-grid-tile-footer>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+</div>

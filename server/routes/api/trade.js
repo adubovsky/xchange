@@ -19,4 +19,17 @@ router.put('/', isAuth(), function (req, res) {
         })
 });
 
+router.get('/', function (req, res) {
+    var query = req.query || {};
+
+    Trade
+        .find(query)
+        .populate('offered requested')
+        .exec(function (err, trades) {
+        res.json({
+            success: true,
+            trades: trades
+        });
+    });
+});
 module.exports = router;

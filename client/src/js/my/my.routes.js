@@ -13,5 +13,11 @@ app.config(['$stateProvider', function ($stateProvider) {
             templateUrl: "/partials/my/wishes.html",
             controller: 'MyWishesController',
             authRequired: true
+        })
+        .state('/my/trades', {
+            url: "/my/trades",
+            templateUrl: "/partials/my/trades.html",
+            controller: 'MyTradesController',
+            authRequired: true
         });
 }]);

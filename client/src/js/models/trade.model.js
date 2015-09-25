@@ -29,6 +29,14 @@ app.factory('Trade', ['$http', '$q', 'BasicModel', 'currentUser', function ($htt
         return defer.promise;
     };
 
+    Trade.getOffers = function () {
+        return Trade.get({user: currentUser.getId()});
+    };
+
+    Trade.getRequests = function () {
+        return Trade.get({tradeUser: currentUser.getId()});
+    };
+
     Trade.prototype.has = function (item) {
         return this.offered.indexOf(item) > -1;
     };
