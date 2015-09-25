@@ -11,7 +11,7 @@ var Trade = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Item'
     }],
-    required: [{
+    requested: [{
         type: Schema.Types.ObjectId,
         ref: 'Item'
     }],

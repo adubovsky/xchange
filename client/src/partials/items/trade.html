@@ -1,0 +1,24 @@
+<h2>New trade:</h2>
+<form ng-submit="send(trade)">
+    <div layout="row"
+         layout-align="start center">
+        <div class='offered-items'
+             flex="50">
+            <div ng-repeat="item in items">
+                <md-checkbox ng-checked="trade.has(item)" ng-click="trade.toggle(item)">
+                    {{item.title}}
+                </md-checkbox>
+            </div>
+        </div>
+        <div class='requested-items'
+             flex="50">
+            <div ng-repeat="item in trade.requested">
+                {{item.title}}
+            </div>
+        </div>
+    </div>
+
+    <md-button class="md-button md-raised md-primary"
+               type="submit"
+               ng-disabled="!trade.isValid()">Offer a trade</md-button>
+</form>

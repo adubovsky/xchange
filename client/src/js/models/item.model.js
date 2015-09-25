@@ -48,6 +48,14 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', fu
         return deferred.promise;
     };
 
+    Item.getByIds = function (ids) {
+        return Item.get({ids: ids});
+    };
+
+    Item.getByUserId = function (userId) {
+        return Item.get({userId: userId});
+    };
+
     Item.getTags = function (query) {
         var deferred = $q.defer();
         $http.get('/api/tag', {
@@ -97,15 +105,15 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', fu
 
     Item.prototype.newTrade = function (offeredItems) {
         var tradeUser = this.userId,
-            required = [this];
+            requested = [this];
 
         $http.put('/api/trade', {
             tradeUser: tradeUser,
-            required: required,
+            requested: requested,
             offered: offeredItems
         }).then(function (response) {
             if (response.success) {
-                console.log( 'Trade offered!', response.trade );
+                console.log('Trade offered!', response.trade);
             }
         });
     };

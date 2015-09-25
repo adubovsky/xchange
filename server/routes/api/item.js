@@ -49,6 +49,13 @@ router.post('/', isAuth(), parseImage('photoUrl', 'imageId'), function (req, res
 
 router.get('/', function (req, res) {
     var query = req.query || {};
+    if(query.ids){
+        query = {
+            _id: {
+                $in: query.ids
+            }
+        };
+    }
     Item.find(query, function (err, items) {
         res.json({
             success: true,

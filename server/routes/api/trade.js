@@ -5,8 +5,8 @@ var express = require('express'),
 /**
  * new trade api
  *   offered {Array} array of items which current user offers
- *   required {Array} array of items which current user needs
- *   tradeUser {userId} id of user who has been offered
+ *   requested {Array} array of items which current user needs
+ *   tradeUser {userId} id of user whose items have been requested
  */
 router.put('/', isAuth(), function (req, res) {
     var trade = new Trade(req.body);

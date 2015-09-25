@@ -4,8 +4,12 @@
         flex>
         {{item.title}}
     </h2>
-
-    <div ng-if="user._id === item.userId"
+    <md-button ng-if="item && user.isLogged && user._id !== item.userId"
+               class="md-raised md-primary"
+               ui-sref=".trade">
+        Make a Trade
+    </md-button>
+    <div ng-if="item && user.isLogged && user._id === item.userId"
          layout="row"
          layout-align="center center">
         <md-button class="md-raised"

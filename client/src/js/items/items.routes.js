@@ -22,5 +22,15 @@ app.config(['$stateProvider', function ($stateProvider) {
                     controller: 'ItemAddController'
                 }
             }
+        })
+        .state('/item/details.trade', {
+            authRequired: true,
+            url: "/trade",
+            views: {
+                '@': {
+                    templateUrl: "/partials/items/trade.html",
+                    controller: 'ItemTradeController'
+                }
+            }
         });
 }]);
