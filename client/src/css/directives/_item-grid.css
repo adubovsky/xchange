@@ -1,0 +1,7 @@
+:root{
+  --item-grid-container-min-width: 100px;
+}
+.item-grid-container{
+  min-width: var(--item-grid-container-min-width);
+  min-height: var(--item-grid-container-min-width);
+}

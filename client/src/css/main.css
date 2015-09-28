@@ -5,4 +5,6 @@
 @import "_content";
 @import "_items";
 @import "_wishes";
+@import "_trades";
 @import "directives/_menu-item";
+@import "directives/_item-grid.css";

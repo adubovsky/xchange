@@ -1,0 +1,5 @@
+.trade-list{
+  &__trade-icon{
+    margin: 0;
+  }
+}
