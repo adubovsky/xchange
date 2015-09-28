@@ -1,24 +1,46 @@
 <div class="my-trades">
-    <h3>Requests to me:</h3>
+    <h3 ng-show="requests.length">Requests to me:</h3>
 
-    <div ng-repeat="trade in requests">
-        <item-grid items="trade.offered"
-                   flex="50"></item-grid>
-        <md-icon flex md-svg-icon="action:ic_swap_horiz_24px"></md-icon>
-        <item-grid items="trade.requested"
-                   flex="50"></item-grid>
+    <div ng-repeat="trade in requests"
+         layout="row"
+         layout-align="start center"
+         class="trade-item"
+         layout-padding
+         ng-class="{'trade-item--pending': trade.pending(),
+         'trade-item--confirmed': trade.confirmed(),
+         'trade-item--rejected': trade.rejected()}">
+        <item-grid items="trade.offered"></item-grid>
+        <md-icon md-svg-icon="action:ic_swap_horiz_24px"
+                 class="trade-item__trade-icon"></md-icon>
+        <item-grid items="trade.requested"></item-grid>
+
+        <div ng-show="trade.pending()">
+            <md-button class="md-raised md-primary"
+                       ng-click="confirm(trade)">
+                Confirm
+            </md-button>
+            <md-button class="md-raised md-accent"
+                       ng-click="reject(trade)">
+                Reject
+            </md-button>
+        </div>
     </div>
 
-    <h3>My offers:</h3>
+    <h3 ng-show="offers.length">My offers:</h3>
 
     <div ng-repeat="trade in offers"
          layout="row"
          layout-align="start center"
-         class="trade-list"
-         layout-padding>
+         class="trade-item"
+         layout-padding
+         ng-class="{'trade-item--pending': trade.pending()}">
         <item-grid items="trade.offered"></item-grid>
         <md-icon md-svg-icon="action:ic_swap_horiz_24px"
-                 class="trade-list__trade-icon"></md-icon>
+                 class="trade-item__trade-icon"></md-icon>
         <item-grid items="trade.requested"></item-grid>
+
+        <md-button class="md-raised md-accent">
+            Delete
+        </md-button>
     </div>
 </div>

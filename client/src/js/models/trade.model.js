@@ -51,5 +51,23 @@ app.factory('Trade', ['$http', '$q', 'BasicModel', 'currentUser', function ($htt
         }
     };
 
+    Trade.prototype.pending = function () {
+        return this.status === 'pending';
+    };
+    Trade.prototype.confirmed = function () {
+        return this.status === 'confirmed';
+    };
+    Trade.prototype.rejected = function () {
+        return this.status === 'rejected';
+    };
+
+    Trade.prototype.confirm = function () {
+        return $http.post('api/trade', {_id: this.getId(), confirm: true});
+    };
+
+    Trade.prototype.reject = function () {
+        return $http.post('api/trade', {_id: this.getId(), reject: true});
+    };
+
     return Trade;
 }]);

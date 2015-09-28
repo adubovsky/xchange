@@ -30,5 +30,15 @@ var Trade = new Schema({
     }
 });
 
+Trade.virtual('confirm').set(function (value) {
+    if(value){
+        this.status = 'confirmed';
+    }
+});
+Trade.virtual('reject').set(function (value) {
+    if(value){
+        this.status = 'rejected';
+    }
+});
 
 module.exports = mongoose.model('Trade', Trade);
