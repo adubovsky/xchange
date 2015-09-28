@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 var Trade = new Schema({
     user: {
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'Account'
     },
     offered: [{
         type: Schema.Types.ObjectId,
@@ -17,7 +17,7 @@ var Trade = new Schema({
     }],
     tradeUser: {
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'Account'
     },
     offerDate: {
         type: Date,

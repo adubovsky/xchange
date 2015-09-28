@@ -29,6 +29,21 @@ app.factory('Trade', ['$http', '$q', 'BasicModel', 'currentUser', function ($htt
         return defer.promise;
     };
 
+    Trade.getById = function (id) {
+        var defer = $q.defer();
+
+        $http.get(['/api/trade', id].join('/'))
+            .then(function (response) {
+                if (response.data.success) {
+                    defer.resolve(response.data.trade);
+                }
+                else {
+                    defer.reject(response.data);
+                }
+            });
+        return defer.promise;
+    };
+
     Trade.getOffers = function () {
         return Trade.get({user: currentUser.getId()});
     };

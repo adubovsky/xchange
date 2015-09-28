@@ -1,0 +1,19 @@
+<a ui-sref="^"
+   class="md-button">
+    <md-icon md-svg-icon="navigation:ic_chevron_left_24px"></md-icon>
+    Back to trades
+</a>
+
+<div class="trade-details">
+    <span ng-show="trade.confirmed()">Confirmed</span>
+    <span ng-show="trade.pending()">Pending</span>
+    <span ng-show="trade.rejected()">Rejected</span>
+    <div layout="row"
+         layout-align="start center"
+         class="trade-item">
+        <item-grid items="trade.offered"></item-grid>
+        <md-icon md-svg-icon="action:ic_swap_horiz_24px"
+                 class="trade-item__trade-icon"></md-icon>
+        <item-grid items="trade.requested"></item-grid>
+    </div>
+</div>

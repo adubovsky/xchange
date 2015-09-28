@@ -24,6 +24,9 @@
                 Reject
             </md-button>
         </div>
+
+        <a class="md-button"
+           ui-sref=".details({id: trade.getId()})">Trade details</a>
     </div>
 
     <h3 ng-show="offers.length">My offers:</h3>
@@ -42,5 +45,8 @@
         <md-button class="md-raised md-accent">
             Delete
         </md-button>
+
+        <a class="md-button"
+           ui-sref=".details({id: trade.getId()})">Trade details</a>
     </div>
 </div>

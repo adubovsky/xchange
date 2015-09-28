@@ -24,11 +24,25 @@ router.get('/', function (req, res) {
 
     Trade
         .find(query)
-        .populate('offered requested')
+        .populate('offered requested user tradeUser')
         .exec(function (err, trades) {
             res.json({
                 success: true,
                 trades: trades
+            });
+        });
+});
+
+router.get('/:id', function (req, res) {
+    var id = req.params.id;
+
+    Trade
+        .findById(id)
+        .populate('offered requested user tradeUser')
+        .exec(function (err, trade) {
+            res.json({
+                success: true,
+                trade: trade
             });
         });
 });
