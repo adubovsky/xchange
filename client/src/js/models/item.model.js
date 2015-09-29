@@ -33,21 +33,6 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', fu
         return ['/images', this.imageId].join('/');
     };
 
-    Item.getById = function (id) {
-        var deferred = $q.defer();
-        $http.get(['/api/item', id].join('/'))
-            .then(function (response) {
-                var data = response.data,
-                    item = new Item();
-                if (data.success) {
-                    item.set(data.item);
-                    deferred.resolve(item);
-                }
-            });
-
-        return deferred.promise;
-    };
-
     Item.getByIds = function (ids) {
         return Item.get({ids: ids});
     };
@@ -71,20 +56,8 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', fu
         return deferred.promise;
     };
 
-    Item.get = function (options) {
-        var defer = $q.defer();
-
-        $http.get('/api/item', {params: options})
-            .then(function (response) {
-                if (response.data.success) {
-                    defer.resolve(response.data.items);
-                }
-                else {
-                    defer.reject(response.data);
-                }
-            });
-        return defer.promise;
-    };
+    Item.get = BasicModel.get('/api/item', 'items');
+    Item.getById = BasicModel.get('/api/item', 'item');
 
     Item.prototype.deleteConfirm = function (ev) {
         var item = this,
@@ -100,21 +73,6 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', fu
             item.delete();
         }, function () {
             console.log('Cancelled!');
-        });
-    };
-
-    Item.prototype.newTrade = function (offeredItems) {
-        var tradeUser = this.userId,
-            requested = [this];
-
-        $http.put('/api/trade', {
-            tradeUser: tradeUser,
-            requested: requested,
-            offered: offeredItems
-        }).then(function (response) {
-            if (response.success) {
-                console.log('Trade offered!', response.trade);
-            }
         });
     };
 

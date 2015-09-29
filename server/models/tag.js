@@ -1,7 +1,7 @@
 "use strict";
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
-
+//Schema for tags (categorisation of items)
 var Tag = new Schema({
     name: String,
     rel: Schema.Types.ObjectId,
@@ -24,7 +24,12 @@ var Tag = new Schema({
         }
     }
 });
-
+/**
+ * Generates instance of new tag by passing instance (model, brand, subCategory or category) and type of instance
+ * @param type {string} type of instance
+ * @param instance {Model | Brand | Category} instance for new tag
+ * @returns {Tag.statics}
+ */
 Tag.statics.new = function (type, instance) {
     var tag = new this();
 

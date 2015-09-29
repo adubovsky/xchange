@@ -14,22 +14,7 @@ app.factory('Brand', ['$http', '$q', 'BasicModel', function ($http, $q, BasicMod
         return !!(this.name && this.category && this.subCategory);
     };
 
-    Brand.get = function (query) {
-        var defer = $q.defer();
-
-        $http.get('/api/brand', {
-            params: query
-        })
-            .then(function (response) {
-                if (response.data.success) {
-                    defer.resolve(response.data.brands);
-                }
-                else {
-                    defer.reject(response.data);
-                }
-            });
-        return defer.promise;
-    };
+    Brand.get = BasicModel.get('/api/brand', 'brands');
 
     return Brand;
 }]);

@@ -1,7 +1,7 @@
 "use strict";
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
-
+//Schema for wishes (Wishes have been used for trades suggesting system)
 var Wish = new Schema({
         type: {
             type: String,
@@ -36,7 +36,11 @@ var Wish = new Schema({
             virtuals: true
         }
     });
-
+/**
+ * Genereates instance of new wish by tag
+ * @param tag {Tag}
+ * @returns wish {Wish} instance of wish
+ */
 Wish.statics.new = function (tag) {
     var wish = new this(),
         types = wish.schema.path('type').enumValues;

@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
-
+//Schema of item's model (type)
 var Model = new Schema({
     name: String,
     description: String,

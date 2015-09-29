@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
-
+//Item schema
 var Item = new Schema({
     title: String,
     description: String,

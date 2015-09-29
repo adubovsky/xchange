@@ -14,20 +14,7 @@ app.factory('Model', ['$http', '$q', 'BasicModel', function ($http, $q, BasicMod
         return !!(this.name && this.category && this.subCategory && this.brand);
     };
 
-    Model.get = function () {
-        var defer = $q.defer();
-
-        $http.get('/api/model')
-            .then(function (response) {
-                if (response.data.success) {
-                    defer.resolve(response.data.models);
-                }
-                else {
-                    defer.reject(response.data);
-                }
-            });
-        return defer.promise;
-    };
+    Model.get = BasicModel.get('/api/model', 'models');
 
     return Model;
 }]);

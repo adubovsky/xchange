@@ -11,22 +11,7 @@ app.factory('Category', ['$http', '$q', 'BasicModel', function ($http, $q, Basic
         return !!(this.name);
     };
 
-    Category.get = function (query) {
-        var defer = $q.defer();
-
-        $http.get('/api/category', {
-            params: query
-        })
-            .then(function (response) {
-                if (response.data.success) {
-                    defer.resolve(response.data.categories);
-                }
-                else {
-                    defer.reject(response.data);
-                }
-            });
-        return defer.promise;
-    };
+    Category.get = BasicModel.get('/api/category', 'categories');
 
     return Category;
 }]);

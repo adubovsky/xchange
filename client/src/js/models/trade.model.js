@@ -14,35 +14,9 @@ app.factory('Trade', ['$http', '$q', 'BasicModel', 'currentUser', function ($htt
         return !!(this.offered.length);
     };
 
-    Trade.get = function (query) {
-        var defer = $q.defer();
+    Trade.get = BasicModel.get('/api/trade', 'trades');
 
-        $http.get('/api/trade', {params: query})
-            .then(function (response) {
-                if (response.data.success) {
-                    defer.resolve(response.data.trades);
-                }
-                else {
-                    defer.reject(response.data);
-                }
-            });
-        return defer.promise;
-    };
-
-    Trade.getById = function (id) {
-        var defer = $q.defer();
-
-        $http.get(['/api/trade', id].join('/'))
-            .then(function (response) {
-                if (response.data.success) {
-                    defer.resolve(response.data.trade);
-                }
-                else {
-                    defer.reject(response.data);
-                }
-            });
-        return defer.promise;
-    };
+    Trade.getById = BasicModel.get('/api/trade', 'trade');
 
     Trade.getOffers = function () {
         return Trade.get({user: currentUser.getId()});

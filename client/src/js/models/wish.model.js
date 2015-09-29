@@ -12,20 +12,7 @@ app.factory('Wish', ['$http', '$q', 'BasicModel', 'currentUser', function ($http
         return !!(this.tag);
     };
 
-    Wish.get = function (query) {
-        var defer = $q.defer();
-
-        $http.get('/api/wish', {params: query})
-            .then(function (response) {
-                if (response.data.success) {
-                    defer.resolve(response.data.wishes);
-                }
-                else {
-                    defer.reject(response.data);
-                }
-            });
-        return defer.promise;
-    };
+    Wish.get = BasicModel.get('/api/wish', 'wishes');
 
     return Wish;
 }]);

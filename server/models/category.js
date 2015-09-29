@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
-
+//Schema of item's categories and subcategories
 var Category = new Schema({
     name: String,
     description: String,
