@@ -1,6 +1,7 @@
 require('../models/user.model.js');
 require('../models/model.factory.js');
-require('./../models/item.model.js');
+require('../helpers/api.helper.js');
+require('../models/item.model.js');
 require('./add.ctrl.js');
 
 describe('Items', function () {

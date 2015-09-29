@@ -1,6 +1,6 @@
 var app = require('../app');
 
-app.factory('Category', ['$http', '$q', 'BasicModel', function ($http, $q, BasicModel) {
+app.factory('Category', ['$http', '$q', 'BasicModel','apiHelper', function ($http, $q, BasicModel,apiHelper) {
     var Category = BasicModel.new('Category');
 
     Category.prototype.save = function () {
@@ -11,7 +11,7 @@ app.factory('Category', ['$http', '$q', 'BasicModel', function ($http, $q, Basic
         return !!(this.name);
     };
 
-    Category.get = BasicModel.get('/api/category', 'categories');
+    Category.get = apiHelper.get('/api/category', 'categories');
 
     return Category;
 }]);

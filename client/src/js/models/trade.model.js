@@ -1,6 +1,6 @@
 var app = require('../app');
 
-app.factory('Trade', ['$http', '$q', 'BasicModel', 'currentUser', function ($http, $q, BasicModel, currentUser) {
+app.factory('Trade', ['$http', '$q', 'BasicModel', 'currentUser','apiHelper', function ($http, $q, BasicModel, currentUser,apiHelper) {
     var Trade = BasicModel.new('Trade', {
         offered: []
     });
@@ -14,9 +14,9 @@ app.factory('Trade', ['$http', '$q', 'BasicModel', 'currentUser', function ($htt
         return !!(this.offered.length);
     };
 
-    Trade.get = BasicModel.get('/api/trade', 'trades');
+    Trade.get = apiHelper.get('/api/trade', 'trades');
 
-    Trade.getById = BasicModel.get('/api/trade', 'trade');
+    Trade.getById = apiHelper.get('/api/trade', 'trade');
 
     Trade.getOffers = function () {
         return Trade.get({user: currentUser.getId()});

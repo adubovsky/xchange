@@ -43,9 +43,7 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
             });
     };
 
-    $scope.getTags = Item.getTags;
-
-    $scope.createChip = function ($chip) {
-        console.log( $chip );
+    $scope.getTags = function (query) {
+        return Item.getTags({searchQuery: query});
     };
 }]);

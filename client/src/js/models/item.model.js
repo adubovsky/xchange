@@ -1,6 +1,7 @@
 var app = require('../app');
 
-app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', function ($http, currentUser, $q, $mdDialog, BasicModel) {
+app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', 'apiHelper',
+    function ($http, currentUser, $q, $mdDialog, BasicModel, apiHelper) {
     /**
      * Item class
      * @param options {Object | Array} item fields json or collection of items
@@ -41,23 +42,15 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', fu
         return Item.get({userId: userId});
     };
 
-    Item.getTags = function (query) {
-        var deferred = $q.defer();
-        $http.get('/api/tag', {
-            params: {
-                searchQuery: query
-            }
-        })
-            .then(function (response) {
-                if (response.data.success) {
-                    deferred.resolve(response.data.tags);
-                }
-            });
-        return deferred.promise;
-    };
+    Item.getTags = apiHelper.get('/api/tag', 'tags');
 
-    Item.get = BasicModel.get('/api/item', 'items');
-    Item.getById = BasicModel.get('/api/item', 'item');
+    Item.get = apiHelper.get('/api/item', 'items', function (items) {
+        return new Item(items);
+    });
+
+    Item.getById = apiHelper.get('/api/item', 'item', function (item) {
+        return new Item(item);
+    });
 
     Item.prototype.deleteConfirm = function (ev) {
         var item = this,

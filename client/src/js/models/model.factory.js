@@ -39,40 +39,6 @@ app.factory('BasicModel', ['$http', '$q', function ($http, $q) {
     BasicModel.prototype.getId = function () {
         return this._id;
     };
-    /**
-     * Returns get function that does request to api on url and returns items at field
-     * @param url {string} url to api
-     * @param returnField {string} field where api returns data array
-     * @returns {Function}
-     */
-    BasicModel.createGet = function (url, returnField) {
-        var urlToApi = url;
-        return function (options) {
-            /**
-             * Returns promise with request to api by options (options can be id)
-             * options {object|string} options to search or id of item
-             */
-            var defer = $q.defer(),
-                params = {params: options};
-
-            if (angular.isString(options)) {
-                //get by id
-                urlToApi = [url, options].join('/');
-                params = {};
-            }
-
-            $http.get(urlToApi, params)
-                .then(function (response) {
-                    if (response.data.success) {
-                        defer.resolve(response.data[returnField]);
-                    }
-                    else {
-                        defer.reject(response.data);
-                    }
-                });
-            return defer.promise;
-        };
-    };
 
     return {
         /**
@@ -84,10 +50,6 @@ app.factory('BasicModel', ['$http', '$q', function ($http, $q) {
             var NewClass = getNewClass(name, defaults);
             NewClass.prototype = angular.copy(BasicModel.prototype);
             return NewClass;
-        },
-        /**
-         * Generates get function to api
-         */
-        get: BasicModel.createGet
+        }
     };
 }]);

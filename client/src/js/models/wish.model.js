@@ -1,6 +1,6 @@
 var app = require('../app');
 
-app.factory('Wish', ['$http', '$q', 'BasicModel', 'currentUser', function ($http, $q, BasicModel, currentUser) {
+app.factory('Wish', ['$http', '$q', 'BasicModel', 'currentUser', 'apiHelper', function ($http, $q, BasicModel, currentUser, apiHelper) {
     var Wish = BasicModel.new('Wish');
 
     Wish.prototype.save = function () {
@@ -12,7 +12,7 @@ app.factory('Wish', ['$http', '$q', 'BasicModel', 'currentUser', function ($http
         return !!(this.tag);
     };
 
-    Wish.get = BasicModel.get('/api/wish', 'wishes');
+    Wish.get = apiHelper.get('/api/wish', 'wishes');
 
     return Wish;
 }]);

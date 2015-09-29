@@ -14,7 +14,9 @@ app.controller('MyWishesController', ['$scope', 'currentUser', 'Wish', 'Item', f
 
     $scope.newWish = new Wish();
 
-    $scope.getTags = Item.getTags;
+    $scope.getTags = function (query) {
+        return Item.getTags({searchQuery: query});
+    };
 
     $scope.save = function (wish) {
         if (!wish.isValid()) {
