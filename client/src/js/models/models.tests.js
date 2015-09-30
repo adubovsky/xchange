@@ -1,3 +1,5 @@
+'use strict';
+var angular = require('angular');
 require('../helpers/api.helper.js');
 require('../models/brand.model.js');
 require('../models/category.model.js');

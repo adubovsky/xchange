@@ -1,18 +1,20 @@
-var app = require('../app');
+'use strict';
+var app = require('../app'),
+    angular = require('angular');
 
 app.factory('BasicModel', ['$http', '$q', function ($http, $q) {
     /**
      * BasicModel class factory
      * @param fieldsToBeSet {Object | Array} item fields json or collection of items
      * @param defaultFields {Object} fields that set by default
-     * @param constructorFn {function}
+     * @param ConstructorFn {function}
      * @returns {*}
      * @constructor
      */
-    var _init = function (constructorFn, fieldsToBeSet, defaultFields) {
+    var _init = function (ConstructorFn, fieldsToBeSet, defaultFields) {
         if (angular.isArray(fieldsToBeSet)) {
             return fieldsToBeSet.map(function (model) {
-                return new constructorFn(model);
+                return new ConstructorFn(model);
             });
         }
         else {

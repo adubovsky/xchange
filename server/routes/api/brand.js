@@ -1,3 +1,4 @@
+'use strict';
 var express = require('express'),
     Brand = require('../../models/brand'),
     router = express.Router(),

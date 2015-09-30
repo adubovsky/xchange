@@ -1,4 +1,6 @@
-var app = require('../app');
+'use strict';
+var app = require('../app'),
+    angular = require('angular');
 
 app.controller('SidemenuController', ['$scope', '$mdUtil', '$mdSidenav', '$rootScope', 'currentUser',
     function ($scope, $mdUtil, $mdSidenav, $rootScope, currentUser) {

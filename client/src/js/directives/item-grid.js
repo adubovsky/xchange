@@ -1,4 +1,6 @@
-var app = require('../app');
+'use strict';
+var app = require('../app'),
+    angular = require('angular');
 
 app.directive('itemGrid', function () {
     return {

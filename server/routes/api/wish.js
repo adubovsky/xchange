@@ -1,3 +1,4 @@
+'use strict';
 var express = require('express'),
     Wish = require('../../models/wish'),
     Tag = require('../../models/tag'),

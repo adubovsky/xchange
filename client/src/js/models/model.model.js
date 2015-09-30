@@ -1,3 +1,4 @@
+'use strict';
 var app = require('../app');
 /**
  * Model for item model (model name, item name, book title etc.)

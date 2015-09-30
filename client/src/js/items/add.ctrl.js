@@ -1,3 +1,4 @@
+'use strict';
 var app = require('../app');
 
 app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$stateParams', function ($scope, Item, Upload, $state, $stateParams) {

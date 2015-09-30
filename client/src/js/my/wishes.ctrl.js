@@ -1,3 +1,4 @@
+'use strict';
 var app = require('../app');
 
 app.controller('MyWishesController', ['$scope', 'currentUser', 'Wish', 'Item', function ($scope, currentUser, Wish, Item) {

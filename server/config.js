@@ -1,3 +1,4 @@
+'use strict';
 module.exports = {
     title: 'xchange',
     description: 'Trade your goods',

@@ -1,3 +1,4 @@
+'use strict';
 var app = require('../app');
 
 app.controller('AdminCategoriesController', ['$scope', '$state', 'currentUser', 'Category',

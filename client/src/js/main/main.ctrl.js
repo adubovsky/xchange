@@ -1,3 +1,4 @@
+'use strict';
 var app = require('../app');
 
 app.controller('MainController', ['$scope', '$mdUtil', '$mdSidenav', '$rootScope', 'currentUser', 'Item',

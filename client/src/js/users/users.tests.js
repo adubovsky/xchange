@@ -1,3 +1,5 @@
+'use strict';
+var angular = require('angular');
 require('./../models/user.model.js');
 require('../models/model.factory.js');
 

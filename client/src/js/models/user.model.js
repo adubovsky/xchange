@@ -1,4 +1,6 @@
-var app = require('../app');
+'use strict';
+var app = require('../app'),
+    angular = require('angular');
 
 app.factory('User', ['$http', '$q', 'BasicModel', function ($http, $q, BasicModel) {
     var User = BasicModel.new('User');

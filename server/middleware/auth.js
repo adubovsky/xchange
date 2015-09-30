@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Checking authorisation, checking role if it passed
  * @param role {string=} Role

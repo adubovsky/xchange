@@ -1,3 +1,4 @@
+'use strict';
 var express = require('express'),
     Model = require('../../models/model'),
     Brand = require('../../models/brand'),

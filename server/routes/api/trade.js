@@ -1,3 +1,4 @@
+'use strict';
 var express = require('express'),
     Trade = require('../../models/trade'),
     router = express.Router(),

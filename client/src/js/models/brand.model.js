@@ -1,3 +1,4 @@
+'use strict';
 var app = require('../app');
 /**
  * Model for brand (manufacturer, author, etc.)

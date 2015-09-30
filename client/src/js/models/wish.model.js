@@ -1,3 +1,4 @@
+'use strict';
 var app = require('../app');
 
 app.factory('Wish', ['$http', '$q', 'BasicModel', 'currentUser', 'apiHelper', function ($http, $q, BasicModel, currentUser, apiHelper) {

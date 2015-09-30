@@ -1,3 +1,4 @@
+'use strict';
 var app = require('../app');
 
 app.controller('MyTradeController', ['$scope', 'currentUser', 'Trade', '$stateParams', function ($scope, currentUser, Trade, $stateParams) {

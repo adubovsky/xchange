@@ -1,3 +1,4 @@
+'use strict';
 var app = require('../app');
 
 app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', 'apiHelper',

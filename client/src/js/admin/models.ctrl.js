@@ -1,3 +1,4 @@
+'use strict';
 var app = require('../app');
 
 app.controller('AdminModelsController', ['$scope', '$state', 'currentUser', 'Model', 'Brand', 'Category',

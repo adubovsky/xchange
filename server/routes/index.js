@@ -1,3 +1,4 @@
+'use strict';
 var express = require('express'),
     Account = require('../models/account'),
     router = express.Router(),

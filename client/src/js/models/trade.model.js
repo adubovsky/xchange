@@ -1,3 +1,4 @@
+'use strict';
 var app = require('../app');
 
 app.factory('Trade', ['$http', '$q', 'BasicModel', 'currentUser','apiHelper', function ($http, $q, BasicModel, currentUser,apiHelper) {
