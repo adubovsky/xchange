@@ -19,6 +19,7 @@
     "body-parser": "^1.13.3",
     "browserify": "^11.0.1",
     "chai": "^3.2.0",
+    "cheerio": "^0.19.0",
     "connect-multiparty": "^2.0.0",
     "cssnano": "^3.1.0",
     "deferred": "^0.7.3",
@@ -55,6 +56,7 @@
     "postcss-cssnext": "^2.1.0",
     "postcss-import": "^7.0.0",
     "postcss-nested": "^1.0.0",
+    "request": "^2.64.0",
     "underscore": "^1.8.3"
   },
   "dependencies": {

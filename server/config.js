@@ -4,5 +4,6 @@ module.exports = {
     serverDir: 'server',
     clientSrcDir: 'client/src',
     clientBuildDir: 'client/build',
-    temporaryImages: 'server/temp'
+    temporaryImages: 'server/temp',
+    parsedResources: 'server/resources'
 };

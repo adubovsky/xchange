@@ -14,7 +14,8 @@ var express = require('express'),
     userRoutes = require('./routes/users'),
     apiRoutes = require('./routes/api'),
     fileUploadRoutes = require('./routes/upload'),
-    imagesRoutes = require('./routes/images');
+    imagesRoutes = require('./routes/images'),
+    parsingRoutes = require('./routes/parsing');
 
 
 app.use(express.static(configSite.clientBuildDir));
@@ -41,6 +42,7 @@ app.use('/user', userRoutes);
 app.use('/api', apiRoutes);
 app.use('/upload', fileUploadRoutes);
 app.use('/images', imagesRoutes);
+app.use('/parse', parsingRoutes);
 
 // passport config
 passport.use(new LocalStrategy(Account.authenticate(), function () {
