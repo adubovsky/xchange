@@ -71,7 +71,7 @@ Wish.virtual('level').get(function () {
     return {
         current: types.indexOf(wish.type),
         max: maxLevel
-    }
+    };
 });
 
 module.exports = mongoose.model('Wish', Wish);

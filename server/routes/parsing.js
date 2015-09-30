@@ -35,15 +35,16 @@ router.get('/ebayCategories', function (req, res) {
                         subCategories: []
                     };
 
-                    var $nextUl = $item.next();
-                    while ($nextUl.is('ul')) {
-                        $nextUl.find('a').each(function (i, subitem) {
+                    var $nextUl = $item.next(),
+                        subItemIterate = function (i, subitem) {
                             var $subitem = $(subitem);
                             category.subCategories.push({
                                 id: $subitem.attr('href'),
                                 name: $subitem.text()
-                            })
-                        });
+                            });
+                        };
+                    while ($nextUl.is('ul')) {
+                        $nextUl.find('a').each(subItemIterate);
                         $nextUl = $nextUl.next();
                     }
 

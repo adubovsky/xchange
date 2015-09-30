@@ -16,7 +16,7 @@ router.put('/', isAuth(), function (req, res) {
                 success: true,
                 trade: trade
             });
-        })
+        });
 });
 
 router.get('/', function (req, res) {
