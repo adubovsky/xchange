@@ -43,7 +43,8 @@
                          layout="row"
                          layout-align="center center">
                         <img ng-show="user.hasPhoto()"
-                             ng-src="{{user.photo}}"/>
+                             ng-src="{{user.getImageUrl()}}"
+                             class="user-menu__photo-img"/>
                         <md-icon ng-show="!user.hasPhoto()"
                                  md-svg-icon="social:ic_person_24px"></md-icon>
                     </div>

@@ -72,5 +72,9 @@ app.factory('apiHelper', ['$http', '$q', function ($http, $q) {
         };
     };
 
+    apiHelper.getImageUrl = function APIGetImageUrl(imageId) {
+        return ['/images', imageId].join('/');
+    };
+
     return apiHelper;
 }]);

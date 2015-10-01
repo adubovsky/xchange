@@ -9,7 +9,8 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
         updating = true;
         Item.getById(itemId)
             .then(function (item) {
-                item.photoUrl = ['/images', item.imageId].join('/');
+                item = new Item(item);
+                item.photoUrl = item.getImageUrl();
                 $scope.item = item;
             });
     }

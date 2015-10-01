@@ -32,7 +32,7 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', 'a
     };
 
     Item.prototype.getImageUrl = function () {
-        return ['/images', this.imageId].join('/');
+        return apiHelper.getImageUrl(this.imageId);
     };
 
     Item.getByIds = function (ids) {

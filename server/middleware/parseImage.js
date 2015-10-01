@@ -12,11 +12,14 @@ function exportParseImage(imageFieldName, setToField) {
             image;
         //if we have a parsed image and it is not updated we go through
         if (imagePath) {
-            //path parse /images/temp/filename --> /temp/filename
-            imagePath = imagePath.replace(/\/images/g, '');
-            console.log(imagePath);
-            if (!req.body[setToField] && req.body[setToField] !== path.join('/images', imagePath)) {
-                fullImagePath = path.join(config.serverDir, imagePath);
+            //imagePath should be /images/:id
+            //if :id starts with temp/ than we should store temporary image to DB
+            //and set to setToField in req.body id of new doc in DB
+
+            var id = imagePath.slice(8);
+            if (id.slice(0, 4) === 'temp') {
+                //it need to be stored
+                fullImagePath = path.join('./', config.serverDir, id);
                 image = new Image({
                     data: fs.readFileSync(fullImagePath),
                     //todo: need to know exact contentType
@@ -33,7 +36,8 @@ function exportParseImage(imageFieldName, setToField) {
                     next();
                 });
             } else {
-                next();
+                //is has been stored already and nothing changed
+                next()
             }
         } else {
             res.status(400);

@@ -2,7 +2,7 @@
 var app = require('../app'),
     angular = require('angular');
 
-app.factory('User', ['$http', '$q', 'BasicModel', function ($http, $q, BasicModel) {
+app.factory('User', ['$http', '$q', 'BasicModel', 'apiHelper', function ($http, $q, BasicModel, apiHelper) {
     var User = BasicModel.new('User');
 
     User.prototype.register = function () {
@@ -57,7 +57,7 @@ app.factory('User', ['$http', '$q', 'BasicModel', function ($http, $q, BasicMode
     };
 
     User.prototype.hasPhoto = function () {
-        return !!this.photo;
+        return !!this.imageId;
     };
 
     User.prototype.checkNotifications = function () {
@@ -75,6 +75,10 @@ app.factory('User', ['$http', '$q', 'BasicModel', function ($http, $q, BasicMode
 
     User.prototype.saveSettings = function () {
         return $http.post('/user/settings', this);
+    };
+
+    User.prototype.getImageUrl = function () {
+        return apiHelper.getImageUrl(this.imageId);
     };
 
     return User;

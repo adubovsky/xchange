@@ -49,8 +49,12 @@
     height: 48px;
     border-radius: 50%;
     margin-right: .33em;
+    overflow:hidden;
     md-icon{
       color: var(--header-line-bg)
+    }
+    &-img{
+       width: 48px;
     }
   }
   &__toggler{
