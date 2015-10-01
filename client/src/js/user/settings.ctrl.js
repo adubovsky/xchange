@@ -3,12 +3,14 @@ var app = require('../app');
 
 app.controller('UserSettingsController', ['$scope', 'User', 'currentUser', 'Upload', function ($scope, User, currentUser, Upload) {
 
-    $scope.user = currentUser;
+    $scope.user = new User(currentUser);
     $scope.user.photoUrl = currentUser.getImageUrl();
 
     $scope.saveSettings = function (user) {
         user.saveSettings()
             .then(function (response) {
+                var updatedUser = response.data.user;
+                currentUser.set(updatedUser);
                 console.log('User settings have been saved!');
             });
     };
