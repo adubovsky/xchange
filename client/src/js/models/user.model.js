@@ -73,6 +73,10 @@ app.factory('User', ['$http', '$q', 'BasicModel', function ($http, $q, BasicMode
         this.isLogged = logged;
     };
 
+    User.prototype.saveSettings = function () {
+        return $http.post('/user/settings', this);
+    };
+
     return User;
 }]);
 

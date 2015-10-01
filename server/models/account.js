@@ -8,6 +8,7 @@ var Account = new Schema({
     password: String,
     name: String,
     role: String,
+    imageId: Schema.Types.ObjectId,
     registerDate: {
         type: Date,
         default: Date.now

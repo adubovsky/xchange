@@ -15,7 +15,8 @@ var express = require('express'),
     apiRoutes = require('./routes/api'),
     fileUploadRoutes = require('./routes/upload'),
     imagesRoutes = require('./routes/images'),
-    parsingRoutes = require('./routes/parsing');
+    parsingRoutes = require('./routes/parsing'),
+    server;
 
 
 app.use(express.static(configSite.clientBuildDir));
@@ -54,7 +55,7 @@ passport.deserializeUser(Account.deserializeUser());
 // mongoose
 mongoose.connect('mongodb://localhost/xchange');
 
-var server = app.listen(3000, function () {
+server = app.listen(3000, function () {
 
     var host = server.address().address;
     var port = server.address().port;

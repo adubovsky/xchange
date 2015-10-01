@@ -2,8 +2,7 @@
 var fs = require('fs'),
     config = require('../config'),
     Image = require('../models/image'),
-    path = require('path'),
-    _ = require('underscore');
+    path = require('path');
 
 function exportParseImage(imageFieldName, setToField) {
     //todo: should work if imageFieldName is an array of strings
@@ -11,8 +10,11 @@ function exportParseImage(imageFieldName, setToField) {
         var imagePath = req.body[imageFieldName],
             fullImagePath,
             image;
-        //if we have parsed image and it is not updated we go through
+        //if we have a parsed image and it is not updated we go through
         if (imagePath) {
+            //path parse /images/temp/filename --> /temp/filename
+            imagePath = imagePath.replace(/\/images/g, '');
+            console.log(imagePath);
             if (!req.body[setToField] && req.body[setToField] !== path.join('/images', imagePath)) {
                 fullImagePath = path.join(config.serverDir, imagePath);
                 image = new Image({

@@ -5,12 +5,17 @@ app.config(['$stateProvider', function ($stateProvider) {
     $stateProvider
         .state('/user/register', {
             url: "/user/register",
-            templateUrl: "/partials/users/register.html",
+            templateUrl: "/partials/user/register.html",
             controller: 'UserRegisterController'
         })
         .state('/user/login', {
             url: "/user/login",
-            templateUrl: "/partials/users/login.html",
+            templateUrl: "/partials/user/login.html",
             controller: 'UserLoginController'
+        })
+        .state('/user/settings', {
+            url: "/user/settings",
+            templateUrl: "/partials/user/settings.html",
+            controller: 'UserSettingsController'
         });
 }]);

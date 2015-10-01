@@ -3,7 +3,8 @@ var express = require('express'),
     passport = require('passport'),
     Account = require('../models/account'),
     router = express.Router(),
-    isAuth = require('../middleware/auth');
+    isAuth = require('../middleware/auth'),
+    parseImage = require('../middleware/parseImage');
 
 router.post('/register', function (req, res) {
     var newAccount = new Account({username: req.body.username});
@@ -42,6 +43,17 @@ router.get('/details', isAuth(), function (req, res) {
         success: true,
         user: user
     });
+});
+
+router.post('/settings',  parseImage('photoUrl', 'imageId'), function (req, res) {
+    var currentUser = req.user,
+        userSettings = req.body;
+    if (currentUser._id === userSettings._id) {
+        res.json({
+            success: true,
+            user: userSettings
+        });
+    }
 });
 
 
