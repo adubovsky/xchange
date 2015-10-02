@@ -64,7 +64,7 @@ router.post('/settings', isAuth(), parseImage('photoUrl', 'imageId'), function (
                 if (!_.isEmpty(err)) {
                     reject(err);
                 } else {
-                    resolve(user)
+                    resolve(user);
                 }
             });
         } else {

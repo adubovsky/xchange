@@ -37,7 +37,7 @@ function exportParseImage(imageFieldName, setToField) {
                 });
             } else {
                 //is has been stored already and nothing changed
-                next()
+                next();
             }
         } else {
             res.status(400);
