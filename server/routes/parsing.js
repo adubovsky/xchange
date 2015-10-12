@@ -8,7 +8,8 @@ var express = require('express'),
     cheerio = require('cheerio'),
     fs = require('fs'),
     config = require('../config'),
-    path = require('path');
+    path = require('path'),
+    EbayCategory = require('../models/ebay-category');
 
 router.get('/ebayCategories', function (req, res) {
     var j = request.jar(),
@@ -62,13 +63,34 @@ router.get('/ebayCategories', function (req, res) {
 
     parsing
         .then(function (categories) {
+            var addCat = function (category, parentItem) {
+                var newCat = new EbayCategory();
+                newCat.ebayId = category.id;
+                newCat.name = category.name;
+                newCat.parent = parentItem ? parentItem._id : null;
+                newCat.save(function (err, savedItem) {
+                    if(category.subCategories){
+                        category.subCategories.forEach(function (sub) {
+                            addCat(sub, savedItem);
+                        });
+                    }
+                    if(parentItem){
+                        parentItem.children.push(savedItem._id);
+                        parentItem.save();
+                    }
+                });
+
+            };
             //need to save
             res.json({categories: categories});
-            fs.writeFile(path.join(config.parsedResources,"ebayCategories.json"), JSON.stringify({categories: categories}), function(err) {
+            categories.forEach(function (category) {
+                addCat(category);
+            });
+            /*fs.writeFile(path.join(config.parsedResources,"ebayCategories.json"), JSON.stringify({categories: categories}), function(err) {
                 if(err) {
                     return console.log(err);
                 }
-            });
+            });*/
         })
         .catch(function (error) {
             res.json({error: error});
