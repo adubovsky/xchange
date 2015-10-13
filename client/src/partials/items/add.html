@@ -44,6 +44,14 @@
                min="0" max="1000000"/>
     </md-input-container>
 
+    <md-input-container>
+        <label>Category</label>
+        <md-select ng-model="item.category">
+            <md-option ng-repeat="category in getCategory" value="{{category._id}}">{{category.name}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+
     <md-chips
             flex
             ng-model="item.tags"
@@ -56,11 +64,10 @@
                 md-min-length="2"
                 md-search-text="query"
                 md-items="tag in getTags(query)"
-                ng-attr-placeholder="{{item.tags.length ? 'Maybe, more?' : 'Add a category'}}"
+                ng-attr-placeholder="{{item.tags.length ? 'Maybe, more?' : '+Tag'}}"
                 md-menu-class="autocomplete-tags">
             <md-item-template>
                 <span class="autocomplete-tags__name"
-                      md-highlight-text="query"
                       layout="column"
                       layout-align="center start"
                       flex>
@@ -68,7 +75,7 @@
                 </span>
                 <span class="autocomplete-tags__category"
                       ng-show="tag.parents.category"
-                        flex="50">
+                      flex="50">
                     {{tag.parents.category.name}}{{tag.parents.subCategory ? ', ' + tag.parents.subCategory.name : ''}}
                 </span>
             </md-item-template>
@@ -81,15 +88,16 @@
             <div class="md-caption">
                 <strong>{{$chip.name}}</strong>
                 <em>
-                    {{$chip.parents.category ? $chip.parents.category.name : ''}}{{$chip.parents.subCategory ? ', ' + $chip.parents.subCategory.name : ''}}
+                    {{$chip.parents.category ? $chip.parents.category.name : ''}}{{$chip.parents.subCategory
+                    ?
+                    ', ' + $chip.parents.subCategory.name : ''}}
                 </em>
             </div>
         </md-chip-template>
     </md-chips>
-
     <md-checkbox ng-model="item.visible">
         <label>
-            Visible for search
+            Visible
         </label>
     </md-checkbox>
 

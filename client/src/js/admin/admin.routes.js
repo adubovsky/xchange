@@ -26,5 +26,11 @@ app.config(['$stateProvider', function ($stateProvider) {
             authRequired: "admin",
             templateUrl: "/partials/admin/models.html",
             controller: 'AdminModelsController'
+        })
+        .state('/admin/ebay/categories', {
+            url: "/admin/ebay/categories",
+            authRequired: "admin",
+            templateUrl: "/partials/admin/ebay-categories.html",
+            controller: 'AdminEbayCategoriesController'
         });
 }]);

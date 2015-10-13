@@ -6,7 +6,7 @@ var express = require('express'),
     router = express.Router(),
     request = require('request'),
     cheerio = require('cheerio'),
-    fs = require('fs'),
+//fs = require('fs'),
     config = require('../config'),
     path = require('path'),
     EbayCategory = require('../models/ebay-category');
@@ -18,7 +18,7 @@ router.get('/ebayCategories', function (req, res) {
         parsing;
 
     parsing = new Promise(function (resolve, reject) {
-        j.setCookie(request.cookie('dp1=bidm/1560d0012^u1p/QEBfX0BAX19AQA**57ece350^bl/BY'+locale+'59ce16d0^pbf/#04000000000000000000000059ce16d4^cq/0^'), url);
+        j.setCookie(request.cookie('dp1=bidm/1560d0012^u1p/QEBfX0BAX19AQA**57ece350^bl/BY' + locale + '59ce16d0^pbf/#04000000000000000000000059ce16d4^cq/0^'), url);
         request({
             url: url,
             headers: {
@@ -59,38 +59,47 @@ router.get('/ebayCategories', function (req, res) {
             }
         });
     });
-
-
     parsing
         .then(function (categories) {
             var addCat = function (category, parentItem) {
-                var newCat = new EbayCategory();
-                newCat.ebayId = category.id;
-                newCat.name = category.name;
-                newCat.parent = parentItem ? parentItem._id : null;
-                newCat.save(function (err, savedItem) {
-                    if(category.subCategories){
-                        category.subCategories.forEach(function (sub) {
-                            addCat(sub, savedItem);
+                    var newCat = new EbayCategory();
+                    newCat.ebayId = category.id;
+                    newCat.name = category.name;
+                    newCat.parent = parentItem ? parentItem._id : null;
+                    return new Promise(function (resolve, reject) {
+                        newCat.save(function (err, savedItem) {
+                            var subPromises = [];
+                            if (category.subCategories) {
+                                category.subCategories.forEach(function (sub) {
+                                    subPromises.push(addCat(sub, savedItem));
+                                });
+                            }
+                            Promise.all(subPromises).then(function (values) {
+                                savedItem.children = values;
+                                savedItem.save();
+                            });
+                            resolve(savedItem);
                         });
-                    }
-                    if(parentItem){
-                        parentItem.children.push(savedItem._id);
-                        parentItem.save();
-                    }
+                    });
+                },
+                promises = [];
+            //need to save
+
+            categories
+                .forEach(function (category) {
+                    promises.push(addCat(category));
                 });
 
-            };
-            //need to save
-            res.json({categories: categories});
-            categories.forEach(function (category) {
-                addCat(category);
-            });
+            Promise
+                .all(promises)
+                .then(function (values) {
+                    res.json({categories: values});
+                });
             /*fs.writeFile(path.join(config.parsedResources,"ebayCategories.json"), JSON.stringify({categories: categories}), function(err) {
-                if(err) {
-                    return console.log(err);
-                }
-            });*/
+             if(err) {
+             return console.log(err);
+             }
+             });*/
         })
         .catch(function (error) {
             res.json({error: error});

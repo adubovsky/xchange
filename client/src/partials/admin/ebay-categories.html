@@ -1,0 +1,14 @@
+<div layout="row">
+    <div class="category-list-holder">
+        <ul>
+            <li ng-repeat="cat in categories">
+                {{cat.name}}
+                <ul ng-if="cat.children.length">
+                    <li ng-repeat="child in cat.children">
+                        {{child.name}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
