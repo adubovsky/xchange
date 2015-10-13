@@ -1,7 +1,8 @@
 <md-sidenav class="md-sidenav-left md-whiteframe-z1 sidebar"
             md-component-id="left"
             md-is-locked-open="$mdMedia('gt-md')"
-            layout="column">
+            layout="column"
+            flex>
 
     <div ng-if="user.isAdmin()" ng-include="'/partials/admin/menu.html'"></div>
 

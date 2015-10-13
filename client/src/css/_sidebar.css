@@ -1,3 +1,6 @@
+:root{
+  --content-min-height: auto;
+}
 .sidebar,
 .sidebar.md-locked-open{
   height: var(--content-min-height);
