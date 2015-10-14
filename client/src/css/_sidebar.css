@@ -1,9 +1,9 @@
 :root{
-  --content-min-height: auto;
+  --content-min-height: calc(100vh - var(--header-height));
 }
 .sidebar,
 .sidebar.md-locked-open{
-  height: var(--content-min-height);
+  min-height: var(--content-min-height);
   width: var(--sidebar-width);
   min-width: var(--sidebar-width);
   background-color: var(--light-gray-bg);

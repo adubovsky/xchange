@@ -14,5 +14,9 @@ app.factory('Category', ['$http', '$q', 'BasicModel','apiHelper', function ($htt
 
     Category.get = apiHelper.get('/api/category', 'categories');
 
+    Category.prototype.getChildren = function () {
+        return Category.get({parent: this.getId()});
+    };
+
     return Category;
 }]);

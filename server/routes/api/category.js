@@ -1,7 +1,6 @@
 'use strict';
 var express = require('express'),
-    Category = require('../../models/category'),
-    EbayCategory = require('../../models/ebay-category'),
+    Category = require('../../models/ebay-category'),
     router = express.Router(),
     isAuth = require('../../middleware/auth'),
     Tag = require('../../models/tag');
@@ -11,6 +10,7 @@ router.get('/', function (req, res) {
     var query = !Object.keys(req.query).length ? {parent: null} : req.query;
     Category.find(query)
         .populate('children')
+        .sort('name')
         .exec(function (err, categories) {
             res.json({
                 success: true,
@@ -56,20 +56,6 @@ router.put('/', isAuth('admin'), function (req, res) {
             .new(category.parent ? 'subCategory' : 'category', category)
             .save();
     });
-});
-
-//Ebay Categories API
-router.get('/ebay/', function (req, res) {
-    var query = !Object.keys(req.query).length ? {parent: null} : req.query;
-    EbayCategory.find(query)
-        .populate('children')
-        .sort('name')
-        .exec(function (err, categories) {
-            res.json({
-                success: true,
-                categories: categories
-            });
-        });
 });
 
 module.exports = router;

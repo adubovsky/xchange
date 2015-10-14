@@ -13,6 +13,14 @@ var Item = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Tag'
     }],
+    category:{
+        type: Schema.Types.ObjectId,
+        ref: 'EbayCategory'
+    },
+    subCategory:{
+        type: Schema.Types.ObjectId,
+        ref: 'EbayCategory'
+    },
     createDate: {
         type: Date,
         default: Date.now

@@ -29,7 +29,7 @@
         </md-autocomplete>
     </div>
 
-    <div ng-show="user.isLogged"
+    <div ng-if="user.isLogged"
          layout="row"
          layout-align="center center"
          class="user-menu">
@@ -77,7 +77,8 @@
                 </md-menu-item>
                 <md-menu-item>
                     <md-button ng-click="">
-                        <md-icon md-svg-icon="social:ic_notifications{{user.checkNotifications() ? '' : '_none'}}_24px" md-menu-align-target></md-icon>
+                        <md-icon md-svg-icon="social:ic_notifications{{user.checkNotifications() ? '' : '_none'}}_24px"
+                                 md-menu-align-target></md-icon>
                         Notifications
                     </md-button>
                 </md-menu-item>
@@ -89,7 +90,7 @@
             <md-icon md-svg-icon="auth:logout_24px"></md-icon>
         </md-button>
     </div>
-    <div ng-show="!user.isLogged"
+    <div ng-if="!user.isLogged"
          layout="row"
          layout-align="center center"
          class="sidebar-avatar">

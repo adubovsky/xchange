@@ -46,13 +46,25 @@
 
     <md-input-container>
         <label>Category</label>
-        <md-select ng-model="item.category">
-            <md-option ng-repeat="category in getCategory" value="{{category._id}}">{{category.name}}
+        <md-select ng-model="item.category"
+                   ng-change="getSubCategories(item.category)">
+            <md-option ng-repeat="category in categories"
+                       ng-value="category">
+                {{category.name}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+    <md-input-container ng-show="subCategories.length">
+        <label>Subcategory</label>
+        <md-select ng-model="item.subCategory">
+            <md-option ng-repeat="category in subCategories"
+                       ng-value="category">
+                {{category.name}}
             </md-option>
         </md-select>
     </md-input-container>
 
-    <md-chips
+    <!--<md-chips
             flex
             ng-model="item.tags"
             readonly="false"
@@ -94,7 +106,7 @@
                 </em>
             </div>
         </md-chip-template>
-    </md-chips>
+    </md-chips>-->
     <md-checkbox ng-model="item.visible">
         <label>
             Visible
