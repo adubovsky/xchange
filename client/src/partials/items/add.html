@@ -49,7 +49,8 @@
         <md-select ng-model="item.category"
                    ng-change="getSubCategories(item.category)">
             <md-option ng-repeat="category in categories"
-                       ng-value="category">
+                       ng-value="category"
+                       ng-selected="category.getId() === item.category._id">
                 {{category.name}}
             </md-option>
         </md-select>
@@ -58,7 +59,8 @@
         <label>Subcategory</label>
         <md-select ng-model="item.subCategory">
             <md-option ng-repeat="category in subCategories"
-                       ng-value="category">
+                       ng-value="category"
+                       ng-selected="category.getId() === item.subCategory._id">
                 {{category.name}}
             </md-option>
         </md-select>

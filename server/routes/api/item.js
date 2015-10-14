@@ -50,7 +50,7 @@ router.post('/', isAuth(), parseImage('photoUrl', 'imageId'), function (req, res
 
 router.get('/', function (req, res) {
     var query = req.query || {};
-    if(query.ids){
+    if (query.ids) {
         query = {
             _id: {
                 $in: query.ids
@@ -68,16 +68,12 @@ router.get('/', function (req, res) {
 router.get('/:id', function (req, res) {
     var id = req.params.id;
     Item.findById(id)
-        .populate('tags')
+        .populate('category subCategory')
         .exec(function (err, item) {
-            Tag
-                .populate(item.tags, 'parents.brand parents.subCategory parents.category', function (err, tags) {
-                    item.tags = tags;
-                    res.json({
-                        success: true,
-                        item: item
-                    });
-                });
+            res.json({
+                success: true,
+                item: item
+            });
         });
 });
 module.exports = router;
