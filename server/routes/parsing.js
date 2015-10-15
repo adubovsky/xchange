@@ -9,82 +9,101 @@ var express = require('express'),
 //fs = require('fs'),
     config = require('../config'),
     path = require('path'),
-    EbayCategory = require('../models/ebay-category');
+    EbayCategory = require('../models/ebay-category'),
+    _ = require('underscore');
 
 router.get('/ebayCategories', function (req, res) {
-    var j = request.jar(),
-        url = 'http://www.ebay.com/sch/allcategories/all-categories',
+    var url = 'https://api.ebay.com/wsapi?' +
+            'callname=GetCategories' +
+            '&siteid=0' +
+            '&appid=Vladimir-4858-4e47-adb9-3c3ecf36c5d0' +
+            'version=511&Routing=new',
         locale = 'en-US',
         parsing;
 
-    parsing = new Promise(function (resolve, reject) {
-        j.setCookie(request.cookie('dp1=bidm/1560d0012^u1p/QEBfX0BAX19AQA**57ece350^bl/BY' + locale + '59ce16d0^pbf/#04000000000000000000000059ce16d4^cq/0^'), url);
-        request({
-            url: url,
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36'
-            },
-            jar: j
-        }, function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                var $ = cheerio.load(body);
-                var categories = [];
-                $('a.clh').each(function (index, item) {
-                    var $item = $(item);
-                    var category = {
-                        id: $item.attr('href'),
-                        name: $item.text(),
-                        subCategories: []
-                    };
+    /**
+     * Returns promise that returns $ cheerio object with parsed response body in it
+     * @param url
+     * @returns {Promise}
+     */
 
-                    var $nextUl = $item.next(),
-                        subItemIterate = function (i, subitem) {
-                            var $subitem = $(subitem);
-                            category.subCategories.push({
-                                id: $subitem.attr('href'),
-                                name: $subitem.text()
-                            });
-                        };
-                    while ($nextUl.is('ul')) {
-                        $nextUl.find('a').each(subItemIterate);
-                        $nextUl = $nextUl.next();
-                    }
-
-                    categories.push(category);
-                });
-
-                resolve(categories);
-            } else {
-                reject(error);
-            }
+    function requestPromise(url) {
+        return new Promise(function (resolve, reject) {
+            var requestOptions = {
+                url: url,
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36'
+                },
+                jar: j
+            };
+            request(requestOptions, function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    resolve(JSON.parse(body));
+                } else {
+                    reject(error);
+                }
+            });
         });
+    }
+
+    parsing = new Promise(function (resolve, reject) {
+        requestPromise(url)
+            .then(function (json) {
+                //should parse json to category: { id, subCategories }
+                //when we get all second levels returned we should return array of categories
+                Promise.all(secondLevelParses)
+                    .then(function (categories) {
+                        resolve(categories);
+                    });
+            })
+            .catch(function (error) {
+                reject(error);
+            });
     });
+
     parsing
         .then(function (categories) {
             var addCat = function (category, parentItem) {
-                    var newCat = new EbayCategory();
-                    newCat.ebayId = category.id;
-                    newCat.name = category.name;
-                    newCat.parent = parentItem ? parentItem._id : null;
                     return new Promise(function (resolve, reject) {
-                        newCat.save(function (err, savedItem) {
-                            var subPromises = [];
-                            if (category.subCategories) {
-                                category.subCategories.forEach(function (sub) {
-                                    subPromises.push(addCat(sub, savedItem));
-                                });
-                            }
-                            Promise.all(subPromises).then(function (values) {
-                                savedItem.children = values;
-                                savedItem.save();
+                        EbayCategory
+                            .findOne({
+                                ebayId: category.id
+                            })
+                            .exec(function (err, foundCat) {
+                                var addSubCats = function (parentItem) {
+                                        var subPromises = [];
+                                        if (category.subCategories) {
+                                            category.subCategories.forEach(function (sub) {
+                                                subPromises.push(addCat(sub, parentItem));
+                                            });
+                                        }
+                                        Promise.all(subPromises).then(function (values) {
+                                            parentItem.children = values;
+                                            parentItem.save();
+                                        });
+                                    },
+                                    newCat;
+                                if (!foundCat) {
+                                    //if we don't have this category we should add it
+                                    newCat = new EbayCategory();
+                                    newCat.ebayId = category.id;
+                                    newCat.name = category.name;
+                                    newCat.parent = parentItem ? parentItem._id : null;
+                                    newCat.save(function (err, savedItem) {
+                                        addSubCats(savedItem);
+                                        resolve(savedItem);
+                                    });
+                                }
+                                else {
+                                    //if we have it we should check its children
+                                    addSubCats(foundCat);
+                                    resolve(foundCat);
+                                }
                             });
-                            resolve(savedItem);
-                        });
                     });
                 },
                 promises = [];
             //need to save
-
             categories
                 .forEach(function (category) {
                     promises.push(addCat(category));
@@ -92,14 +111,9 @@ router.get('/ebayCategories', function (req, res) {
 
             Promise
                 .all(promises)
-                .then(function (values) {
-                    res.json({categories: values});
+                .then(function (categories) {
+                    res.json({categories: categories});
                 });
-            /*fs.writeFile(path.join(config.parsedResources,"ebayCategories.json"), JSON.stringify({categories: categories}), function(err) {
-             if(err) {
-             return console.log(err);
-             }
-             });*/
         })
         .catch(function (error) {
             res.json({error: error});
