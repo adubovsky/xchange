@@ -1,1607 +1,2444 @@
 {
   "categories": [
     {
-      "id": "http://photography.shop.ebay.com/",
-      "name": "Cameras & Photo",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Camera-Drones-/179697/i.html",
-          "name": "Camera Drones",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Cameras-Photo-/27432/i.html",
-          "name": "Other Cameras & Photo",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Digital-Cameras-/31388/i.html",
-          "name": "Digital Cameras",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Manuals-Guides-/4684/i.html",
-          "name": "Manuals & Guides",
-          "subCategories": []
-        }
-      ]
+      "id": "20081",
+      "parentId": null,
+      "name": "Antiques"
     },
     {
-      "id": "http://entertainment-memorabilia.shop.ebay.com/",
-      "name": "Entertainment Memorabilia",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Autographs-Reprints-/104412",
-          "name": "Autographs-Reprints",
-          "subCategories": []
-        }
-      ]
+      "id": "37903",
+      "parentId": "20081",
+      "name": "Antiquities"
     },
     {
-      "id": "http://business.shop.ebay.com/",
-      "name": "Business & Industrial",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Heavy-Equipment-/177641",
-          "name": "Heavy Equipment",
-          "subCategories": []
-        }
-      ]
+      "id": "4707",
+      "parentId": "20081",
+      "name": "Architectural & Garden"
     },
     {
-      "id": "http://gift-certificates.shop.ebay.com/",
-      "name": "Gift Cards & Coupons",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/eBay-Gift-Cards-/172036",
-          "name": "eBay Gift Cards",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Digital-Gifts-/176950",
-          "name": "Digital Gifts",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Gift-Certificates-/31411",
-          "name": "Gift Certificates",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Coupons-/172010",
-          "name": "Coupons",
-          "subCategories": []
-        }
-      ]
+      "id": "20082",
+      "parentId": "20081",
+      "name": "Asian Antiques"
     },
     {
-      "id": "http://dvd.shop.ebay.com/",
-      "name": "DVDs & Movies",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/VHS-Tapes-/309",
-          "name": "VHS Tapes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Storage-Media-Accessories-/52554",
-          "name": "Storage & Media Accessories",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/DVDs-Blu-ray-Discs-/617",
-          "name": "DVDs & Blu-ray Discs",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Formats-/41676",
-          "name": "Other Formats",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Wholesale-Lots-/31606",
-          "name": "Wholesale Lots",
-          "subCategories": [
-            {
-              "id": "http://www.ebay.com/sch/DVDs-Bluray-Discs-/46760/i.html",
-              "name": "DVDs & Blu-ray Discs",
-              "subCategories": []
-            },
-            {
-              "id": "http://www.ebay.com/sch/VHS-Tapes-/46765/i.html",
-              "name": "VHS Tapes",
-              "subCategories": []
-            },
-            {
-              "id": "http://www.ebay.com/sch/Other-DVD-Movie-Whlsl-Lots-/46771/i.html",
-              "name": "Other DVD & Movie Whlsl Lots",
-              "subCategories": []
-            }
-          ]
-        }
-      ]
+      "id": "2195",
+      "parentId": "20081",
+      "name": "Books & Manuscripts"
     },
     {
-      "id": "http://books.shop.ebay.com/",
-      "name": "Books",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Magazine-Back-Issues-/280",
-          "name": "Magazine Back Issues",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Audiobooks-/29792",
-          "name": "Audiobooks",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Fiction-Literature-/171228",
-          "name": "Fiction & Literature",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Antiquarian-Collectible-/29223",
-          "name": "Antiquarian & Collectible",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Books-/268",
-          "name": "Other Books",
-          "subCategories": []
-        }
-      ]
+      "id": "20086",
+      "parentId": "20081",
+      "name": "Decorative Arts"
     },
     {
-      "id": "http://realestate.shop.ebay.com/",
-      "name": "Real Estate",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Land-/15841",
-          "name": "Land",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Real-Estate-/1607",
-          "name": "Other Real Estate",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Manufactured-Homes-/94825",
-          "name": "Manufactured Homes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Timeshares-for-Sale-/15897",
-          "name": "Timeshares for Sale",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Commercial-/15825",
-          "name": "Commercial",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Residential-/12605",
-          "name": "Residential",
-          "subCategories": []
-        }
-      ]
+      "id": "2207",
+      "parentId": "20081",
+      "name": "Ethnographic"
     },
     {
-      "id": "http://www.ebay.com/sch/?_sacat=6000",
-      "name": "eBay Motors",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Parts-Accessories-/6028/i.html",
-          "name": "Parts & Accessories",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Motorcycles-/6024/i.html",
-          "name": "Motorcycles",
-          "subCategories": []
-        }
-      ]
+      "id": "20091",
+      "parentId": "20081",
+      "name": "Furniture"
     },
     {
-      "id": "http://video-games.shop.ebay.com/",
-      "name": "Video Games & Consoles",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Video-Gaming-Merchandise-/38583/i.html",
-          "name": "Video Gaming Merchandise",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Video-Games-Consoles-/187/i.html",
-          "name": "Other Video Games & Consoles",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Video-Game-Consoles-/139971/i.html",
-          "name": "Video Game Consoles",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Prepaid-Gaming-Cards-/156597/i.html",
-          "name": "Prepaid Gaming Cards",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Video-Games-/139973/i.html",
-          "name": "Video Games",
-          "subCategories": []
-        }
-      ]
+      "id": "163008",
+      "parentId": "20081",
+      "name": "Home & Hearth"
     },
     {
-      "id": "http://cell-phones.shop.ebay.com/",
-      "name": "Cell Phones & Accessories",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Smart-Watch-Accessories-/180899/i.html",
-          "name": "Smart Watch Accessories",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Display-Phones-/136699/i.html",
-          "name": "Display Phones",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Cell-Phones-Accs-/42428/i.html",
-          "name": "Other Cell Phones & Accs",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Smart-Watches-/178893/i.html",
-          "name": "Smart Watches",
-          "subCategories": []
-        }
-      ]
+      "id": "2218",
+      "parentId": "20081",
+      "name": "Linens & Textiles (Pre-1930)"
     },
     {
-      "id": "http://dvd.shop.ebay.com/",
-      "name": "DVDs & Movies",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/VHS-Tapes-/309",
-          "name": "VHS Tapes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Storage-Media-Accessories-/52554",
-          "name": "Storage & Media Accessories",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/DVDs-Blu-ray-Discs-/617",
-          "name": "DVDs & Blu-ray Discs",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Formats-/41676",
-          "name": "Other Formats",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Wholesale-Lots-/31606",
-          "name": "Wholesale Lots",
-          "subCategories": [
-            {
-              "id": "http://www.ebay.com/sch/DVDs-Bluray-Discs-/46760/i.html",
-              "name": "DVDs & Blu-ray Discs",
-              "subCategories": []
-            },
-            {
-              "id": "http://www.ebay.com/sch/VHS-Tapes-/46765/i.html",
-              "name": "VHS Tapes",
-              "subCategories": []
-            },
-            {
-              "id": "http://www.ebay.com/sch/Other-DVD-Movie-Whlsl-Lots-/46771/i.html",
-              "name": "Other DVD & Movie Whlsl Lots",
-              "subCategories": []
-            }
-          ]
-        }
-      ]
+      "id": "37958",
+      "parentId": "20081",
+      "name": "Maps, Atlases & Globes"
     },
     {
-      "id": "http://photography.shop.ebay.com/",
-      "name": "Cameras & Photo",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Camera-Drones-/179697/i.html",
-          "name": "Camera Drones",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Cameras-Photo-/27432/i.html",
-          "name": "Other Cameras & Photo",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Digital-Cameras-/31388/i.html",
-          "name": "Digital Cameras",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Manuals-Guides-/4684/i.html",
-          "name": "Manuals & Guides",
-          "subCategories": []
-        }
-      ]
+      "id": "37965",
+      "parentId": "20081",
+      "name": "Maritime"
     },
     {
-      "id": "http://video-games.shop.ebay.com/",
-      "name": "Video Games & Consoles",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Video-Gaming-Merchandise-/38583/i.html",
-          "name": "Video Gaming Merchandise",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Video-Games-Consoles-/187/i.html",
-          "name": "Other Video Games & Consoles",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Video-Game-Consoles-/139971/i.html",
-          "name": "Video Game Consoles",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Prepaid-Gaming-Cards-/156597/i.html",
-          "name": "Prepaid Gaming Cards",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Video-Games-/139973/i.html",
-          "name": "Video Games",
-          "subCategories": []
-        }
-      ]
+      "id": "163091",
+      "parentId": "20081",
+      "name": "Mercantile, Trades & Factories"
     },
     {
-      "id": "http://books.shop.ebay.com/",
-      "name": "Books",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Magazine-Back-Issues-/280",
-          "name": "Magazine Back Issues",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Audiobooks-/29792",
-          "name": "Audiobooks",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Fiction-Literature-/171228",
-          "name": "Fiction & Literature",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Antiquarian-Collectible-/29223",
-          "name": "Antiquarian & Collectible",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Books-/268",
-          "name": "Other Books",
-          "subCategories": []
-        }
-      ]
+      "id": "37974",
+      "parentId": "20081",
+      "name": "Musical Instruments (Pre-1930)"
     },
     {
-      "id": "http://books.shop.ebay.com/",
-      "name": "Books",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Magazine-Back-Issues-/280",
-          "name": "Magazine Back Issues",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Audiobooks-/29792",
-          "name": "Audiobooks",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Fiction-Literature-/171228",
-          "name": "Fiction & Literature",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Antiquarian-Collectible-/29223",
-          "name": "Antiquarian & Collectible",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Books-/268",
-          "name": "Other Books",
-          "subCategories": []
-        }
-      ]
+      "id": "100927",
+      "parentId": "20081",
+      "name": "Periods & Styles"
     },
     {
-      "id": "http://gift-certificates.shop.ebay.com/",
-      "name": "Gift Cards & Coupons",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/eBay-Gift-Cards-/172036",
-          "name": "eBay Gift Cards",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Digital-Gifts-/176950",
-          "name": "Digital Gifts",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Gift-Certificates-/31411",
-          "name": "Gift Certificates",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Coupons-/172010",
-          "name": "Coupons",
-          "subCategories": []
-        }
-      ]
+      "id": "1217",
+      "parentId": "20081",
+      "name": "Primitives"
     },
     {
-      "id": "http://realestate.shop.ebay.com/",
-      "name": "Real Estate",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Land-/15841",
-          "name": "Land",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Real-Estate-/1607",
-          "name": "Other Real Estate",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Manufactured-Homes-/94825",
-          "name": "Manufactured Homes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Timeshares-for-Sale-/15897",
-          "name": "Timeshares for Sale",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Commercial-/15825",
-          "name": "Commercial",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Residential-/12605",
-          "name": "Residential",
-          "subCategories": []
-        }
-      ]
+      "id": "163101",
+      "parentId": "20081",
+      "name": "Restoration & Care"
     },
     {
-      "id": "http://realestate.shop.ebay.com/",
-      "name": "Real Estate",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Land-/15841",
-          "name": "Land",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Real-Estate-/1607",
-          "name": "Other Real Estate",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Manufactured-Homes-/94825",
-          "name": "Manufactured Homes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Timeshares-for-Sale-/15897",
-          "name": "Timeshares for Sale",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Commercial-/15825",
-          "name": "Commercial",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Residential-/12605",
-          "name": "Residential",
-          "subCategories": []
-        }
-      ]
+      "id": "37978",
+      "parentId": "20081",
+      "name": "Rugs & Carpets"
     },
     {
-      "id": "http://cell-phones.shop.ebay.com/",
-      "name": "Cell Phones & Accessories",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Smart-Watch-Accessories-/180899/i.html",
-          "name": "Smart Watch Accessories",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Display-Phones-/136699/i.html",
-          "name": "Display Phones",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Cell-Phones-Accs-/42428/i.html",
-          "name": "Other Cell Phones & Accs",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Smart-Watches-/178893/i.html",
-          "name": "Smart Watches",
-          "subCategories": []
-        }
-      ]
+      "id": "20094",
+      "parentId": "20081",
+      "name": "Science & Medicine (Pre-1930)"
     },
     {
-      "id": "http://everythingelse.shop.ebay.com/",
-      "name": "Everything Else",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Reward-Points-Incentives-/102553/i.html",
-          "name": "Reward Points & Incentives",
-          "subCategories": []
-        }
-      ]
+      "id": "156323",
+      "parentId": "20081",
+      "name": "Sewing (Pre-1930)"
     },
     {
-      "id": "http://www.ebay.com/sch/?_sacat=6000",
-      "name": "eBay Motors",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Parts-Accessories-/6028/i.html",
-          "name": "Parts & Accessories",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Motorcycles-/6024/i.html",
-          "name": "Motorcycles",
-          "subCategories": []
-        }
-      ]
+      "id": "20096",
+      "parentId": "20081",
+      "name": "Silver"
     },
     {
-      "id": "http://travel.shop.ebay.com/",
-      "name": "Travel",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Rail-/98982",
-          "name": "Rail",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Lodging-/16123",
-          "name": "Lodging",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Cruises-/16078",
-          "name": "Cruises",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Luggage-/16080",
-          "name": "Luggage",
-          "subCategories": []
-        }
-      ]
+      "id": "22608",
+      "parentId": "20081",
+      "name": "Reproduction Antiques"
     },
     {
-      "id": "http://pet-supplies.shop.ebay.com/",
-      "name": "Pet Supplies",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Horse-Supplies-/63512",
-          "name": "Horse Supplies",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Backyard-Poultry-Supplies-/177801",
-          "name": "Backyard Poultry Supplies",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Pet-Memorials-Urns-/116391",
-          "name": "Pet Memorials & Urns",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Wholesale-Lots-/48760",
-          "name": "Wholesale Lots",
-          "subCategories": []
-        }
-      ]
+      "id": "12",
+      "parentId": "20081",
+      "name": "Other Antiques"
     },
     {
-      "id": "http://dvd.shop.ebay.com/",
-      "name": "DVDs & Movies",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/VHS-Tapes-/309",
-          "name": "VHS Tapes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Storage-Media-Accessories-/52554",
-          "name": "Storage & Media Accessories",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/DVDs-Blu-ray-Discs-/617",
-          "name": "DVDs & Blu-ray Discs",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Formats-/41676",
-          "name": "Other Formats",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Wholesale-Lots-/31606",
-          "name": "Wholesale Lots",
-          "subCategories": [
-            {
-              "id": "http://www.ebay.com/sch/DVDs-Bluray-Discs-/46760/i.html",
-              "name": "DVDs & Blu-ray Discs",
-              "subCategories": []
-            },
-            {
-              "id": "http://www.ebay.com/sch/VHS-Tapes-/46765/i.html",
-              "name": "VHS Tapes",
-              "subCategories": []
-            },
-            {
-              "id": "http://www.ebay.com/sch/Other-DVD-Movie-Whlsl-Lots-/46771/i.html",
-              "name": "Other DVD & Movie Whlsl Lots",
-              "subCategories": []
-            }
-          ]
-        }
-      ]
+      "id": "550",
+      "parentId": null,
+      "name": "Art"
     },
     {
-      "id": "http://realestate.shop.ebay.com/",
-      "name": "Real Estate",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Land-/15841",
-          "name": "Land",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Real-Estate-/1607",
-          "name": "Other Real Estate",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Manufactured-Homes-/94825",
-          "name": "Manufactured Homes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Timeshares-for-Sale-/15897",
-          "name": "Timeshares for Sale",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Commercial-/15825",
-          "name": "Commercial",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Residential-/12605",
-          "name": "Residential",
-          "subCategories": []
-        }
-      ]
+      "id": "60435",
+      "parentId": "550",
+      "name": "Direct from the Artist"
     },
     {
-      "id": "http://video-games.shop.ebay.com/",
-      "name": "Video Games & Consoles",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Video-Gaming-Merchandise-/38583/i.html",
-          "name": "Video Gaming Merchandise",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Video-Games-Consoles-/187/i.html",
-          "name": "Other Video Games & Consoles",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Video-Game-Consoles-/139971/i.html",
-          "name": "Video Game Consoles",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Prepaid-Gaming-Cards-/156597/i.html",
-          "name": "Prepaid Gaming Cards",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Video-Games-/139973/i.html",
-          "name": "Video Games",
-          "subCategories": []
-        }
-      ]
+      "id": "158658",
+      "parentId": "550",
+      "name": "Art from Dealers & Resellers"
     },
     {
-      "id": "http://video-games.shop.ebay.com/",
-      "name": "Video Games & Consoles",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Video-Gaming-Merchandise-/38583/i.html",
-          "name": "Video Gaming Merchandise",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Video-Games-Consoles-/187/i.html",
-          "name": "Other Video Games & Consoles",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Video-Game-Consoles-/139971/i.html",
-          "name": "Video Game Consoles",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Prepaid-Gaming-Cards-/156597/i.html",
-          "name": "Prepaid Gaming Cards",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Video-Games-/139973/i.html",
-          "name": "Video Games",
-          "subCategories": []
-        }
-      ]
+      "id": "52524",
+      "parentId": "550",
+      "name": "Wholesale Lots"
     },
     {
-      "id": "http://music.shop.ebay.com/",
-      "name": "Music",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Records-/176985",
-          "name": "Records",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/CDs-/176984",
-          "name": "CDs",
-          "subCategories": []
-        }
-      ]
+      "id": "2984",
+      "parentId": null,
+      "name": "Baby"
     },
     {
-      "id": "http://home.shop.ebay.com/",
-      "name": "Home & Garden",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Other-Home-Garden-/181076/i.html",
-          "name": "Other Home & Garden",
-          "subCategories": []
-        }
-      ]
+      "id": "100223",
+      "parentId": "2984",
+      "name": "Baby Gear"
     },
     {
-      "id": "http://sports-cards.shop.ebay.com/",
-      "name": "Sports Mem, Cards & Fan Shop",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Wholesale-Lots-/56080",
-          "name": "Wholesale Lots",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Autographs-Reprints-/50115",
-          "name": "Autographs-Reprints",
-          "subCategories": []
-        }
-      ]
+      "id": "20433",
+      "parentId": "2984",
+      "name": "Baby Safety & Health"
     },
     {
-      "id": "http://sporting-goods.shop.ebay.com/",
-      "name": "Sporting Goods",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Other-Sporting-Goods-/310/i.html",
-          "name": "Other Sporting Goods",
-          "subCategories": []
-        }
-      ]
+      "id": "20394",
+      "parentId": "2984",
+      "name": "Bathing & Grooming"
     },
     {
-      "id": "http://photography.shop.ebay.com/",
-      "name": "Cameras & Photo",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Camera-Drones-/179697/i.html",
-          "name": "Camera Drones",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Cameras-Photo-/27432/i.html",
-          "name": "Other Cameras & Photo",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Digital-Cameras-/31388/i.html",
-          "name": "Digital Cameras",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Manuals-Guides-/4684/i.html",
-          "name": "Manuals & Guides",
-          "subCategories": []
-        }
-      ]
+      "id": "66692",
+      "parentId": "2984",
+      "name": "Car Safety Seats"
     },
     {
-      "id": "http://music.shop.ebay.com/",
-      "name": "Music",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Records-/176985",
-          "name": "Records",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/CDs-/176984",
-          "name": "CDs",
-          "subCategories": []
-        }
-      ]
+      "id": "100982",
+      "parentId": "2984",
+      "name": "Carriers, Slings & Backpacks"
     },
     {
-      "id": "http://crafts.shop.ebay.com/",
-      "name": "Crafts",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Other-Crafts-/75576/i.html",
-          "name": "Other Crafts",
-          "subCategories": []
-        }
-      ]
+      "id": "45455",
+      "parentId": "2984",
+      "name": "Diapering"
     },
     {
-      "id": "http://cell-phones.shop.ebay.com/",
-      "name": "Cell Phones & Accessories",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Smart-Watch-Accessories-/180899/i.html",
-          "name": "Smart Watch Accessories",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Display-Phones-/136699/i.html",
-          "name": "Display Phones",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Cell-Phones-Accs-/42428/i.html",
-          "name": "Other Cell Phones & Accs",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Smart-Watches-/178893/i.html",
-          "name": "Smart Watches",
-          "subCategories": []
-        }
-      ]
+      "id": "20400",
+      "parentId": "2984",
+      "name": "Feeding"
     },
     {
-      "id": "http://computers.shop.ebay.com/",
-      "name": "Computers/Tablets & Networking",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Tablet-eBook-Reader-Parts-/180235/i.html",
-          "name": "Tablet & eBook Reader Parts",
-          "subCategories": []
-        }
-      ]
+      "id": "117388",
+      "parentId": "2984",
+      "name": "Keepsakes & Baby Announcements"
     },
     {
-      "id": "http://jewelry.shop.ebay.com/",
-      "name": "Jewelry & Watches",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Other-Jewelry-Watches-/98863/i.html",
-          "name": "Other Jewelry & Watches",
-          "subCategories": []
-        }
-      ]
+      "id": "20416",
+      "parentId": "2984",
+      "name": "Nursery Bedding"
     },
     {
-      "id": "http://photography.shop.ebay.com/",
-      "name": "Cameras & Photo",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Camera-Drones-/179697/i.html",
-          "name": "Camera Drones",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Cameras-Photo-/27432/i.html",
-          "name": "Other Cameras & Photo",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Digital-Cameras-/31388/i.html",
-          "name": "Digital Cameras",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Manuals-Guides-/4684/i.html",
-          "name": "Manuals & Guides",
-          "subCategories": []
-        }
-      ]
+      "id": "66697",
+      "parentId": "2984",
+      "name": "Nursery Décor"
     },
     {
-      "id": "http://tickets.shop.ebay.com/",
-      "name": "Tickets & Experiences",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Theme-Park-Club-Passes-/170594/i.html",
-          "name": "Theme Park & Club Passes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Parking-Passes-/178892/i.html",
-          "name": "Parking Passes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Special-Experiences-/170591/i.html",
-          "name": "Special Experiences",
-          "subCategories": []
-        }
-      ]
+      "id": "20422",
+      "parentId": "2984",
+      "name": "Nursery Furniture"
     },
     {
-      "id": "http://travel.shop.ebay.com/",
-      "name": "Travel",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Rail-/98982",
-          "name": "Rail",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Lodging-/16123",
-          "name": "Lodging",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Cruises-/16078",
-          "name": "Cruises",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Luggage-/16080",
-          "name": "Luggage",
-          "subCategories": []
-        }
-      ]
+      "id": "37631",
+      "parentId": "2984",
+      "name": "Potty Training"
     },
     {
-      "id": "http://pet-supplies.shop.ebay.com/",
-      "name": "Pet Supplies",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Horse-Supplies-/63512",
-          "name": "Horse Supplies",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Backyard-Poultry-Supplies-/177801",
-          "name": "Backyard Poultry Supplies",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Pet-Memorials-Urns-/116391",
-          "name": "Pet Memorials & Urns",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Wholesale-Lots-/48760",
-          "name": "Wholesale Lots",
-          "subCategories": []
-        }
-      ]
+      "id": "66698",
+      "parentId": "2984",
+      "name": "Strollers & Accessories"
     },
     {
-      "id": "http://realestate.shop.ebay.com/",
-      "name": "Real Estate",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Land-/15841",
-          "name": "Land",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Real-Estate-/1607",
-          "name": "Other Real Estate",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Manufactured-Homes-/94825",
-          "name": "Manufactured Homes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Timeshares-for-Sale-/15897",
-          "name": "Timeshares for Sale",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Commercial-/15825",
-          "name": "Commercial",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Residential-/12605",
-          "name": "Residential",
-          "subCategories": []
-        }
-      ]
+      "id": "19068",
+      "parentId": "2984",
+      "name": "Toys for Baby"
     },
     {
-      "id": "http://cell-phones.shop.ebay.com/",
-      "name": "Cell Phones & Accessories",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Smart-Watch-Accessories-/180899/i.html",
-          "name": "Smart Watch Accessories",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Display-Phones-/136699/i.html",
-          "name": "Display Phones",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Cell-Phones-Accs-/42428/i.html",
-          "name": "Other Cell Phones & Accs",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Smart-Watches-/178893/i.html",
-          "name": "Smart Watches",
-          "subCategories": []
-        }
-      ]
+      "id": "1261",
+      "parentId": "2984",
+      "name": "Other Baby"
     },
     {
-      "id": "http://antiques.shop.ebay.com/",
-      "name": "Antiques",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Reproduction-Antiques-/22608",
-          "name": "Reproduction Antiques",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Primitives-/1217",
-          "name": "Primitives",
-          "subCategories": []
-        }
-      ]
+      "id": "48757",
+      "parentId": "2984",
+      "name": "Wholesale Lots"
     },
     {
-      "id": "http://dvd.shop.ebay.com/",
-      "name": "DVDs & Movies",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/VHS-Tapes-/309",
-          "name": "VHS Tapes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Storage-Media-Accessories-/52554",
-          "name": "Storage & Media Accessories",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/DVDs-Blu-ray-Discs-/617",
-          "name": "DVDs & Blu-ray Discs",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Formats-/41676",
-          "name": "Other Formats",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Wholesale-Lots-/31606",
-          "name": "Wholesale Lots",
-          "subCategories": [
-            {
-              "id": "http://www.ebay.com/sch/DVDs-Bluray-Discs-/46760/i.html",
-              "name": "DVDs & Blu-ray Discs",
-              "subCategories": []
-            },
-            {
-              "id": "http://www.ebay.com/sch/VHS-Tapes-/46765/i.html",
-              "name": "VHS Tapes",
-              "subCategories": []
-            },
-            {
-              "id": "http://www.ebay.com/sch/Other-DVD-Movie-Whlsl-Lots-/46771/i.html",
-              "name": "Other DVD & Movie Whlsl Lots",
-              "subCategories": []
-            }
-          ]
-        }
-      ]
+      "id": "267",
+      "parentId": null,
+      "name": "Books"
     },
     {
-      "id": "http://books.shop.ebay.com/",
-      "name": "Books",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Magazine-Back-Issues-/280",
-          "name": "Magazine Back Issues",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Audiobooks-/29792",
-          "name": "Audiobooks",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Fiction-Literature-/171228",
-          "name": "Fiction & Literature",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Antiquarian-Collectible-/29223",
-          "name": "Antiquarian & Collectible",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Books-/268",
-          "name": "Other Books",
-          "subCategories": []
-        }
-      ]
+      "id": "45110",
+      "parentId": "267",
+      "name": "Accessories"
     },
     {
-      "id": "http://tickets.shop.ebay.com/",
-      "name": "Tickets & Experiences",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Theme-Park-Club-Passes-/170594/i.html",
-          "name": "Theme Park & Club Passes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Parking-Passes-/178892/i.html",
-          "name": "Parking Passes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Special-Experiences-/170591/i.html",
-          "name": "Special Experiences",
-          "subCategories": []
-        }
-      ]
+      "id": "29223",
+      "parentId": "267",
+      "name": "Antiquarian & Collectible"
     },
     {
-      "id": "http://baby.shop.ebay.com/",
-      "name": "Baby",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Potty-Training-/37631",
-          "name": "Potty Training",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Carriers-Slings-Backpacks-/100982",
-          "name": "Carriers, Slings & Backpacks",
-          "subCategories": []
-        }
-      ]
+      "id": "29792",
+      "parentId": "267",
+      "name": "Audiobooks"
     },
     {
-      "id": "http://pet-supplies.shop.ebay.com/",
-      "name": "Pet Supplies",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Horse-Supplies-/63512",
-          "name": "Horse Supplies",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Backyard-Poultry-Supplies-/177801",
-          "name": "Backyard Poultry Supplies",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Pet-Memorials-Urns-/116391",
-          "name": "Pet Memorials & Urns",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Wholesale-Lots-/48760",
-          "name": "Wholesale Lots",
-          "subCategories": []
-        }
-      ]
+      "id": "118254",
+      "parentId": "267",
+      "name": "Catalogs"
     },
     {
-      "id": "http://services.shop.ebay.com/",
-      "name": "Specialty Services",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Graphic-Logo-Design-/47131",
-          "name": "Graphic & Logo Design",
-          "subCategories": []
-        }
-      ]
+      "id": "1093",
+      "parentId": "267",
+      "name": "Children & Young Adults"
     },
     {
-      "id": "http://baby.shop.ebay.com/",
-      "name": "Baby",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Potty-Training-/37631",
-          "name": "Potty Training",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Carriers-Slings-Backpacks-/100982",
-          "name": "Carriers, Slings & Backpacks",
-          "subCategories": []
-        }
-      ]
+      "id": "11104",
+      "parentId": "267",
+      "name": "Cookbooks"
     },
     {
-      "id": "http://dvd.shop.ebay.com/",
-      "name": "DVDs & Movies",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/VHS-Tapes-/309",
-          "name": "VHS Tapes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Storage-Media-Accessories-/52554",
-          "name": "Storage & Media Accessories",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/DVDs-Blu-ray-Discs-/617",
-          "name": "DVDs & Blu-ray Discs",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Formats-/41676",
-          "name": "Other Formats",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Wholesale-Lots-/31606",
-          "name": "Wholesale Lots",
-          "subCategories": [
-            {
-              "id": "http://www.ebay.com/sch/DVDs-Bluray-Discs-/46760/i.html",
-              "name": "DVDs & Blu-ray Discs",
-              "subCategories": []
-            },
-            {
-              "id": "http://www.ebay.com/sch/VHS-Tapes-/46765/i.html",
-              "name": "VHS Tapes",
-              "subCategories": []
-            },
-            {
-              "id": "http://www.ebay.com/sch/Other-DVD-Movie-Whlsl-Lots-/46771/i.html",
-              "name": "Other DVD & Movie Whlsl Lots",
-              "subCategories": []
-            }
-          ]
-        }
-      ]
+      "id": "171228",
+      "parentId": "267",
+      "name": "Fiction & Literature"
     },
     {
-      "id": "http://gift-certificates.shop.ebay.com/",
-      "name": "Gift Cards & Coupons",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/eBay-Gift-Cards-/172036",
-          "name": "eBay Gift Cards",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Digital-Gifts-/176950",
-          "name": "Digital Gifts",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Gift-Certificates-/31411",
-          "name": "Gift Certificates",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Coupons-/172010",
-          "name": "Coupons",
-          "subCategories": []
-        }
-      ]
+      "id": "280",
+      "parentId": "267",
+      "name": "Magazine Back Issues"
     },
     {
-      "id": "http://antiques.shop.ebay.com/",
-      "name": "Antiques",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Reproduction-Antiques-/22608",
-          "name": "Reproduction Antiques",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Primitives-/1217",
-          "name": "Primitives",
-          "subCategories": []
-        }
-      ]
+      "id": "171243",
+      "parentId": "267",
+      "name": "Nonfiction"
     },
     {
-      "id": "http://pet-supplies.shop.ebay.com/",
-      "name": "Pet Supplies",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Horse-Supplies-/63512",
-          "name": "Horse Supplies",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Backyard-Poultry-Supplies-/177801",
-          "name": "Backyard Poultry Supplies",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Pet-Memorials-Urns-/116391",
-          "name": "Pet Memorials & Urns",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Wholesale-Lots-/48760",
-          "name": "Wholesale Lots",
-          "subCategories": []
-        }
-      ]
+      "id": "2228",
+      "parentId": "267",
+      "name": "Textbooks, Education"
     },
     {
-      "id": "http://video-games.shop.ebay.com/",
-      "name": "Video Games & Consoles",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Video-Gaming-Merchandise-/38583/i.html",
-          "name": "Video Gaming Merchandise",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Other-Video-Games-Consoles-/187/i.html",
-          "name": "Other Video Games & Consoles",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Video-Game-Consoles-/139971/i.html",
-          "name": "Video Game Consoles",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Prepaid-Gaming-Cards-/156597/i.html",
-          "name": "Prepaid Gaming Cards",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Video-Games-/139973/i.html",
-          "name": "Video Games",
-          "subCategories": []
-        }
-      ]
+      "id": "29399",
+      "parentId": "267",
+      "name": "Wholesale & Bulk Lots"
     },
     {
-      "id": "http://books.shop.ebay.com/",
-      "name": "Books",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Magazine-Back-Issues-/280",
-          "name": "Magazine Back Issues",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Audiobooks-/29792",
-          "name": "Audiobooks",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Fiction-Literature-/171228",
-          "name": "Fiction & Literature",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Antiquarian-Collectible-/29223",
-          "name": "Antiquarian & Collectible",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Books-/268",
-          "name": "Other Books",
-          "subCategories": []
-        }
-      ]
+      "id": "268",
+      "parentId": "267",
+      "name": "Other Books"
     },
     {
-      "id": "http://travel.shop.ebay.com/",
-      "name": "Travel",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Rail-/98982",
-          "name": "Rail",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Lodging-/16123",
-          "name": "Lodging",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Cruises-/16078",
-          "name": "Cruises",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Luggage-/16080",
-          "name": "Luggage",
-          "subCategories": []
-        }
-      ]
+      "id": "12576",
+      "parentId": null,
+      "name": "Business & Industrial"
     },
     {
-      "id": "http://travel.shop.ebay.com/",
-      "name": "Travel",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Rail-/98982",
-          "name": "Rail",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Lodging-/16123",
-          "name": "Lodging",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Cruises-/16078",
-          "name": "Cruises",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Luggage-/16080",
-          "name": "Luggage",
-          "subCategories": []
-        }
-      ]
+      "id": "11748",
+      "parentId": "12576",
+      "name": "Agriculture & Forestry"
     },
     {
-      "id": "http://tickets.shop.ebay.com/",
-      "name": "Tickets & Experiences",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/sch/Theme-Park-Club-Passes-/170594/i.html",
-          "name": "Theme Park & Club Passes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Parking-Passes-/178892/i.html",
-          "name": "Parking Passes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/sch/Special-Experiences-/170591/i.html",
-          "name": "Special Experiences",
-          "subCategories": []
-        }
-      ]
+      "id": "11765",
+      "parentId": "12576",
+      "name": "Construction"
     },
     {
-      "id": "http://gift-certificates.shop.ebay.com/",
-      "name": "Gift Cards & Coupons",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/eBay-Gift-Cards-/172036",
-          "name": "eBay Gift Cards",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Digital-Gifts-/176950",
-          "name": "Digital Gifts",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Gift-Certificates-/31411",
-          "name": "Gift Certificates",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Coupons-/172010",
-          "name": "Coupons",
-          "subCategories": []
-        }
-      ]
+      "id": "92074",
+      "parentId": "12576",
+      "name": "Electrical & Test Equipment"
     },
     {
-      "id": "http://sports-cards.shop.ebay.com/",
-      "name": "Sports Mem, Cards & Fan Shop",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Wholesale-Lots-/56080",
-          "name": "Wholesale Lots",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Autographs-Reprints-/50115",
-          "name": "Autographs-Reprints",
-          "subCategories": []
-        }
-      ]
+      "id": "159693",
+      "parentId": "12576",
+      "name": "Fuel & Energy"
     },
     {
-      "id": "http://realestate.shop.ebay.com/",
-      "name": "Real Estate",
-      "subCategories": [
-        {
-          "id": "http://www.ebay.com/chp/Land-/15841",
-          "name": "Land",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Other-Real-Estate-/1607",
-          "name": "Other Real Estate",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Manufactured-Homes-/94825",
-          "name": "Manufactured Homes",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Timeshares-for-Sale-/15897",
-          "name": "Timeshares for Sale",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Commercial-/15825",
-          "name": "Commercial",
-          "subCategories": []
-        },
-        {
-          "id": "http://www.ebay.com/chp/Residential-/12605",
-          "name": "Residential",
-          "subCategories": []
-        }
-      ]
+      "id": "11815",
+      "parentId": "12576",
+      "name": "Healthcare, Lab & Life Science"
+    },
+    {
+      "id": "177641",
+      "parentId": "12576",
+      "name": "Heavy Equipment"
+    },
+    {
+      "id": "177647",
+      "parentId": "12576",
+      "name": "Heavy Equipment Attachments"
+    },
+    {
+      "id": "41489",
+      "parentId": "12576",
+      "name": "Heavy Equipment Parts & Accs"
+    },
+    {
+      "id": "61573",
+      "parentId": "12576",
+      "name": "Light Equipment & Tools"
+    },
+    {
+      "id": "11804",
+      "parentId": "12576",
+      "name": "Manufacturing & Metalworking"
+    },
+    {
+      "id": "1266",
+      "parentId": "12576",
+      "name": "MRO & Industrial Supply"
+    },
+    {
+      "id": "25298",
+      "parentId": "12576",
+      "name": "Office"
+    },
+    {
+      "id": "19273",
+      "parentId": "12576",
+      "name": "Packing & Shipping"
+    },
+    {
+      "id": "26238",
+      "parentId": "12576",
+      "name": "Printing & Graphic Arts"
+    },
+    {
+      "id": "11874",
+      "parentId": "12576",
+      "name": "Restaurant & Catering"
+    },
+    {
+      "id": "11890",
+      "parentId": "12576",
+      "name": "Retail & Services"
+    },
+    {
+      "id": "11759",
+      "parentId": "12576",
+      "name": "Websites & Businesses for Sale"
+    },
+    {
+      "id": "26261",
+      "parentId": "12576",
+      "name": "Other Business & Industrial"
+    },
+    {
+      "id": "625",
+      "parentId": null,
+      "name": "Cameras & Photo"
+    },
+    {
+      "id": "28179",
+      "parentId": "625",
+      "name": "Binoculars & Telescopes"
+    },
+    {
+      "id": "179697",
+      "parentId": "625",
+      "name": "Camera Drones"
+    },
+    {
+      "id": "11724",
+      "parentId": "625",
+      "name": "Camcorders"
+    },
+    {
+      "id": "31388",
+      "parentId": "625",
+      "name": "Digital Cameras"
+    },
+    {
+      "id": "15200",
+      "parentId": "625",
+      "name": "Camera & Photo Accessories"
+    },
+    {
+      "id": "150044",
+      "parentId": "625",
+      "name": "Digital Photo Frames"
+    },
+    {
+      "id": "69323",
+      "parentId": "625",
+      "name": "Film Photography"
+    },
+    {
+      "id": "64353",
+      "parentId": "625",
+      "name": "Flashes & Flash Accessories"
+    },
+    {
+      "id": "78997",
+      "parentId": "625",
+      "name": "Lenses & Filters"
+    },
+    {
+      "id": "30078",
+      "parentId": "625",
+      "name": "Lighting & Studio"
+    },
+    {
+      "id": "4684",
+      "parentId": "625",
+      "name": "Manuals & Guides"
+    },
+    {
+      "id": "162047",
+      "parentId": "625",
+      "name": "Replacement Parts & Tools"
+    },
+    {
+      "id": "30090",
+      "parentId": "625",
+      "name": "Tripods & Supports"
+    },
+    {
+      "id": "21162",
+      "parentId": "625",
+      "name": "Video Production & Editing"
+    },
+    {
+      "id": "3326",
+      "parentId": "625",
+      "name": "Vintage Movie & Photography"
+    },
+    {
+      "id": "45086",
+      "parentId": "625",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "27432",
+      "parentId": "625",
+      "name": "Other Cameras & Photo"
+    },
+    {
+      "id": "15032",
+      "parentId": null,
+      "name": "Cell Phones & Accessories"
+    },
+    {
+      "id": "9355",
+      "parentId": "15032",
+      "name": "Cell Phones & Smartphones"
+    },
+    {
+      "id": "178893",
+      "parentId": "15032",
+      "name": "Smart Watches"
+    },
+    {
+      "id": "180899",
+      "parentId": "15032",
+      "name": "Smart Watch Accessories"
+    },
+    {
+      "id": "9394",
+      "parentId": "15032",
+      "name": "Cell Phone Accessories"
+    },
+    {
+      "id": "136699",
+      "parentId": "15032",
+      "name": "Display Phones"
+    },
+    {
+      "id": "146492",
+      "parentId": "15032",
+      "name": "Phone Cards & SIM Cards"
+    },
+    {
+      "id": "43304",
+      "parentId": "15032",
+      "name": "Cell Phone & Smartphone Parts"
+    },
+    {
+      "id": "45065",
+      "parentId": "15032",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "42428",
+      "parentId": "15032",
+      "name": "Other Cell Phones & Accs"
+    },
+    {
+      "id": "11450",
+      "parentId": null,
+      "name": "Clothing, Shoes & Accessories"
+    },
+    {
+      "id": "3082",
+      "parentId": "11450",
+      "name": "Baby & Toddler Clothing"
+    },
+    {
+      "id": "171146",
+      "parentId": "11450",
+      "name": "Kids' Clothing, Shoes & Accs"
+    },
+    {
+      "id": "163147",
+      "parentId": "11450",
+      "name": "Costumes, Reenactment, Theater"
+    },
+    {
+      "id": "155240",
+      "parentId": "11450",
+      "name": "Cultural & Ethnic Clothing"
+    },
+    {
+      "id": "112425",
+      "parentId": "11450",
+      "name": "Dancewear"
+    },
+    {
+      "id": "4250",
+      "parentId": "11450",
+      "name": "Men's Accessories"
+    },
+    {
+      "id": "1059",
+      "parentId": "11450",
+      "name": "Men's Clothing"
+    },
+    {
+      "id": "93427",
+      "parentId": "11450",
+      "name": "Men's Shoes"
+    },
+    {
+      "id": "28015",
+      "parentId": "11450",
+      "name": "Uniforms & Work Clothing"
+    },
+    {
+      "id": "155184",
+      "parentId": "11450",
+      "name": "Unisex Clothing, Shoes & Accs"
+    },
+    {
+      "id": "3259",
+      "parentId": "11450",
+      "name": "Wedding & Formal Occasion"
+    },
+    {
+      "id": "4251",
+      "parentId": "11450",
+      "name": "Women's Accessories"
+    },
+    {
+      "id": "15724",
+      "parentId": "11450",
+      "name": "Women's Clothing"
+    },
+    {
+      "id": "169291",
+      "parentId": "11450",
+      "name": "Women's Handbags & Bags"
+    },
+    {
+      "id": "3034",
+      "parentId": "11450",
+      "name": "Women's Shoes"
+    },
+    {
+      "id": "175759",
+      "parentId": "11450",
+      "name": "Vintage"
+    },
+    {
+      "id": "41964",
+      "parentId": "11450",
+      "name": "Wholesale, Large & Small Lots"
+    },
+    {
+      "id": "11116",
+      "parentId": null,
+      "name": "Coins & Paper Money"
+    },
+    {
+      "id": "39482",
+      "parentId": "11116",
+      "name": "Bullion"
+    },
+    {
+      "id": "253",
+      "parentId": "11116",
+      "name": "Coins: US"
+    },
+    {
+      "id": "3377",
+      "parentId": "11116",
+      "name": "Coins: Canada"
+    },
+    {
+      "id": "4733",
+      "parentId": "11116",
+      "name": "Coins: Ancient"
+    },
+    {
+      "id": "18466",
+      "parentId": "11116",
+      "name": "Coins: Medieval"
+    },
+    {
+      "id": "256",
+      "parentId": "11116",
+      "name": "Coins: World"
+    },
+    {
+      "id": "3452",
+      "parentId": "11116",
+      "name": "Exonumia"
+    },
+    {
+      "id": "3412",
+      "parentId": "11116",
+      "name": "Paper Money: US"
+    },
+    {
+      "id": "3411",
+      "parentId": "11116",
+      "name": "Paper Money: World"
+    },
+    {
+      "id": "83274",
+      "parentId": "11116",
+      "name": "Publications & Supplies"
+    },
+    {
+      "id": "3444",
+      "parentId": "11116",
+      "name": "Stocks & Bonds, Scripophily"
+    },
+    {
+      "id": "179197",
+      "parentId": "11116",
+      "name": "Virtual Currency"
+    },
+    {
+      "id": "169305",
+      "parentId": "11116",
+      "name": "Other Coins & Paper Money"
+    },
+    {
+      "id": "1",
+      "parentId": null,
+      "name": "Collectibles"
+    },
+    {
+      "id": "34",
+      "parentId": "1",
+      "name": "Advertising"
+    },
+    {
+      "id": "1335",
+      "parentId": "1",
+      "name": "Animals"
+    },
+    {
+      "id": "13658",
+      "parentId": "1",
+      "name": "Animation Art & Characters"
+    },
+    {
+      "id": "66502",
+      "parentId": "1",
+      "name": "Arcade, Jukeboxes & Pinball"
+    },
+    {
+      "id": "14429",
+      "parentId": "1",
+      "name": "Autographs"
+    },
+    {
+      "id": "66503",
+      "parentId": "1",
+      "name": "Banks, Registers & Vending"
+    },
+    {
+      "id": "3265",
+      "parentId": "1",
+      "name": "Barware"
+    },
+    {
+      "id": "156277",
+      "parentId": "1",
+      "name": "Beads"
+    },
+    {
+      "id": "29797",
+      "parentId": "1",
+      "name": "Bottles & Insulators"
+    },
+    {
+      "id": "562",
+      "parentId": "1",
+      "name": "Breweriana, Beer"
+    },
+    {
+      "id": "898",
+      "parentId": "1",
+      "name": "Casino"
+    },
+    {
+      "id": "397",
+      "parentId": "1",
+      "name": "Clocks"
+    },
+    {
+      "id": "63",
+      "parentId": "1",
+      "name": "Comics"
+    },
+    {
+      "id": "3913",
+      "parentId": "1",
+      "name": "Cultures & Ethnicities"
+    },
+    {
+      "id": "13777",
+      "parentId": "1",
+      "name": "Decorative Collectibles"
+    },
+    {
+      "id": "137",
+      "parentId": "1",
+      "name": "Disneyana"
+    },
+    {
+      "id": "10860",
+      "parentId": "1",
+      "name": "Fantasy, Mythical & Magic"
+    },
+    {
+      "id": "13877",
+      "parentId": "1",
+      "name": "Historical Memorabilia"
+    },
+    {
+      "id": "907",
+      "parentId": "1",
+      "name": "Holiday & Seasonal"
+    },
+    {
+      "id": "13905",
+      "parentId": "1",
+      "name": "Kitchen & Home"
+    },
+    {
+      "id": "1401",
+      "parentId": "1",
+      "name": "Knives, Swords & Blades"
+    },
+    {
+      "id": "1404",
+      "parentId": "1",
+      "name": "Lamps, Lighting"
+    },
+    {
+      "id": "940",
+      "parentId": "1",
+      "name": "Linens & Textiles (1930-Now)"
+    },
+    {
+      "id": "1430",
+      "parentId": "1",
+      "name": "Metalware"
+    },
+    {
+      "id": "13956",
+      "parentId": "1",
+      "name": "Militaria"
+    },
+    {
+      "id": "124",
+      "parentId": "1",
+      "name": "Paper"
+    },
+    {
+      "id": "966",
+      "parentId": "1",
+      "name": "Pens & Writing Instruments"
+    },
+    {
+      "id": "14005",
+      "parentId": "1",
+      "name": "Pez, Keychains, Promo Glasses"
+    },
+    {
+      "id": "14277",
+      "parentId": "1",
+      "name": "Photographic Images"
+    },
+    {
+      "id": "39507",
+      "parentId": "1",
+      "name": "Pinbacks, Bobbles, Lunchboxes"
+    },
+    {
+      "id": "914",
+      "parentId": "1",
+      "name": "Postcards"
+    },
+    {
+      "id": "29832",
+      "parentId": "1",
+      "name": "Radio, Phonograph, TV, Phone"
+    },
+    {
+      "id": "1446",
+      "parentId": "1",
+      "name": "Religion & Spirituality"
+    },
+    {
+      "id": "3213",
+      "parentId": "1",
+      "name": "Rocks, Fossils & Minerals"
+    },
+    {
+      "id": "152",
+      "parentId": "1",
+      "name": "Science Fiction & Horror"
+    },
+    {
+      "id": "412",
+      "parentId": "1",
+      "name": "Science & Medicine (1930-Now)"
+    },
+    {
+      "id": "113",
+      "parentId": "1",
+      "name": "Sewing (1930-Now)"
+    },
+    {
+      "id": "165800",
+      "parentId": "1",
+      "name": "Souvenirs & Travel Memorabilia"
+    },
+    {
+      "id": "593",
+      "parentId": "1",
+      "name": "Tobacciana"
+    },
+    {
+      "id": "13849",
+      "parentId": "1",
+      "name": "Tools, Hardware & Locks"
+    },
+    {
+      "id": "868",
+      "parentId": "1",
+      "name": "Trading Cards"
+    },
+    {
+      "id": "417",
+      "parentId": "1",
+      "name": "Transportation"
+    },
+    {
+      "id": "597",
+      "parentId": "1",
+      "name": "Vanity, Perfume & Shaving"
+    },
+    {
+      "id": "69851",
+      "parentId": "1",
+      "name": "Vintage, Retro, Mid-Century"
+    },
+    {
+      "id": "45058",
+      "parentId": "1",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "58058",
+      "parentId": null,
+      "name": "Computers/Tablets & Networking"
+    },
+    {
+      "id": "171485",
+      "parentId": "58058",
+      "name": "iPads, Tablets & eBook Readers"
+    },
+    {
+      "id": "176970",
+      "parentId": "58058",
+      "name": "iPad/Tablet/eBook Accessories"
+    },
+    {
+      "id": "180235",
+      "parentId": "58058",
+      "name": "Tablet & eBook Reader Parts"
+    },
+    {
+      "id": "175672",
+      "parentId": "58058",
+      "name": "Laptops & Netbooks"
+    },
+    {
+      "id": "171957",
+      "parentId": "58058",
+      "name": "Desktops & All-In-Ones"
+    },
+    {
+      "id": "31530",
+      "parentId": "58058",
+      "name": "Laptop & Desktop Accessories"
+    },
+    {
+      "id": "31491",
+      "parentId": "58058",
+      "name": "Cables & Connectors"
+    },
+    {
+      "id": "175673",
+      "parentId": "58058",
+      "name": "Computer Components & Parts"
+    },
+    {
+      "id": "165",
+      "parentId": "58058",
+      "name": "Drives, Storage & Blank Media"
+    },
+    {
+      "id": "175698",
+      "parentId": "58058",
+      "name": "Enterprise Networking, Servers"
+    },
+    {
+      "id": "11176",
+      "parentId": "58058",
+      "name": "Home Networking & Connectivity"
+    },
+    {
+      "id": "3676",
+      "parentId": "58058",
+      "name": "Keyboards, Mice & Pointing"
+    },
+    {
+      "id": "162497",
+      "parentId": "58058",
+      "name": "Monitors, Projectors & Accs"
+    },
+    {
+      "id": "86722",
+      "parentId": "58058",
+      "name": "Power Protection, Distribution"
+    },
+    {
+      "id": "171961",
+      "parentId": "58058",
+      "name": "Printers, Scanners & Supplies"
+    },
+    {
+      "id": "18793",
+      "parentId": "58058",
+      "name": "Software"
+    },
+    {
+      "id": "3516",
+      "parentId": "58058",
+      "name": "Manuals & Resources"
+    },
+    {
+      "id": "11189",
+      "parentId": "58058",
+      "name": "Vintage Computing"
+    },
+    {
+      "id": "159260",
+      "parentId": "58058",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "162",
+      "parentId": "58058",
+      "name": "Other Computers & Networking"
+    },
+    {
+      "id": "293",
+      "parentId": null,
+      "name": "Consumer Electronics"
+    },
+    {
+      "id": "15052",
+      "parentId": "293",
+      "name": "Portable Audio & Headphones"
+    },
+    {
+      "id": "32852",
+      "parentId": "293",
+      "name": "TV, Video & Home Audio"
+    },
+    {
+      "id": "3270",
+      "parentId": "293",
+      "name": "Vehicle Electronics & GPS"
+    },
+    {
+      "id": "50582",
+      "parentId": "293",
+      "name": "Home Automation"
+    },
+    {
+      "id": "48633",
+      "parentId": "293",
+      "name": "Home Surveillance"
+    },
+    {
+      "id": "3286",
+      "parentId": "293",
+      "name": "Home Telephones & Accessories"
+    },
+    {
+      "id": "48446",
+      "parentId": "293",
+      "name": "Multipurpose Batteries & Power"
+    },
+    {
+      "id": "1500",
+      "parentId": "293",
+      "name": "Radio Communication"
+    },
+    {
+      "id": "14948",
+      "parentId": "293",
+      "name": "Gadgets & Other Electronics"
+    },
+    {
+      "id": "14998",
+      "parentId": "293",
+      "name": "Vintage Electronics"
+    },
+    {
+      "id": "61494",
+      "parentId": "293",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "14339",
+      "parentId": null,
+      "name": "Crafts"
+    },
+    {
+      "id": "11783",
+      "parentId": "14339",
+      "name": "Art Supplies"
+    },
+    {
+      "id": "31723",
+      "parentId": "14339",
+      "name": "Beads & Jewelry Making"
+    },
+    {
+      "id": "163778",
+      "parentId": "14339",
+      "name": "Glass & Mosaics"
+    },
+    {
+      "id": "71183",
+      "parentId": "14339",
+      "name": "Handcrafted & Finished Pieces"
+    },
+    {
+      "id": "160667",
+      "parentId": "14339",
+      "name": "Home Arts & Crafts"
+    },
+    {
+      "id": "116652",
+      "parentId": "14339",
+      "name": "Kids' Crafts"
+    },
+    {
+      "id": "28102",
+      "parentId": "14339",
+      "name": "Multi-Purpose Craft Supplies"
+    },
+    {
+      "id": "160706",
+      "parentId": "14339",
+      "name": "Needlecrafts & Yarn"
+    },
+    {
+      "id": "11788",
+      "parentId": "14339",
+      "name": "Scrapbooking & Paper Crafts"
+    },
+    {
+      "id": "160737",
+      "parentId": "14339",
+      "name": "Sewing & Fabric"
+    },
+    {
+      "id": "3122",
+      "parentId": "14339",
+      "name": "Stamping & Embossing"
+    },
+    {
+      "id": "75576",
+      "parentId": "14339",
+      "name": "Other Crafts"
+    },
+    {
+      "id": "45074",
+      "parentId": "14339",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "237",
+      "parentId": null,
+      "name": "Dolls & Bears"
+    },
+    {
+      "id": "50253",
+      "parentId": "237",
+      "name": "Bear Making Supplies"
+    },
+    {
+      "id": "386",
+      "parentId": "237",
+      "name": "Bears"
+    },
+    {
+      "id": "238",
+      "parentId": "237",
+      "name": "Dolls"
+    },
+    {
+      "id": "1202",
+      "parentId": "237",
+      "name": "Dollhouse Miniatures"
+    },
+    {
+      "id": "2440",
+      "parentId": "237",
+      "name": "Paper Dolls"
+    },
+    {
+      "id": "52546",
+      "parentId": "237",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "11232",
+      "parentId": null,
+      "name": "DVDs & Movies"
+    },
+    {
+      "id": "617",
+      "parentId": "11232",
+      "name": "DVDs & Blu-ray Discs"
+    },
+    {
+      "id": "63821",
+      "parentId": "11232",
+      "name": "Film Stock"
+    },
+    {
+      "id": "381",
+      "parentId": "11232",
+      "name": "Laserdiscs"
+    },
+    {
+      "id": "132975",
+      "parentId": "11232",
+      "name": "UMDs"
+    },
+    {
+      "id": "309",
+      "parentId": "11232",
+      "name": "VHS Tapes"
+    },
+    {
+      "id": "41676",
+      "parentId": "11232",
+      "name": "Other Formats"
+    },
+    {
+      "id": "52554",
+      "parentId": "11232",
+      "name": "Storage & Media Accessories"
+    },
+    {
+      "id": "31606",
+      "parentId": "11232",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "45100",
+      "parentId": null,
+      "name": "Entertainment Memorabilia"
+    },
+    {
+      "id": "57",
+      "parentId": "45100",
+      "name": "Autographs-Original"
+    },
+    {
+      "id": "104412",
+      "parentId": "45100",
+      "name": "Autographs-Reprints"
+    },
+    {
+      "id": "196",
+      "parentId": "45100",
+      "name": "Movie Memorabilia"
+    },
+    {
+      "id": "2329",
+      "parentId": "45100",
+      "name": "Music Memorabilia"
+    },
+    {
+      "id": "1424",
+      "parentId": "45100",
+      "name": "Television Memorabilia"
+    },
+    {
+      "id": "2362",
+      "parentId": "45100",
+      "name": "Theater Memorabilia"
+    },
+    {
+      "id": "45101",
+      "parentId": "45100",
+      "name": "Video Game Memorabilia"
+    },
+    {
+      "id": "2312",
+      "parentId": "45100",
+      "name": "Other Entertainment Mem"
+    },
+    {
+      "id": "172008",
+      "parentId": null,
+      "name": "Gift Cards & Coupons"
+    },
+    {
+      "id": "172009",
+      "parentId": "172008",
+      "name": "Gift Cards"
+    },
+    {
+      "id": "172036",
+      "parentId": "172008",
+      "name": "eBay Gift Cards"
+    },
+    {
+      "id": "31411",
+      "parentId": "172008",
+      "name": "Gift Certificates"
+    },
+    {
+      "id": "172010",
+      "parentId": "172008",
+      "name": "Coupons"
+    },
+    {
+      "id": "176950",
+      "parentId": "172008",
+      "name": "Digital Gifts"
+    },
+    {
+      "id": "26395",
+      "parentId": null,
+      "name": "Health & Beauty"
+    },
+    {
+      "id": "11838",
+      "parentId": "26395",
+      "name": "Bath & Body"
+    },
+    {
+      "id": "180345",
+      "parentId": "26395",
+      "name": "Fragrances"
+    },
+    {
+      "id": "11854",
+      "parentId": "26395",
+      "name": "Hair Care & Styling"
+    },
+    {
+      "id": "67588",
+      "parentId": "26395",
+      "name": "Health Care"
+    },
+    {
+      "id": "31786",
+      "parentId": "26395",
+      "name": "Makeup"
+    },
+    {
+      "id": "36447",
+      "parentId": "26395",
+      "name": "Massage"
+    },
+    {
+      "id": "11778",
+      "parentId": "26395",
+      "name": "Medical, Mobility & Disability"
+    },
+    {
+      "id": "47945",
+      "parentId": "26395",
+      "name": "Nail Care, Manicure & Pedicure"
+    },
+    {
+      "id": "67659",
+      "parentId": "26395",
+      "name": "Natural & Alternative Remedies"
+    },
+    {
+      "id": "31769",
+      "parentId": "26395",
+      "name": "Oral Care"
+    },
+    {
+      "id": "177731",
+      "parentId": "26395",
+      "name": "Salon & Spa Equipment"
+    },
+    {
+      "id": "31762",
+      "parentId": "26395",
+      "name": "Shaving & Hair Removal"
+    },
+    {
+      "id": "11863",
+      "parentId": "26395",
+      "name": "Skin Care"
+    },
+    {
+      "id": "31772",
+      "parentId": "26395",
+      "name": "Sun Protection & Tanning"
+    },
+    {
+      "id": "33914",
+      "parentId": "26395",
+      "name": "Tattoos & Body Art"
+    },
+    {
+      "id": "31414",
+      "parentId": "26395",
+      "name": "Vision Care"
+    },
+    {
+      "id": "180959",
+      "parentId": "26395",
+      "name": "Vitamins & Dietary Supplements"
+    },
+    {
+      "id": "40965",
+      "parentId": "26395",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "1277",
+      "parentId": "26395",
+      "name": "Other Health & Beauty"
+    },
+    {
+      "id": "11700",
+      "parentId": null,
+      "name": "Home & Garden"
+    },
+    {
+      "id": "26677",
+      "parentId": "11700",
+      "name": "Bath"
+    },
+    {
+      "id": "20444",
+      "parentId": "11700",
+      "name": "Bedding"
+    },
+    {
+      "id": "14308",
+      "parentId": "11700",
+      "name": "Food & Beverages"
+    },
+    {
+      "id": "178069",
+      "parentId": "11700",
+      "name": "Fresh Cut Flowers & Supplies"
+    },
+    {
+      "id": "3197",
+      "parentId": "11700",
+      "name": "Furniture"
+    },
+    {
+      "id": "16086",
+      "parentId": "11700",
+      "name": "Greeting Cards & Party Supply"
+    },
+    {
+      "id": "38227",
+      "parentId": "11700",
+      "name": "Holiday & Seasonal Décor"
+    },
+    {
+      "id": "10033",
+      "parentId": "11700",
+      "name": "Home Décor"
+    },
+    {
+      "id": "159907",
+      "parentId": "11700",
+      "name": "Home Improvement"
+    },
+    {
+      "id": "299",
+      "parentId": "11700",
+      "name": "Household Supplies & Cleaning"
+    },
+    {
+      "id": "176988",
+      "parentId": "11700",
+      "name": "Kids & Teens at Home"
+    },
+    {
+      "id": "20625",
+      "parentId": "11700",
+      "name": "Kitchen, Dining & Bar"
+    },
+    {
+      "id": "20697",
+      "parentId": "11700",
+      "name": "Lamps, Lighting & Ceiling Fans"
+    },
+    {
+      "id": "20710",
+      "parentId": "11700",
+      "name": "Major Appliances"
+    },
+    {
+      "id": "20571",
+      "parentId": "11700",
+      "name": "Rugs & Carpets"
+    },
+    {
+      "id": "631",
+      "parentId": "11700",
+      "name": "Tools"
+    },
+    {
+      "id": "11827",
+      "parentId": "11700",
+      "name": "Wedding Supplies"
+    },
+    {
+      "id": "63514",
+      "parentId": "11700",
+      "name": "Window Treatments & Hardware"
+    },
+    {
+      "id": "159912",
+      "parentId": "11700",
+      "name": "Yard, Garden & Outdoor Living"
+    },
+    {
+      "id": "31605",
+      "parentId": "11700",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "181076",
+      "parentId": "11700",
+      "name": "Other Home & Garden"
+    },
+    {
+      "id": "281",
+      "parentId": null,
+      "name": "Jewelry & Watches"
+    },
+    {
+      "id": "84605",
+      "parentId": "281",
+      "name": "Children's Jewelry"
+    },
+    {
+      "id": "91427",
+      "parentId": "281",
+      "name": "Engagement & Wedding"
+    },
+    {
+      "id": "11312",
+      "parentId": "281",
+      "name": "Ethnic, Regional & Tribal"
+    },
+    {
+      "id": "10968",
+      "parentId": "281",
+      "name": "Fashion Jewelry"
+    },
+    {
+      "id": "4196",
+      "parentId": "281",
+      "name": "Fine Jewelry"
+    },
+    {
+      "id": "110633",
+      "parentId": "281",
+      "name": "Handcrafted, Artisan Jewelry"
+    },
+    {
+      "id": "10321",
+      "parentId": "281",
+      "name": "Jewelry Boxes & Organizers"
+    },
+    {
+      "id": "164352",
+      "parentId": "281",
+      "name": "Jewelry Design & Repair"
+    },
+    {
+      "id": "179264",
+      "parentId": "281",
+      "name": "Loose Beads"
+    },
+    {
+      "id": "491",
+      "parentId": "281",
+      "name": "Loose Diamonds & Gemstones"
+    },
+    {
+      "id": "10290",
+      "parentId": "281",
+      "name": "Men's Jewelry"
+    },
+    {
+      "id": "48579",
+      "parentId": "281",
+      "name": "Vintage & Antique Jewelry"
+    },
+    {
+      "id": "14324",
+      "parentId": "281",
+      "name": "Watches"
+    },
+    {
+      "id": "98863",
+      "parentId": "281",
+      "name": "Other Jewelry & Watches"
+    },
+    {
+      "id": "40131",
+      "parentId": "281",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "11233",
+      "parentId": null,
+      "name": "Music"
+    },
+    {
+      "id": "176983",
+      "parentId": "11233",
+      "name": "Cassettes"
+    },
+    {
+      "id": "176984",
+      "parentId": "11233",
+      "name": "CDs"
+    },
+    {
+      "id": "176985",
+      "parentId": "11233",
+      "name": "Records"
+    },
+    {
+      "id": "618",
+      "parentId": "11233",
+      "name": "Other Formats"
+    },
+    {
+      "id": "52473",
+      "parentId": "11233",
+      "name": "Storage & Media Accessories"
+    },
+    {
+      "id": "31608",
+      "parentId": "11233",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "619",
+      "parentId": null,
+      "name": "Musical Instruments & Gear"
+    },
+    {
+      "id": "16212",
+      "parentId": "619",
+      "name": "Brass"
+    },
+    {
+      "id": "3858",
+      "parentId": "619",
+      "name": "Guitars & Basses"
+    },
+    {
+      "id": "180012",
+      "parentId": "619",
+      "name": "Percussion"
+    },
+    {
+      "id": "180010",
+      "parentId": "619",
+      "name": "Pianos, Keyboards & Organs"
+    },
+    {
+      "id": "180014",
+      "parentId": "619",
+      "name": "Pro Audio Equipment"
+    },
+    {
+      "id": "47043",
+      "parentId": "619",
+      "name": "Instruction Books, CDs & Video"
+    },
+    {
+      "id": "175696",
+      "parentId": "619",
+      "name": "Karaoke Entertainment"
+    },
+    {
+      "id": "180015",
+      "parentId": "619",
+      "name": "Sheet Music & Song Books"
+    },
+    {
+      "id": "12922",
+      "parentId": "619",
+      "name": "Stage Lighting & Effects"
+    },
+    {
+      "id": "180016",
+      "parentId": "619",
+      "name": "String"
+    },
+    {
+      "id": "10181",
+      "parentId": "619",
+      "name": "Wind & Woodwind"
+    },
+    {
+      "id": "180008",
+      "parentId": "619",
+      "name": "Equipment"
+    },
+    {
+      "id": "181162",
+      "parentId": "619",
+      "name": "Vintage Musical Instruments"
+    },
+    {
+      "id": "52555",
+      "parentId": "619",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "308",
+      "parentId": "619",
+      "name": "Other Musical Instruments"
+    },
+    {
+      "id": "1281",
+      "parentId": null,
+      "name": "Pet Supplies"
+    },
+    {
+      "id": "177801",
+      "parentId": "1281",
+      "name": "Backyard Poultry Supplies"
+    },
+    {
+      "id": "20734",
+      "parentId": "1281",
+      "name": "Bird Supplies"
+    },
+    {
+      "id": "20737",
+      "parentId": "1281",
+      "name": "Cat Supplies"
+    },
+    {
+      "id": "20742",
+      "parentId": "1281",
+      "name": "Dog Supplies"
+    },
+    {
+      "id": "20754",
+      "parentId": "1281",
+      "name": "Fish & Aquariums"
+    },
+    {
+      "id": "63512",
+      "parentId": "1281",
+      "name": "Horse Supplies"
+    },
+    {
+      "id": "1285",
+      "parentId": "1281",
+      "name": "Reptile Supplies"
+    },
+    {
+      "id": "26696",
+      "parentId": "1281",
+      "name": "Small Animal Supplies"
+    },
+    {
+      "id": "116391",
+      "parentId": "1281",
+      "name": "Pet Memorials & Urns"
+    },
+    {
+      "id": "48760",
+      "parentId": "1281",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "301",
+      "parentId": "1281",
+      "name": "Other Pet Supplies"
+    },
+    {
+      "id": "870",
+      "parentId": null,
+      "name": "Pottery & Glass"
+    },
+    {
+      "id": "50693",
+      "parentId": "870",
+      "name": "Glass"
+    },
+    {
+      "id": "18875",
+      "parentId": "870",
+      "name": "Pottery & China"
+    },
+    {
+      "id": "10542",
+      "parentId": null,
+      "name": "Real Estate"
+    },
+    {
+      "id": "15825",
+      "parentId": "10542",
+      "name": "Commercial"
+    },
+    {
+      "id": "15841",
+      "parentId": "10542",
+      "name": "Land"
+    },
+    {
+      "id": "94825",
+      "parentId": "10542",
+      "name": "Manufactured Homes"
+    },
+    {
+      "id": "12605",
+      "parentId": "10542",
+      "name": "Residential"
+    },
+    {
+      "id": "15897",
+      "parentId": "10542",
+      "name": "Timeshares for Sale"
+    },
+    {
+      "id": "1607",
+      "parentId": "10542",
+      "name": "Other Real Estate"
+    },
+    {
+      "id": "316",
+      "parentId": null,
+      "name": "Specialty Services"
+    },
+    {
+      "id": "47126",
+      "parentId": "316",
+      "name": "Artistic Services"
+    },
+    {
+      "id": "50343",
+      "parentId": "316",
+      "name": "Custom Clothing & Jewelry"
+    },
+    {
+      "id": "50349",
+      "parentId": "316",
+      "name": "eBay Auction Services"
+    },
+    {
+      "id": "47131",
+      "parentId": "316",
+      "name": "Graphic & Logo Design"
+    },
+    {
+      "id": "170048",
+      "parentId": "316",
+      "name": "Home Improvement Services"
+    },
+    {
+      "id": "175814",
+      "parentId": "316",
+      "name": "Item Based Services"
+    },
+    {
+      "id": "50355",
+      "parentId": "316",
+      "name": "Media Editing & Duplication"
+    },
+    {
+      "id": "20943",
+      "parentId": "316",
+      "name": "Printing & Personalization"
+    },
+    {
+      "id": "47119",
+      "parentId": "316",
+      "name": "Restoration & Repair"
+    },
+    {
+      "id": "47104",
+      "parentId": "316",
+      "name": "Web & Computer Services"
+    },
+    {
+      "id": "317",
+      "parentId": "316",
+      "name": "Other Specialty Services"
+    },
+    {
+      "id": "888",
+      "parentId": null,
+      "name": "Sporting Goods"
+    },
+    {
+      "id": "179767",
+      "parentId": "888",
+      "name": "Boxing, Martial Arts & MMA"
+    },
+    {
+      "id": "7294",
+      "parentId": "888",
+      "name": "Cycling"
+    },
+    {
+      "id": "1492",
+      "parentId": "888",
+      "name": "Fishing"
+    },
+    {
+      "id": "15273",
+      "parentId": "888",
+      "name": "Fitness, Running & Yoga"
+    },
+    {
+      "id": "1513",
+      "parentId": "888",
+      "name": "Golf"
+    },
+    {
+      "id": "7301",
+      "parentId": "888",
+      "name": "Hunting"
+    },
+    {
+      "id": "36274",
+      "parentId": "888",
+      "name": "Indoor Games"
+    },
+    {
+      "id": "159043",
+      "parentId": "888",
+      "name": "Outdoor Sports"
+    },
+    {
+      "id": "159049",
+      "parentId": "888",
+      "name": "Team Sports"
+    },
+    {
+      "id": "159134",
+      "parentId": "888",
+      "name": "Tennis & Racquet Sports"
+    },
+    {
+      "id": "159136",
+      "parentId": "888",
+      "name": "Water Sports"
+    },
+    {
+      "id": "36259",
+      "parentId": "888",
+      "name": "Winter Sports"
+    },
+    {
+      "id": "310",
+      "parentId": "888",
+      "name": "Other Sporting Goods"
+    },
+    {
+      "id": "40146",
+      "parentId": "888",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "64482",
+      "parentId": null,
+      "name": "Sports Mem, Cards & Fan Shop"
+    },
+    {
+      "id": "51",
+      "parentId": "64482",
+      "name": "Autographs-Original"
+    },
+    {
+      "id": "50115",
+      "parentId": "64482",
+      "name": "Autographs-Reprints"
+    },
+    {
+      "id": "212",
+      "parentId": "64482",
+      "name": "Cards"
+    },
+    {
+      "id": "24409",
+      "parentId": "64482",
+      "name": "Fan Apparel & Souvenirs"
+    },
+    {
+      "id": "50116",
+      "parentId": "64482",
+      "name": "Game Used Memorabilia"
+    },
+    {
+      "id": "60591",
+      "parentId": "64482",
+      "name": "Manufacturer Authenticated"
+    },
+    {
+      "id": "50123",
+      "parentId": "64482",
+      "name": "Vintage Sports Memorabilia"
+    },
+    {
+      "id": "56080",
+      "parentId": "64482",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "260",
+      "parentId": null,
+      "name": "Stamps"
+    },
+    {
+      "id": "261",
+      "parentId": "260",
+      "name": "United States"
+    },
+    {
+      "id": "3478",
+      "parentId": "260",
+      "name": "Canada"
+    },
+    {
+      "id": "3499",
+      "parentId": "260",
+      "name": "Great Britain"
+    },
+    {
+      "id": "181423",
+      "parentId": "260",
+      "name": "Africa"
+    },
+    {
+      "id": "181416",
+      "parentId": "260",
+      "name": "Asia"
+    },
+    {
+      "id": "181424",
+      "parentId": "260",
+      "name": "Australia & Oceania"
+    },
+    {
+      "id": "65174",
+      "parentId": "260",
+      "name": "British Colonies & Territories"
+    },
+    {
+      "id": "179377",
+      "parentId": "260",
+      "name": "Caribbean"
+    },
+    {
+      "id": "4742",
+      "parentId": "260",
+      "name": "Europe"
+    },
+    {
+      "id": "181417",
+      "parentId": "260",
+      "name": "Latin America"
+    },
+    {
+      "id": "181422",
+      "parentId": "260",
+      "name": "Middle East"
+    },
+    {
+      "id": "181420",
+      "parentId": "260",
+      "name": "Worldwide"
+    },
+    {
+      "id": "4752",
+      "parentId": "260",
+      "name": "Topical Stamps"
+    },
+    {
+      "id": "7898",
+      "parentId": "260",
+      "name": "Specialty Philately"
+    },
+    {
+      "id": "181421",
+      "parentId": "260",
+      "name": "Publications & Supplies"
+    },
+    {
+      "id": "170137",
+      "parentId": "260",
+      "name": "Other Stamps"
+    },
+    {
+      "id": "1305",
+      "parentId": null,
+      "name": "Tickets & Experiences"
+    },
+    {
+      "id": "173633",
+      "parentId": "1305",
+      "name": "Sports Tickets"
+    },
+    {
+      "id": "173634",
+      "parentId": "1305",
+      "name": "Concert Tickets"
+    },
+    {
+      "id": "173635",
+      "parentId": "1305",
+      "name": "Theater Tickets"
+    },
+    {
+      "id": "170594",
+      "parentId": "1305",
+      "name": "Theme Park & Club Passes"
+    },
+    {
+      "id": "178892",
+      "parentId": "1305",
+      "name": "Parking Passes"
+    },
+    {
+      "id": "170591",
+      "parentId": "1305",
+      "name": "Special Experiences"
+    },
+    {
+      "id": "1306",
+      "parentId": "1305",
+      "name": "Other Tickets & Experiences"
+    },
+    {
+      "id": "220",
+      "parentId": null,
+      "name": "Toys & Hobbies"
+    },
+    {
+      "id": "246",
+      "parentId": "220",
+      "name": "Action Figures"
+    },
+    {
+      "id": "49019",
+      "parentId": "220",
+      "name": "Beanbag Plush"
+    },
+    {
+      "id": "18991",
+      "parentId": "220",
+      "name": "Building Toys"
+    },
+    {
+      "id": "19016",
+      "parentId": "220",
+      "name": "Classic Toys"
+    },
+    {
+      "id": "222",
+      "parentId": "220",
+      "name": "Diecast & Toy Vehicles"
+    },
+    {
+      "id": "11731",
+      "parentId": "220",
+      "name": "Educational"
+    },
+    {
+      "id": "19071",
+      "parentId": "220",
+      "name": "Electronic, Battery & Wind-Up"
+    },
+    {
+      "id": "19077",
+      "parentId": "220",
+      "name": "Fast Food & Cereal Premiums"
+    },
+    {
+      "id": "233",
+      "parentId": "220",
+      "name": "Games"
+    },
+    {
+      "id": "771",
+      "parentId": "220",
+      "name": "Marbles"
+    },
+    {
+      "id": "180250",
+      "parentId": "220",
+      "name": "Model Railroads & Trains"
+    },
+    {
+      "id": "1188",
+      "parentId": "220",
+      "name": "Models & Kits"
+    },
+    {
+      "id": "11743",
+      "parentId": "220",
+      "name": "Outdoor Toys & Structures"
+    },
+    {
+      "id": "19169",
+      "parentId": "220",
+      "name": "Preschool Toys & Pretend Play"
+    },
+    {
+      "id": "2613",
+      "parentId": "220",
+      "name": "Puzzles"
+    },
+    {
+      "id": "2562",
+      "parentId": "220",
+      "name": "Radio Control & Control Line"
+    },
+    {
+      "id": "19192",
+      "parentId": "220",
+      "name": "Robots, Monsters & Space Toys"
+    },
+    {
+      "id": "2616",
+      "parentId": "220",
+      "name": "Slot Cars"
+    },
+    {
+      "id": "436",
+      "parentId": "220",
+      "name": "Stuffed Animals"
+    },
+    {
+      "id": "2631",
+      "parentId": "220",
+      "name": "Toy Soldiers"
+    },
+    {
+      "id": "2536",
+      "parentId": "220",
+      "name": "Trading Card Games"
+    },
+    {
+      "id": "2624",
+      "parentId": "220",
+      "name": "TV, Movie & Character Toys"
+    },
+    {
+      "id": "717",
+      "parentId": "220",
+      "name": "Vintage & Antique Toys"
+    },
+    {
+      "id": "40149",
+      "parentId": "220",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "3252",
+      "parentId": null,
+      "name": "Travel"
+    },
+    {
+      "id": "3253",
+      "parentId": "3252",
+      "name": "Airline"
+    },
+    {
+      "id": "164802",
+      "parentId": "3252",
+      "name": "Campground & RV Parks"
+    },
+    {
+      "id": "147399",
+      "parentId": "3252",
+      "name": "Car Rental"
+    },
+    {
+      "id": "16078",
+      "parentId": "3252",
+      "name": "Cruises"
+    },
+    {
+      "id": "16123",
+      "parentId": "3252",
+      "name": "Lodging"
+    },
+    {
+      "id": "16080",
+      "parentId": "3252",
+      "name": "Luggage"
+    },
+    {
+      "id": "173520",
+      "parentId": "3252",
+      "name": "Luggage Accessories"
+    },
+    {
+      "id": "164803",
+      "parentId": "3252",
+      "name": "Maps"
+    },
+    {
+      "id": "98982",
+      "parentId": "3252",
+      "name": "Rail"
+    },
+    {
+      "id": "93838",
+      "parentId": "3252",
+      "name": "Travel Accessories"
+    },
+    {
+      "id": "29578",
+      "parentId": "3252",
+      "name": "Vacation Packages"
+    },
+    {
+      "id": "1310",
+      "parentId": "3252",
+      "name": "Other Travel"
+    },
+    {
+      "id": "1249",
+      "parentId": null,
+      "name": "Video Games & Consoles"
+    },
+    {
+      "id": "139973",
+      "parentId": "1249",
+      "name": "Video Games"
+    },
+    {
+      "id": "139971",
+      "parentId": "1249",
+      "name": "Video Game Consoles"
+    },
+    {
+      "id": "54968",
+      "parentId": "1249",
+      "name": "Video Game Accessories"
+    },
+    {
+      "id": "156597",
+      "parentId": "1249",
+      "name": "Prepaid Gaming Cards"
+    },
+    {
+      "id": "171833",
+      "parentId": "1249",
+      "name": "Replacement Parts & Tools"
+    },
+    {
+      "id": "156595",
+      "parentId": "1249",
+      "name": "Strategy Guides & Cheats"
+    },
+    {
+      "id": "38583",
+      "parentId": "1249",
+      "name": "Video Gaming Merchandise"
+    },
+    {
+      "id": "187",
+      "parentId": "1249",
+      "name": "Other Video Games & Consoles"
+    },
+    {
+      "id": "48749",
+      "parentId": "1249",
+      "name": "Wholesale Lots"
+    },
+    {
+      "id": "99",
+      "parentId": null,
+      "name": "Everything Else"
+    },
+    {
+      "id": "319",
+      "parentId": "99",
+      "name": "Adult Only"
+    },
+    {
+      "id": "3143",
+      "parentId": "99",
+      "name": "Career Development & Education"
+    },
+    {
+      "id": "177600",
+      "parentId": "99",
+      "name": "eBay Special Offers"
+    },
+    {
+      "id": "20924",
+      "parentId": "99",
+      "name": "eBay User Tools"
+    },
+    {
+      "id": "88739",
+      "parentId": "99",
+      "name": "Funeral & Cemetery"
+    },
+    {
+      "id": "20925",
+      "parentId": "99",
+      "name": "Genealogy"
+    },
+    {
+      "id": "102480",
+      "parentId": "99",
+      "name": "Information Products"
+    },
+    {
+      "id": "19266",
+      "parentId": "99",
+      "name": "Metaphysical"
+    },
+    {
+      "id": "102329",
+      "parentId": "99",
+      "name": "Personal Development"
+    },
+    {
+      "id": "102535",
+      "parentId": "99",
+      "name": "Personal Security"
+    },
+    {
+      "id": "102545",
+      "parentId": "99",
+      "name": "Religious Products & Supplies"
+    },
+    {
+      "id": "102553",
+      "parentId": "99",
+      "name": "Reward Points & Incentives"
+    },
+    {
+      "id": "1466",
+      "parentId": "99",
+      "name": "Weird Stuff"
+    },
+    {
+      "id": "88433",
+      "parentId": "99",
+      "name": "Every Other Thing"
+    },
+    {
+      "id": "14112",
+      "parentId": "99",
+      "name": "Test Auctions"
     }
   ]
 }

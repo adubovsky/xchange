@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 var EbayCategory = new Schema({
     name: String,
     ebayId: String,
+    parentEbayId: String,
     parent: {
         type: Schema.Types.ObjectId,
         ref: 'EbayCategory'

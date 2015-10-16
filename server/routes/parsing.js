@@ -31,6 +31,7 @@ router.get('/ebayCategories', function (req, res) {
                 params: {
                     'DetailLevel': 'ReturnAll',
                     'WarningLevel': 'High',
+                    //'LevelLimit': 2,
                     'CategorySiteID': 0
                 }
             }, function (error, results) {
@@ -43,79 +44,56 @@ router.get('/ebayCategories', function (req, res) {
         });
     }
 
+    function findByEbayId(id) {
+        return new Promise(function (resolve, reject) {
+            EbayCategory
+                .findOne({
+                    ebayId: id
+                })
+                .exec(function (error, foundItem) {
+                    resolve(foundItem);
+                });
+        });
+    }
+
     requestPromise()
         .then(function (results) {
+            //parse response
             var categories = [];
             //need to parse results to categories
             if (_.isArray(results.Categorys)) {
                 results.Categorys.forEach(function (category) {
-                    categories.push({
+                    var item = {
                         id: category.CategoryID,
                         parentId: category.CategoryID === category.CategoryParentID ? null : category.CategoryParentID,
                         name: category.CategoryName
-                    });
+                    };
+                    categories.push(item);
                 });
             }
             return categories;
         })
         .then(function (categories) {
-            var findByEbayId = function (id) {
-                    return new Promise(function (resolve, reject) {
-                        EbayCategory
-                            .findOne({
-                                ebayId: id
-                            })
-                            .exec(function (error, foundItem) {
-                                if (error) {
-                                    reject(error);
-                                }
-                                else {
-                                    resolve(foundItem);
-                                }
-                            });
-                    });
-                },
-                addCat = function (category) {
+            //add to db
+            var addCat = function (category) {
                     return findByEbayId(category.id)
                         .then(function (foundItem) {
                             var newItem;
                             if (foundItem) {
                                 //already in DB
-                                if (category.parentId) {
-                                    return findByEbayId(category.parentId)
-                                        .then(function (foundParent) {
-                                            foundParent.children.push(foundItem);
-                                            foundItem.parent = foundParent;
-                                            foundParent.save();
-                                            foundItem.save();
-                                            return foundItem;
-                                        });
-                                }
-                                return foundItem;
-                            } else {
-                                //need to add to DB
-                                return new Promise(function (resolve, reject) {
-                                    newItem = new EbayCategory();
-                                    newItem.name = category.name;
-                                    newItem.ebayId = category.id;
-                                    newItem.save(function (error, savedItem) {
-                                        if (category.parentId) {
-                                            findByEbayId(category.parentId)
-                                                .then(function (foundParent) {
-                                                    foundParent.children.push(savedItem);
-                                                    savedItem.parent = foundParent;
-                                                    foundParent.save();
-                                                    savedItem.save(function (error, savedItem) {
-                                                        resolve(savedItem);
-                                                    });
-                                                });
-                                        }
-                                        else {
-                                            resolve(savedItem);
-                                        }
-                                    });
-                                });
+                                newItem = foundItem;
                             }
+                            else {
+                                newItem = new EbayCategory();
+                            }
+                            return new Promise(function (resolve, reject) {
+                                newItem.name = category.name;
+                                newItem.ebayId = category.id;
+                                newItem.parentEbayId = category.parentId;
+                                newItem.save(function (error, savedItem) {
+                                    resolve(savedItem);
+                                });
+                            });
                         });
                 },
                 promises = [];
@@ -125,6 +103,25 @@ router.get('/ebayCategories', function (req, res) {
                     promises.push(addCat(category));
                 });
 
+            return Promise.all(promises);
+        })
+        .then(function (documents) {
+            //need to add dependencies to DB
+            var promises = [];
+            documents.forEach(function (document) {
+                if (document.parentEbayId) {
+                    promises.push(findByEbayId(document.parentEbayId)
+                        .then(function (foundParent) {
+                            if (foundParent.children.indexOf(document._id) === -1) {
+                                foundParent.children.push(document._id);
+                                document.parent = foundParent._id;
+                                foundParent.save();
+                                document.save();
+                            }
+                            return document;
+                        }));
+                }
+            });
             return Promise.all(promises);
         })
         .then(function (categories) {
