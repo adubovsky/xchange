@@ -23,6 +23,7 @@
     "connect-multiparty": "^2.0.0",
     "cssnano": "^3.1.0",
     "deferred": "^0.7.3",
+    "ebay-api": "^1.6.1",
     "express": "^4.13.3",
     "express-session": "^1.11.3",
     "grunt": "^0.4.5",

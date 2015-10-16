@@ -4,103 +4,119 @@
  */
 var express = require('express'),
     router = express.Router(),
-    request = require('request'),
     cheerio = require('cheerio'),
-//fs = require('fs'),
     config = require('../config'),
     path = require('path'),
     EbayCategory = require('../models/ebay-category'),
-    _ = require('underscore');
+    _ = require('underscore'),
+    ebayAPI = require('ebay-api'),
+    privateConfig = require('../private');
 
 router.get('/ebayCategories', function (req, res) {
-    var url = 'https://api.ebay.com/wsapi?' +
-            'callname=GetCategories' +
-            '&siteid=0' +
-            '&appid=Vladimir-4858-4e47-adb9-3c3ecf36c5d0' +
-            'version=511&Routing=new',
-        locale = 'en-US',
-        parsing;
-
-    /**
-     * Returns promise that returns $ cheerio object with parsed response body in it
-     * @param url
-     * @returns {Promise}
-     */
-
-    function requestPromise(url) {
+    function requestPromise() {
         return new Promise(function (resolve, reject) {
-            var requestOptions = {
-                url: url,
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.99 Safari/537.36'
-                },
-                jar: j
-            };
-            request(requestOptions, function (error, response, body) {
-                if (!error && response.statusCode == 200) {
-                    resolve(JSON.parse(body));
-                } else {
+            ebayAPI.xmlRequest({
+                serviceName: 'Trading',
+                opType: 'GetCategories',
+
+                // app/environment
+                devId: privateConfig.ebay.devId,
+                certId: privateConfig.ebay.certId,
+                appName: privateConfig.ebay.appName,
+                sandbox: false,
+
+                // per user
+                authToken: privateConfig.ebay.authToken,
+
+                params: {
+                    'DetailLevel': 'ReturnAll',
+                    'WarningLevel': 'High',
+                    'CategorySiteID': 0
+                }
+            }, function (error, results) {
+                if (error) {
                     reject(error);
+                } else {
+                    resolve(results);
                 }
             });
         });
     }
 
-    parsing = new Promise(function (resolve, reject) {
-        requestPromise(url)
-            .then(function (json) {
-                //should parse json to category: { id, subCategories }
-                //when we get all second levels returned we should return array of categories
-                Promise.all(secondLevelParses)
-                    .then(function (categories) {
-                        resolve(categories);
+    requestPromise()
+        .then(function (results) {
+            var categories = [];
+            //need to parse results to categories
+            if (_.isArray(results.Categorys)) {
+                results.Categorys.forEach(function (category) {
+                    categories.push({
+                        id: category.CategoryID,
+                        parentId: category.CategoryID === category.CategoryParentID ? null : category.CategoryParentID,
+                        name: category.CategoryName
                     });
-            })
-            .catch(function (error) {
-                reject(error);
-            });
-    });
-
-    parsing
+                });
+            }
+            return categories;
+        })
         .then(function (categories) {
-            var addCat = function (category, parentItem) {
+            var findByEbayId = function (id) {
                     return new Promise(function (resolve, reject) {
                         EbayCategory
                             .findOne({
-                                ebayId: category.id
+                                ebayId: id
                             })
-                            .exec(function (err, foundCat) {
-                                var addSubCats = function (parentItem) {
-                                        var subPromises = [];
-                                        if (category.subCategories) {
-                                            category.subCategories.forEach(function (sub) {
-                                                subPromises.push(addCat(sub, parentItem));
-                                            });
-                                        }
-                                        Promise.all(subPromises).then(function (values) {
-                                            parentItem.children = values;
-                                            parentItem.save();
-                                        });
-                                    },
-                                    newCat;
-                                if (!foundCat) {
-                                    //if we don't have this category we should add it
-                                    newCat = new EbayCategory();
-                                    newCat.ebayId = category.id;
-                                    newCat.name = category.name;
-                                    newCat.parent = parentItem ? parentItem._id : null;
-                                    newCat.save(function (err, savedItem) {
-                                        addSubCats(savedItem);
-                                        resolve(savedItem);
-                                    });
+                            .exec(function (error, foundItem) {
+                                if (error) {
+                                    reject(error);
                                 }
                                 else {
-                                    //if we have it we should check its children
-                                    addSubCats(foundCat);
-                                    resolve(foundCat);
+                                    resolve(foundItem);
                                 }
                             });
                     });
+                },
+                addCat = function (category) {
+                    return findByEbayId(category.id)
+                        .then(function (foundItem) {
+                            var newItem;
+                            if (foundItem) {
+                                //already in DB
+                                if (category.parentId) {
+                                    return findByEbayId(category.parentId)
+                                        .then(function (foundParent) {
+                                            foundParent.children.push(foundItem);
+                                            foundItem.parent = foundParent;
+                                            foundParent.save();
+                                            foundItem.save();
+                                            return foundItem;
+                                        });
+                                }
+                                return foundItem;
+                            } else {
+                                //need to add to DB
+                                return new Promise(function (resolve, reject) {
+                                    newItem = new EbayCategory();
+                                    newItem.name = category.name;
+                                    newItem.ebayId = category.id;
+                                    newItem.save(function (error, savedItem) {
+                                        if (category.parentId) {
+                                            findByEbayId(category.parentId)
+                                                .then(function (foundParent) {
+                                                    foundParent.children.push(savedItem);
+                                                    savedItem.parent = foundParent;
+                                                    foundParent.save();
+                                                    savedItem.save(function (error, savedItem) {
+                                                        resolve(savedItem);
+                                                    });
+                                                });
+                                        }
+                                        else {
+                                            resolve(savedItem);
+                                        }
+                                    });
+                                });
+                            }
+                        });
                 },
                 promises = [];
             //need to save
@@ -109,11 +125,10 @@ router.get('/ebayCategories', function (req, res) {
                     promises.push(addCat(category));
                 });
 
-            Promise
-                .all(promises)
-                .then(function (categories) {
-                    res.json({categories: categories});
-                });
+            return Promise.all(promises);
+        })
+        .then(function (categories) {
+            res.json({categories: categories});
         })
         .catch(function (error) {
             res.json({error: error});
