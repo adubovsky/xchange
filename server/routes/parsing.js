@@ -66,7 +66,8 @@ router.get('/ebayCategories', function (req, res) {
                     var item = {
                         id: category.CategoryID,
                         parentId: category.CategoryID === category.CategoryParentID ? null : category.CategoryParentID,
-                        name: category.CategoryName
+                        name: category.CategoryName,
+                        level: category.CategoryLevel
                     };
                     categories.push(item);
                 });
@@ -89,6 +90,7 @@ router.get('/ebayCategories', function (req, res) {
                             return new Promise(function (resolve, reject) {
                                 newItem.name = category.name;
                                 newItem.ebayId = category.id;
+                                newItem.level = category.level;
                                 newItem.parentEbayId = category.parentId;
                                 newItem.save(function (error, savedItem) {
                                     resolve(savedItem);

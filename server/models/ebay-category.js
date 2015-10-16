@@ -6,6 +6,7 @@ var EbayCategory = new Schema({
     name: String,
     ebayId: String,
     parentEbayId: String,
+    level: Number,
     parent: {
         type: Schema.Types.ObjectId,
         ref: 'EbayCategory'
