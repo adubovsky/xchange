@@ -11,7 +11,7 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', 'a
      */
     var Item = BasicModel.new('Item', {
         visible: true,
-        tags: []
+        subCategory: []
     });
 
     Item.prototype.save = function () {

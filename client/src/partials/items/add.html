@@ -55,12 +55,15 @@
             </md-option>
         </md-select>
     </md-input-container>
-    <md-input-container ng-show="subCategories.length">
+
+    <md-input-container ng-repeat="subCategories in subCategoriesArray"
+                        ng-if="subCategories.length">
         <label>Subcategory</label>
-        <md-select ng-model="item.subCategory">
+        <md-select ng-model="item.subCategory[$index]"
+                   ng-change="getSubCategories(item.subCategory[$index], true)">
             <md-option ng-repeat="category in subCategories"
                        ng-value="category"
-                       ng-selected="category.getId() === item.subCategory._id">
+                       ng-selected="category.getId() === item.subCategory[$index]._id">
                 {{category.name}}
             </md-option>
         </md-select>

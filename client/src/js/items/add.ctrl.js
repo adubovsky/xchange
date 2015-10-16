@@ -11,6 +11,7 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
             Item.getById(itemId)
                 .then(function (item) {
                     item = new Item(item);
+                    console.log( item );
                     item.photoUrl = item.getImageUrl();
                     $scope.item = item;
                 });
@@ -51,16 +52,23 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
         };
 
         $scope.categories = [];
-        $scope.subCategories = [];
+        $scope.subCategoriesArray = [];
         Category.get()
             .then(function (categories) {
                 $scope.categories = new Category(categories);
             });
 
-        $scope.getSubCategories = function (parent) {
+        $scope.getSubCategories = function (parent, append) {
             parent.getChildren()
                 .then(function (categories) {
-                    $scope.subCategories = new Category(categories);
+                    if(!append){
+                        $scope.subCategoriesArray = [];
+                    }
+                    //delete all subcategories upper than parent level
+                    console.log( $scope.item );
+                    $scope.item.subCategory.slice(parent.level);
+                    $scope.subCategoriesArray.slice(parent.level);
+                    $scope.subCategoriesArray[parent.level-1] = new Category(categories);
                 });
         };
 
