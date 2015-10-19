@@ -43,8 +43,6 @@ app.factory('Item', ['$http', 'currentUser', '$q', '$mdDialog', 'BasicModel', 'a
         return Item.get({userId: userId});
     };
 
-    Item.getTags = apiHelper.get('/api/tag', 'tags');
-
     Item.get = apiHelper.get('/api/item', 'items', function (items) {
         return new Item(items);
     });

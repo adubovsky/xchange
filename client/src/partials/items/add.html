@@ -63,7 +63,7 @@
                    ng-change="getSubCategories(item.subCategory[$index], true)">
             <md-option ng-repeat="category in subCategories"
                        ng-value="category"
-                       ng-selected="category.getId() === item.subCategory[$index]._id">
+                       ng-selected="category.getId() === item.subCategory[$parent.$index]._id">
                 {{category.name}}
             </md-option>
         </md-select>

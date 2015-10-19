@@ -1,7 +1,7 @@
 'use strict';
 var app = require('../app');
 
-app.factory('Category', ['$http', '$q', 'BasicModel','apiHelper', function ($http, $q, BasicModel,apiHelper) {
+app.factory('Category', ['$http', '$q', 'BasicModel', 'apiHelper', function ($http, $q, BasicModel, apiHelper) {
     var Category = BasicModel.new('Category');
 
     Category.prototype.save = function () {

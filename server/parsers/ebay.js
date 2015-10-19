@@ -6,7 +6,7 @@ var request = require('request'),
     cheerio = require('cheerio'),
     config = require('../config'),
     path = require('path'),
-    EbayCategory = require('../models/ebay-category'),
+    Category = require('../models/category'),
     _ = require('underscore');
 
 (function parseEbayCategories() {
@@ -151,7 +151,7 @@ var request = require('request'),
         .then(function (categories) {
             var addCat = function (category, parentItem) {
                     return new Promise(function (resolve, reject) {
-                        EbayCategory
+                        Category
                             .findOne({
                                 ebayId: category.id
                             })
@@ -171,7 +171,7 @@ var request = require('request'),
                                     newCat;
                                 if (!foundCat) {
                                     //if we don't have this category we should add it
-                                    newCat = new EbayCategory();
+                                    newCat = new Category();
                                     newCat.ebayId = category.id;
                                     newCat.name = category.name;
                                     newCat.parent = parentItem ? parentItem._id : null;

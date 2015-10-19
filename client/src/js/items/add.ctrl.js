@@ -11,7 +11,6 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
             Item.getById(itemId)
                 .then(function (item) {
                     item = new Item(item);
-                    console.log( item );
                     item.photoUrl = item.getImageUrl();
                     $scope.item = item;
                 });
@@ -31,11 +30,9 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
                     file: newFile
                 }).progress(function (evt) {
                     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                    console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
                 }).success(function (data, status, headers, config) {
                     $scope.item.photoUrl = data.file.temp;
                 }).error(function (data, status, headers, config) {
-                    console.log('error status: ' + status);
                 });
             }
         });
@@ -65,7 +62,6 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
                         $scope.subCategoriesArray = [];
                     }
                     //delete all subcategories upper than parent level
-                    console.log( $scope.item );
                     $scope.item.subCategory.slice(parent.level);
                     $scope.subCategoriesArray.slice(parent.level);
                     $scope.subCategoriesArray[parent.level-1] = new Category(categories);
