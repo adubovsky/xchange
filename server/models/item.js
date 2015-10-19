@@ -15,11 +15,11 @@ var Item = new Schema({
     }],
     category:{
         type: Schema.Types.ObjectId,
-        ref: 'EbayCategory'
+        ref: 'Category'
     },
     subCategory:[{
         type: Schema.Types.ObjectId,
-        ref: 'EbayCategory'
+        ref: 'Category'
     }],
     createDate: {
         type: Date,

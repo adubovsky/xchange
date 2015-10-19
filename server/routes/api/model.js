@@ -3,8 +3,7 @@ var express = require('express'),
     Model = require('../../models/model'),
     Brand = require('../../models/brand'),
     router = express.Router(),
-    isAuth = require('../../middleware/auth'),
-    Tag = require('../../models/tag');
+    isAuth = require('../../middleware/auth');
 
 router.put('/', isAuth('admin'), function (req, res) {
     var model = new Model(req.body);
@@ -31,10 +30,6 @@ router.put('/', isAuth('admin'), function (req, res) {
                         success: true,
                         model: model
                     });
-                    //Append new tag
-                    Tag
-                        .new('model', model)
-                        .save();
                     console.log('%s brand is updated.', brand.name);
                 });
         }

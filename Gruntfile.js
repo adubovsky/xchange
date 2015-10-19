@@ -128,7 +128,9 @@ module.exports = function (grunt) {
                     module: false,
                     'module.exports': false,
                     /*node*/
-                    Buffer: false
+                    Buffer: false,
+                    setTimeout: false,
+                    clearTimeout: false
                 }
             },
             client: [siteConfig.clientSrcDir + '/**/*.js'],

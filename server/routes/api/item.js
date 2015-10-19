@@ -1,7 +1,6 @@
 'use strict';
 var express = require('express'),
     Item = require('../../models/item'),
-    Tag = require('../../models/tag'),
     router = express.Router(),
     isAuth = require('../../middleware/auth'),
     parseImage = require('../../middleware/parseImage');

@@ -10,7 +10,6 @@ var express = require('express'),
     'category',
     'brand',
     'model',
-    'tag',
     'wish',
     'trade'
 ].forEach(function (routeName) {

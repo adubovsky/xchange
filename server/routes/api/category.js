@@ -1,9 +1,8 @@
 'use strict';
 var express = require('express'),
-    Category = require('../../models/ebay-category'),
+    Category = require('../../models/category'),
     router = express.Router(),
-    isAuth = require('../../middleware/auth'),
-    Tag = require('../../models/tag');
+    isAuth = require('../../middleware/auth');
 
 //Categories API
 router.get('/', function (req, res) {
@@ -51,10 +50,6 @@ router.put('/', isAuth('admin'), function (req, res) {
             success: true,
             category: category
         });
-        //Append new tag
-        Tag
-            .new(category.parent ? 'subCategory' : 'category', category)
-            .save();
     });
 });
 

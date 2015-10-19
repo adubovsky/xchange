@@ -7,7 +7,7 @@ var express = require('express'),
     cheerio = require('cheerio'),
     config = require('../config'),
     path = require('path'),
-    EbayCategory = require('../models/ebay-category'),
+    Category = require('../models/category'),
     _ = require('underscore'),
     ebayAPI = require('ebay-api'),
     privateConfig = require('../private');
@@ -46,7 +46,7 @@ router.get('/ebayCategories', function (req, res) {
 
     function findByEbayId(id) {
         return new Promise(function (resolve, reject) {
-            EbayCategory
+            Category
                 .findOne({
                     ebayId: id
                 })
@@ -85,7 +85,7 @@ router.get('/ebayCategories', function (req, res) {
                                 newItem = foundItem;
                             }
                             else {
-                                newItem = new EbayCategory();
+                                newItem = new Category();
                             }
                             return new Promise(function (resolve, reject) {
                                 newItem.name = category.name;

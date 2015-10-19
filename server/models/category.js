@@ -1,10 +1,12 @@
 'use strict';
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
-//Schema of item's categories and subcategories
+//Schema for categories and subcategories from Ebay
 var Category = new Schema({
     name: String,
-    description: String,
+    ebayId: String,
+    parentEbayId: String,
+    level: Number,
     parent: {
         type: Schema.Types.ObjectId,
         ref: 'Category'
