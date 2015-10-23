@@ -10,9 +10,9 @@ app.factory('Wish', ['$http', '$q', 'BasicModel', 'currentUser', 'apiHelper', fu
     };
 
     Wish.prototype.isValid = function () {
-        return !!(this.tag);
+        return !!(this.category);
     };
-
+    Wish.getTags = apiHelper.get('/api/wish/search', 'tags');
     Wish.get = apiHelper.get('/api/wish', 'wishes');
 
     return Wish;
