@@ -1,5 +1,6 @@
 'use strict';
-var app = require('../app');
+var app = require('../app'),
+    angular = require('angular');
 
 app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$stateParams', 'Category',
     function ($scope, Item, Upload, $state, $stateParams, Category) {
@@ -58,14 +59,42 @@ app.controller('ItemAddController', ['$scope', 'Item', 'Upload', '$state', '$sta
         $scope.getSubCategories = function (parent, append) {
             parent.getChildren()
                 .then(function (categories) {
-                    if(!append){
+                    if (!append) {
                         $scope.subCategoriesArray = [];
                     }
                     //delete all subcategories upper than parent level
                     $scope.item.subCategory.slice(parent.level);
                     $scope.subCategoriesArray.slice(parent.level);
-                    $scope.subCategoriesArray[parent.level-1] = new Category(categories);
+                    $scope.subCategoriesArray[parent.level - 1] = new Category(categories);
                 });
+        };
+
+        $scope.map = {
+            center: {latitude: 0, longitude: 0},
+            zoom: 2,
+            markers: [],
+            events: {
+                click: function (map, eventName, originalEventArgs) {
+                    var $event = originalEventArgs[0],
+                        latitude = $event.latLng.lat(),
+                        longitude = $event.latLng.lng();
+                    $scope.map.marker = {
+                        id: Date.now(),
+                        coords: {
+                            latitude: latitude,
+                            longitude: longitude
+                        }
+                    };
+                    angular.extend($scope.map, {
+                        zoom:7,
+                        center: {
+                            latitude: latitude,
+                            longitude: longitude
+                        }
+                    });
+                    $scope.$apply();
+                }
+            }
         };
 
     }]);

@@ -112,6 +112,23 @@
             </div>
         </md-chip-template>
     </md-chips>-->
+    <md-input-container
+            ng-class="{'md-input-has-value': map.marker}">
+        <label>Coordinates, where item is located</label>
+        <input type="text"
+               ng-disabled="true"
+               ng-value="map.marker.coords.longitude+' '+map.marker.coords.latitude">
+    </md-input-container>
+    <ui-gmap-google-map center='map.center'
+                        zoom='map.zoom'
+                        draggable="true"
+                        events="map.events">
+        <ui-gmap-marker ng-if="map.marker"
+                        coords="map.marker.coords"
+                        icon="map.marker.icon"
+                        idkey="map.marker.id"></ui-gmap-marker>
+    </ui-gmap-google-map>
+
     <md-checkbox ng-model="item.visible">
         <label>
             Visible

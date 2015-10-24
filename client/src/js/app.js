@@ -6,8 +6,9 @@ var angular = require('angular'),
 require('angular-material');
 require('angular-ui-router');
 require('ng-file-upload');
+require('angular-google-maps');
 
-app = angular.module('xchangeApp', ['ngMaterial', 'ui.router', 'ngFileUpload']);
+app = angular.module('xchangeApp', ['ngMaterial', 'ui.router', 'ngFileUpload', 'uiGmapgoogle-maps']);
 
 app.run(['$rootScope', '$state', 'currentUser', 'User', function ($rootScope, $state, currentUser, User) {
     var checked = currentUser.check();
