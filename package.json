@@ -19,6 +19,7 @@
     "autoprefixer": "^6.0.3",
     "body-parser": "^1.13.3",
     "browserify": "^11.0.1",
+    "browserify-shim": "^3.8.11",
     "chai": "^3.2.0",
     "cheerio": "^0.19.0",
     "connect-multiparty": "^2.0.0",
@@ -63,5 +64,24 @@
   },
   "dependencies": {
     "express-handlebars": "^2.0.1"
+  },
+  "browser": {
+    "angular-google-maps": "./node_modules/angular-google-maps/dist/angular-google-maps.js",
+    "angular-simple-logger": "./node_modules/angular-google-maps/node_modules/angular-simple-logger/dist/angular-simple-logger.js",
+    "lodash": "./node_modules/angular-google-maps/node_modules/lodash/index.js"
+  },
+  "browserify-shim": {
+    "lodash": "_",
+    "angular-google-maps": {
+      "depends": [
+        "angular-simple-logger",
+        "lodash"
+      ]
+    }
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
   }
 }
